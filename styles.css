@@ -1,0 +1,175 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set default font and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Style the header section */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+}
+
+/* Style the navigation */
+nav {
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Theme switch container */
+.theme-switch {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* The switch - the input checkbox */
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+/* The button (round part) */
+.slider {
+    position: relative;
+    width: 60px; /* Adjust width for longer button */
+    height: 30px;
+    background: linear-gradient(to right, #ffcc00, #3498db); /* Gradient for day mode */
+    border-radius: 30px; /* Adjust radius for rounded button */
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Round slider knob */
+.round {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dark mode styling */
+.dark-mode {
+    background: linear-gradient(to right, #1a1a2e, #5d5d81); /* Gradient for dark mode */
+    color: #fff;
+}
+
+/* Adjust colors for light mode */
+.light-mode {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+/* Initial state for the button text */
+.theme-switch span {
+    margin-left: 10px;
+}
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set default font and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* ... Previous CSS code ... */
+
+/* Plans content */
+.plans {
+    text-align: center;
+    padding: 50px 0; /* Adjust padding as needed */
+}
+
+.plans-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plan {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px; /* Add padding */
+    margin-bottom: 20px; /* Add spacing between plans */
+    text-align: center;
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px; /* Add maximum width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    display: block;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.plan-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.plan-button:hover {
+    background-color: #2980b9;
+}

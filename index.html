@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dreams Timeskip Testing</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Dreams Timeskip Testing Server</h1>
+        <p>You are one of the lucky few who were selected to begin your immersive MMORPG Minecraft experience.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="#merchandise">Merchandise</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <h2>Embark on a Legendary Adventure</h2>
+        <p>Step into the realm of Dreams Timeskip, where your adventure begins and the possibilities are limitless. Immerse yourself in a stunning open-world MMORPG experience, filled with epic quests, live events, and dynamic gameplay.</p>
+        <a href="plans.html" class="cta-button">Choose Your Adventure</a>
+    </section>
+
+    <!-- More sections and content here -->
+    <div class="theme-switch">
+        <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span id="mode-text">Dark Mode</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Dreams Timeskip. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+            const modeText = document.getElementById('mode-text');
+
+            // Detect user's preferred color scheme
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Set initial mode based on user preference
+            if (prefersDarkMode) {
+                body.classList.add('dark-mode');
+                modeText.textContent = 'Dark Mode';
+            } else {
+                body.classList.add('light-mode');
+                modeText.textContent = 'Light Mode';
+            }
+
+            darkModeToggle.addEventListener('change', () => {
+                body.classList.toggle('dark-mode');
+                body.classList.toggle('light-mode');
+                modeText.textContent = darkModeToggle.checked ? 'Light Mode' : 'Dark Mode';
+            });
+        });
+    </script>
+</body>
+</html>
