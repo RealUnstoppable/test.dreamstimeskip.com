@@ -24,6 +24,7 @@ nav {
     color: white;
 }
 
+/* Style the navigation links */
 nav ul {
     list-style: none;
     display: flex;
@@ -31,15 +32,23 @@ nav ul {
     padding: 1rem;
 }
 
+/* Updated styles for navigation links */
 nav a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    padding: 10px 20px; /* Add padding */
+    border-radius: 20px; /* Add border-radius for rounded corners */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition */
 }
 
+/* Updated styles for navigation links on hover */
 nav a:hover {
-    color: #3498db;
+    background-color: #1a1a2e; /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
 }
+
+/* ... Rest of your existing CSS ... */
+
 
 /* Style the footer */
 footer {
@@ -65,15 +74,33 @@ footer {
     z-index: 1;
 }
 
-.theme-switch:hover {
+.theme-switch span {
+    margin-left: 10px;
+}
+
+.theme-toggle {
+    display: inline-block;
+    width: 60px; /* Adjust width for rectangular button */
+    padding: 10px; /* Add padding to fit text */
+    background: linear-gradient(to right, #ffcc00, #3498db);
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
     transform: scale(1.1);
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* The switch - the input checkbox */
-.switch input[type="checkbox"] {
-    display: none;
+.theme-switch .slider {
+    display: block; /* Change to block element */
+    width: 40px; /* Width of the rectangular button */
+    height: 20px; /* Height of the rectangular button */
+    border-radius: 5px; /* Rounded corners for the button */
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
 }
+
 
 /* The button (round part) */
 .slider {
@@ -98,35 +125,63 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Dark mode styling */
-.dark-mode {
-    background: linear-gradient(to right, #1a1a2e, #5d5d81); /* Gradient for dark mode */
-    color: #fff;
+
+/* Light mode */
+.light-mode {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text color */
 }
 
-/* Adjust colors for light mode */
-.light-mode {
-    background-color: #f2f2f2;
-    color: #000;
+.light-mode header {
+    background-color: #f2f2f2; /* Light gray background for header */
+    color: #000000; /* Black text color for header */
 }
+
+.light-mode nav {
+    background-color: #f2f2f2; /* Light gray background for navigation */
+    color: #000000; /* Black text color for navigation */
+}
+
+.light-mode nav a {
+    color: #000000; /* Black text color for navigation links */
+}
+
+.light-mode footer {
+    background-color: #f2f2f2; /* Light gray background for footer */
+    color: #000000; /* Black text color for footer */
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text color */
+}
+
+.dark-mode header {
+    background-color: #1a1a1a; /* Dark background for header */
+    color: #ffffff; /* White text color for header */
+}
+
+.dark-mode nav {
+    background-color: #1a1a1a; /* Dark background for navigation */
+    color: #ffffff; /* White text color for navigation */
+}
+
+.dark-mode nav a {
+    color: #ffffff; /* White text color for navigation links */
+}
+
+.dark-mode footer {
+    background-color: #1a1a1a; /* Dark background for footer */
+    color: #ffffff; /* White text color for footer */
+}
+
+
 
 /* Initial state for the button text */
 .theme-switch span {
     margin-left: 10px;
 }
-/* Reset some default styles */
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Set default font and background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-
-/* ... Previous CSS code ... */
 
 /* Plans content */
 .plans {
@@ -158,18 +213,100 @@ body {
     margin-top: 10px;
 }
 
+/* Style for plan buttons */
 .plan-button {
     display: inline-block;
-    margin-top: 15px;
     padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
+    background-color: transparent; /* Transparent background */
+    color: #3498db;
+    border: 2px solid #3498db; /* Add border */
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add transition */
 }
 
 .plan-button:hover {
-    background-color: #2980b9;
+    background-color: #3498db; /* Background color on hover */
+    color: #fff;
+    border-color: #fff; /* Border color on hover */
+}
+
+/* Style for home, features, plans, merchandise, and contact buttons */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px; /* Add padding */
+    border-radius: 20px; /* Add border-radius for rounded corners */
+    background-color: #3498db; /* Default background color */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition */
+}
+
+.cta-button:hover {
+    background-color: #1a1a2e; /* Darker background color on hover */
+}
+
+/* Adjust colors for light mode */
+.light-mode .cta-button:hover {
+    background-color: #fff; /* Background color on hover in light mode */
+    color: #1a1a2e; /* Text color on hover in light mode */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    /* Adjust header, nav, and other element styles for mobile */
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav a {
+        padding: 8px 20px;
+        border-radius: 20px;
+    }
+
+    /* Adjust hero section */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    /* Adjust footer styles */
+    footer {
+        padding: 0.5rem;
+    }
+
+    /* Adjust plans section */
+    .plans-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .plan {
+        width: 90%;
+        margin: 0 auto;
+        max-width: none;
+    }
+
+    /* Adjust theme switch position */
+    .theme-switch {
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Apply styles for tablet devices if needed */
+}
+
+/* Desktop devices */
+@media (min-width: 1024px) {
+    /* Apply styles for desktop devices if needed */
 }

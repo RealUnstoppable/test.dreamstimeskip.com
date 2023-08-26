@@ -61,7 +61,35 @@
     </footer>
 
     <script>
-        // Dark mode functionality here
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+            const modeText = document.getElementById('mode-text');
+
+            // Function to set the theme mode
+            function setThemeMode(mode) {
+                body.classList.remove('dark-mode', 'light-mode');
+                body.classList.add(mode);
+                modeText.textContent = mode === 'dark-mode' ? 'Dark Mode' : 'Light Mode';
+                localStorage.setItem('themeMode', mode);
+            }
+
+            // Detect user's preferred color scheme
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Retrieve theme mode from localStorage or use default
+            const storedThemeMode = localStorage.getItem('themeMode');
+            if (storedThemeMode) {
+                setThemeMode(storedThemeMode);
+            } else {
+                setThemeMode(prefersDarkMode ? 'dark-mode' : 'light-mode');
+            }
+
+            darkModeToggle.addEventListener('change', () => {
+                const newThemeMode = darkModeToggle.checked ? 'light-mode' : 'dark-mode';
+                setThemeMode(newThemeMode);
+            });
+        });
     </script>
 </body>
 </html>

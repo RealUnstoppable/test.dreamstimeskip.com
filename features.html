@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dreams Timeskip - Features</title>
+</head>
+<body>
+    <header>
+        <h1>Explore the Features of Dreams Timeskip</h1>
+        <p>Discover the incredible features that await you in our immersive MMORPG world.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="#merchandise">Merchandise</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="features" class="feature-section">
+        <h2>Key Features of Dreams Timeskip</h2>
+        <div class="feature">
+            <img src="feature-1-icon.png" alt="Feature Icon">
+            <h3>Open-World Exploration</h3>
+            <p>Embark on a journey through a vast open world filled with diverse landscapes, hidden treasures, and thrilling adventures. Roam freely and uncover secrets at every corner.</p>
+        </div>
+        <div class="feature">
+            <img src="feature-2-icon.png" alt="Feature Icon">
+            <h3>Dynamic Gameplay</h3>
+            <p>Experience dynamic gameplay mechanics that adapt to your decisions and playstyle. Engage in challenging battles, solve intricate puzzles, and shape the world around you.</p>
+        </div>
+        <div class="feature">
+            <img src="feature-3-icon.png" alt="Feature Icon">
+            <h3>Engaging Storyline</h3>
+            <p>Immerse yourself in an epic storyline that unfolds as you progress. Encounter captivating characters, forge alliances, and make impactful choices that shape the narrative.</p>
+        </div>
+        <div class="feature">
+            <img src="feature-4-icon.png" alt="Feature Icon">
+            <h3>Live Events</h3>
+            <p>Participate in live events that bring the world of Dreams Timeskip to life. Join in-game festivals, epic battles, and time-limited challenges for unique rewards and experiences.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Dreams Timeskip. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <!-- Include your JavaScript for theme switching here -->
+    document.addEventListener('DOMContentLoaded', () => {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const modeText = document.getElementById('mode-text');
+
+        // Function to set the theme mode
+        function setThemeMode(mode) {
+            body.classList.remove('dark-mode', 'light-mode');
+            body.classList.add(mode);
+            modeText.textContent = mode === 'dark-mode' ? 'Dark Mode' : 'Light Mode';
+            localStorage.setItem('themeMode', mode);
+        }
+
+        // Detect user's preferred color scheme
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Retrieve theme mode from localStorage or use default
+        const storedThemeMode = localStorage.getItem('themeMode');
+        if (storedThemeMode) {
+            setThemeMode(storedThemeMode);
+        } else {
+            setThemeMode(prefersDarkMode ? 'dark-mode' : 'light-mode');
+        }
+
+        darkModeToggle.addEventListener('change', () => {
+            const newThemeMode = darkModeToggle.checked ? 'light-mode' : 'dark-mode';
+            setThemeMode(newThemeMode);
+        });
+    });
+</script>
+</body>
+</html>
