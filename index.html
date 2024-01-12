@@ -4,79 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Dreams Timeskip Testing</title>
+    <title>Dreams Timeskip</title>
+    <!--Icons-->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">  
+    <!-- Link to CSS-->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Dreams Timeskip Testing Server</h1>
-        <p>You are one of the lucky few who were selected to begin your immersive MMORPG Minecraft experience.</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="plans.html">Plans</a></li>
-            <li><a href="merchandise.html">Merchandise</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Hero section -->
-    <section id="home" class="hero">
-        <h2>Embark on a Legendary Adventure</h2>
-        <p>Step into the realm of Dreams Timeskip, where your adventure begins and the possibilities are limitless. Immerse yourself in a stunning open-world MMORPG experience, filled with epic quests, live events, and dynamic gameplay.</p>
-        <a href="plans.html" class="cta-button">Choose Your Adventure</a>
-    </section>
-
-    <!-- More sections and content here -->
-    <div class="theme-switch">
-        <label class="switch">
-            <input type="checkbox" id="dark-mode-toggle">
-            <span class="slider round"></span>
-        </label>
-        <span id="mode-text">Dark Mode</span>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Dreams Timeskip. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    <!--Main-->
+    <section id="main">
+        <!--Glass Box-->
+        <div class="main-box">
+            <!-- Navbar-->
+            <nav>
+                <u1>
+                    <li><a href="#" class="logo">Dreams</a></li>
+                    <li><i class='bx bx-star'></i></li>
+                </u1>
+            </nav>
+            <!-- Main Content-->
+            <div class="main-content">
+                <!-- Main Text-->
+                <div class="main-text">
+                    <h1>Dreams <br>TimeSkip</h1>
+                    <h2>Website Redesign</h2>
+                    <p>Get Excited <br>Updated Weekly</p>
+                    <!--Buttons-->
+                    <a href="#" class="btn1">View Timeline</a>
+                    <a href="#" class="btn2">FAQs</a>
+                    </div>
+                    <!--Image-->
+                    <div class="main-img">
+                    <img src="Dreams Upgraded Premium Membership.png" alt="">
         </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const darkModeToggle = document.getElementById('dark-mode-toggle');
-            const body = document.body;
-            const modeText = document.getElementById('mode-text');
-
-            // Function to set the theme mode
-            function setThemeMode(mode) {
-                body.classList.remove('dark-mode', 'light-mode');
-                body.classList.add(mode);
-                modeText.textContent = mode === 'dark-mode' ? 'Dark Mode' : 'Light Mode';
-                localStorage.setItem('themeMode', mode);
-            }
-
-            // Detect user's preferred color scheme
-            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            // Retrieve theme mode from localStorage or use default
-            const storedThemeMode = localStorage.getItem('themeMode');
-            if (storedThemeMode) {
-                setThemeMode(storedThemeMode);
-            } else {
-                setThemeMode(prefersDarkMode ? 'dark-mode' : 'light-mode');
-            }
-
-            darkModeToggle.addEventListener('change', () => {
-                const newThemeMode = darkModeToggle.checked ? 'light-mode' : 'dark-mode';
-                setThemeMode(newThemeMode);
-            });
-        });
-    </script>
-</body>
-</html>
+    </div>
+    </div>
+    </section>
+    <!--circles-->
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+  

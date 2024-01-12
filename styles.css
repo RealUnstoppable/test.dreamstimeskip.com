@@ -1,312 +1,129 @@
-/* Reset some default styles */
-body, h1, h2, h3, p {
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
     margin: 0;
     padding: 0;
+   list-style: none;
+   text-decoration: none;
+
+font-family: 'Poppins', sans-serif;    
 }
-
-/* Set default font and background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+#main {
+width: 100%;
+min-height: 100vh;
+background: #3a3a3a;
+display: flex;
+justify-content:center;
+align-items: center;
 }
-
-/* Style the header section */
-header {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 2rem;
+.main-box{
+    background: white;
+    width: 80%;
+    min-height: 80vh;
+    background: linear-gradient(to right bottom,
+        rgba(255,255,255,0.5),
+        rgba(255,255,255,0.1)
+    );
+        border-radius: 1rem;
+        backdrop-filter: blur(2rem);
+        z-index: 4;
 }
-
-/* Style the navigation */
-nav {
-    background-color: #333;
-    color: white;
-}
-
-/* Style the navigation links */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-}
-
-/* Updated styles for navigation links */
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px; /* Add padding */
-    border-radius: 20px; /* Add border-radius for rounded corners */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition */
-}
-
-/* Updated styles for navigation links on hover */
-nav a:hover {
-    background-color: #1a1a2e; /* Darker background color on hover */
-    color: #fff; /* Text color on hover */
-}
-
-/* ... Rest of your existing CSS ... */
-
-
-/* Style the footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Theme switch container */
-.theme-switch {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    z-index: 1;
-}
-
-.theme-switch span {
-    margin-left: 10px;
-}
-
-.theme-toggle {
-    display: inline-block;
-    width: 60px; /* Adjust width for rectangular button */
-    padding: 10px; /* Add padding to fit text */
-    background: linear-gradient(to right, #ffcc00, #3498db);
-    border-radius: 5px; /* Rounded corners for the button */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.theme-switch .slider {
-    display: block; /* Change to block element */
-    width: 40px; /* Width of the rectangular button */
-    height: 20px; /* Height of the rectangular button */
-    border-radius: 5px; /* Rounded corners for the button */
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
-
-
-/* The button (round part) */
-.slider {
-    position: relative;
-    width: 60px; /* Adjust width for longer button */
-    height: 30px;
-    background: linear-gradient(to right, #ffcc00, #3498db); /* Gradient for day mode */
-    border-radius: 30px; /* Adjust radius for rounded button */
-    margin-right: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Round slider knob */
-.round {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 26px;
-    height: 26px;
+.circle1, .circle2{
+    background: white;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    background: linear-gradient( to right bottom,
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0.4)
+    );
+    z-index: 2;
 }
-
-
-/* Light mode */
-.light-mode {
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text color */
+.circle1{
+  top: 4%;
+  right: 2%;  
 }
-
-.light-mode header {
-    background-color: #f2f2f2; /* Light gray background for header */
-    color: #000000; /* Black text color for header */
+.circle2{
+    bottom: 4%;
+    left: 2%;
 }
-
-.light-mode nav {
-    background-color: #f2f2f2; /* Light gray background for navigation */
-    color: #000000; /* Black text color for navigation */
+.main-box nav{
+    padding: 50px;
 }
-
-.light-mode nav a {
-    color: #000000; /* Black text color for navigation links */
+.main-box nav u1{
+   display: flex; 
+   justify-content: space-between;
 }
-
-.light-mode footer {
-    background-color: #f2f2f2; /* Light gray background for footer */
-    color: #000000; /* Black text color for footer */
+.logo{
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 800;
 }
-
-/* Dark mode */
-.dark-mode {
-    background-color: #333333; /* Dark gray background */
-    color: #ffffff; /* White text color */
-}
-
-.dark-mode header {
-    background-color: #1a1a1a; /* Dark background for header */
-    color: #ffffff; /* White text color for header */
-}
-
-.dark-mode nav {
-    background-color: #1a1a1a; /* Dark background for navigation */
-    color: #ffffff; /* White text color for navigation */
-}
-
-.dark-mode nav a {
-    color: #ffffff; /* White text color for navigation links */
-}
-
-.dark-mode footer {
-    background-color: #1a1a1a; /* Dark background for footer */
-    color: #ffffff; /* White text color for footer */
-}
-
-
-
-/* Initial state for the button text */
-.theme-switch span {
-    margin-left: 10px;
-}
-
-/* Plans content */
-.plans {
-    text-align: center;
-    padding: 50px 0; /* Adjust padding as needed */
-}
-
-.plans-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.plan {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px; /* Add padding */
-    margin-bottom: 20px; /* Add spacing between plans */
-    text-align: center;
-    width: 80%; /* Adjust width as needed */
-    max-width: 400px; /* Add maximum width */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.price {
-    display: block;
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-/* Style for plan buttons */
-.plan-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: transparent; /* Transparent background */
-    color: #3498db;
-    border: 2px solid #3498db; /* Add border */
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add transition */
-}
-
-.plan-button:hover {
-    background-color: #3498db; /* Background color on hover */
+.bx{
+    font-size: 1.6rem;
     color: #fff;
-    border-color: #fff; /* Border color on hover */
+    padding: 6px 6px;
+    border-radius: 0.5rem;
+background: black;
+cursor: pointer;
 }
-
-/* Style for home, features, plans, merchandise, and contact buttons */
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px; /* Add padding */
-    border-radius: 20px; /* Add border-radius for rounded corners */
-    background-color: #3498db; /* Default background color */
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition */
+.main-content{
+display: flex;
+align-items: center;
+justify-content: space-around;
 }
+.main-text{
+    max-width: 500px;
 
-.cta-button:hover {
-    background-color: #1a1a2e; /* Darker background color on hover */
 }
-
-/* Adjust colors for light mode */
-.light-mode .cta-button:hover {
-    background-color: #fff; /* Background color on hover in light mode */
-    color: #1a1a2e; /* Text color on hover in light mode */
+.main-text h1 {
+font-size: 2.5rem;    
 }
-
-/* Media Queries for Responsive Design */
-
-/* Mobile devices */
-@media (max-width: 767px) {
-    /* Adjust header, nav, and other element styles for mobile */
-    header {
-        padding: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-    nav a {
-        padding: 8px 20px;
-        border-radius: 20px;
-    }
-
-    /* Adjust hero section */
-    .hero {
-        padding: 2rem 1rem;
-    }
-
-    /* Adjust footer styles */
-    footer {
-        padding: 0.5rem;
-    }
-
-    /* Adjust plans section */
-    .plans-container {
-        width: 100%;
-        padding: 0;
-    }
-
-    .plan {
-        width: 90%;
-        margin: 0 auto;
-        max-width: none;
-    }
-
-    /* Adjust theme switch position */
-    .theme-switch {
-        bottom: 10px;
-        left: 10px;
-    }
+.main-text h2 {
+    font-size: 2rem;
+    font-weight: 200;
 }
-
-/* Tablet devices */
-@media (min-width: 768px) and (max-width: 1023px) {
-    /* Apply styles for tablet devices if needed */
+.main-text p {
+ font-size: 1rem;
+ font-weight: 100;
+ margin: 18px 0 40px;
 }
-
-/* Desktop devices */
-@media (min-width: 1024px) {
-    /* Apply styles for desktop devices if needed */
+.btn1,.btn2{
+padding: 10px 20px;
+background: #000000;
+color: #fff;
+font-weight: 300;
+border-radius: 2rem;
+cursor: pointer;
+}
+.btn2{
+    background-color: #fff;
+    color: black;
+    margin-left: 1rem;
+}
+.btn2:hover {
+    background: #000000;
+    color: #fff;
+    transition: 0.5s ease;
+}
+.main-text::after{
+    content: '';
+    width: 5px;
+    height: 20%;
+    background: #fff;
+    position: absolute;
+    left: 2.4rem;
+    top: 11.1rem;
+}
+.main-img{
+    width: 350px;
+    height: 350px;
+}
+.main-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
