@@ -90,7 +90,7 @@ font-size: 2.5rem;
  font-weight: 100;
  margin: 18px 0 40px;
 }
-.btn1,.btn2{
+.btn1,.btn2,.btn3,.btn4{
 padding: 10px 20px;
 background: #000000;
 color: #fff;
@@ -116,6 +116,26 @@ cursor: pointer;
 .btn2:hover {
     background: #000000;
     color: #fff;
+    transition: 0.5s ease;
+}
+.btn3{
+    background-color: #fff;
+    color: black;
+    margin-left: 1rem;
+}
+.btn3:hover {
+    background: #000000;
+    color: #ffffff;
+    transition: 0.5s ease;
+}
+.btn4{
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    margin-left: 1rem;
+}
+.btn4:hover {
+    background: #ff7575;
+    color: #000000;
     transition: 0.5s ease;
 }
 .main-text::after{
