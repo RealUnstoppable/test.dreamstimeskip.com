@@ -3,45 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unstoppable's Website</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Dreams Timeskip</title>
-    <!--Icons-->
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">  
-    <!-- Link to CSS-->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Add gap between buttons */
+        }
+
+        .popup-buttons button {
+            flex: 1; /* Use all available space */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup-buttons button#login-btn {
+            background-color: #0000ff; /* Blue color for Sign Up button */
+            color: #ffffff;
+        }
+
+        .popup-buttons button#signup-btn {
+            background-color: #ffffff; /* White color for Log In button */
+            color: #000000;
+        }
+
+        .popup-buttons button:hover {
+            opacity: 0.8; /* Reduced opacity on hover */
+        }
+    </style>
 </head>
 <body>
-    <!--Main-->
-    <section id="main">
-        <!--Glass Box-->
-        <div class="main-box">
-            <!-- Navbar-->
-            <nav>
-                <u1>
-                    <li><a href="#" class="logo">Dreams</a></li>
-                    <li><i class='bx bx-star'></i></li>
-                </u1>
-            </nav>
-            <!-- Main Content-->
-            <div class="main-content">
-                <!-- Main Text-->
-                <div class="main-text">
-                    <h1>Dreams <br>TimeSkip</h1>
-                    <h2>Website Redesign</h2>
-                    <p>Get Excited <br>Updated Weekly</p>
-                    <!--Buttons-->
-                    <a href="timeline.html" class="btn1">View Timeline</a>
-                    <a href="faq.html" class="btn2">FAQs</a>
-                    </div>
-                    <!--Image-->
-                    <div class="main-img">
-                    <img src="Dreams New Website.png" alt="">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="unstoppable logo website.png" alt="Unstoppable">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="dreamstimeskip.html" class="nav-link">Dreams Timeskip</a></li>
+                <li><a href="unstoppable.html" class="nav-link">Unstoppable</a></li>
+                <li><a href="harmonytunes.html" class="nav-link">HarmonyTunes</a></li>
+                <li><a href="fotd.html" class="nav-link">F.O.T.D.</a></li>
+                <li><a href="404.html" class="nav-link">Starlight VPN</a></li> <!-- Replaced "Portfolio" with "Starlight VPN" -->
+            </ul>
+        </div>
+        <div class="profile">
+            <button id="profile-btn">
+                <img src="profile image website.png" alt="Profile">
+            </button>
+            <div class="dropdown">
+                <div class="popup-buttons">
+                    <button id="login-btn">Log In</button>
+                    <button id="signup-btn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Mockup of Apple-like main section -->
+        <section class="apple-mockup">
+            <div class="inner">
+                <h1>Welcome to the Unstoppable Universe</h1>
+                <p>One place for everything.</p>
+                <button class="learn-more">Learn More</button> <!-- Added a class for the button -->
+            </div>
+        </section>
+
+        <!-- Bento Box Layout for Section 1 -->
+        <section class="bento-box">
+            <div class="image">
+                <img src="harmonytunes perks2.png" alt="HarmonyTunes">
+            </div>
+            <div class="text">
+                <h2>HarmonyTunes</h2>
+                <p>Music at the tip of your fingertips.</p>
+            </div>
+        </section>
+
+        <!-- Bento Box Layout for Section 2 -->
+        <section class="bento-box">
+            <div class="text">
+                <h2>Dreams TimeSkip</h2>
+                <p>A Minecraft MMO with tons of content to explore.</p>
+            </div>
+            <div class="image">
+                <img src="dreamstimeskip perks2.png" alt="Dreams TimeSkip">
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="description">
+            <!-- Your e-commerce site description -->
+            <p>This is a exclusive sneak-peak for an upcoming e-commerce/media site. We are Unstoppable and we own 4 seprate entities, that all make their home here.</p>
+        </div>
+        <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn" onclick="toggleTheme()"><img src="moon.png" alt="Dark Mode"></button>
+        </div>
+    </footer>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Experimental Site</h2>
+            <p>By continuing to view the website and its content, you agree to not tell anyone about this site.</p>
+            <div class="popup-buttons">
+                <button class="agree" onclick="accept()">Agree</button>
+                <button class="disagree" onclick="disagree()">Disagree</button>
+            </div>
         </div>
     </div>
-    </div>
-    </section>
-    <!--circles-->
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-  
+
+    <!-- JavaScript for theme toggle -->
+    <script>
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("light-mode");
+            body.classList.toggle("dark-mode");
+
+            // Toggle dark background for the entire body
+            if (body.classList.contains("dark-mode")) {
+                body.style.backgroundColor = "#000000"; // Dark background color
+                document.querySelector(".learn-more").style.color = "#000000"; // Change button text color to black in dark mode
+                document.querySelectorAll(".nav-link").forEach(function(item) {
+                    item.style.color = "#ffffff"; // Change navigation link text color to white in dark mode
+                });
+            } else {
+                body.style.backgroundColor = "#ffffff"; // Light background color
+                document.querySelector(".learn-more").style.color = "#ffffff"; // Change button text color to white in light mode
+                document.querySelectorAll(".nav-link").forEach(function(item) {
+                    item.style.color = "#000000"; // Change navigation link text color to black in light mode
+                });
+            }
+        }
+
+        // JavaScript for dropdown box
+        document.getElementById("profile-btn").addEventListener("click", function() {
+            document.querySelector(".dropdown").classList.toggle("show");
+        });
+
+        // Close dropdown box when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Function to handle when user accepts
+        function accept() {
+            localStorage.setItem("agreed", true);
+            document.getElementById("popup").style.display = "none";
+            window.location.href = "index.html"; // Redirect to index page
+        }
+
+        // Function to handle when user disagrees
+        function disagree() {
+            window.location.href = "404.html";
+        }
+
+        // Show the popup when the page loads
+        window.onload = function() {
+            var agreed = localStorage.getItem("agreed");
+            if (!agreed) {
+                document.getElementById("popup").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

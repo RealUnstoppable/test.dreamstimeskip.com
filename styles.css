@@ -1,129 +1,262 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-*{
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
-   list-style: none;
-   text-decoration: none;
+    box-sizing: border-box;
+}
 
-font-family: 'Poppins', sans-serif;    
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
 }
-#main {
-width: 100%;
-min-height: 100vh;
-background: #3a3a3a;
-display: flex;
-justify-content:center;
-align-items: center;
-}
-.main-box{
-    background: white;
-    width: 80%;
-    min-height: 80vh;
-    background: linear-gradient(to right bottom,
-        rgba(255,255,255,0.5),
-        rgba(255,255,255,0.1)
-    );
-        border-radius: 1rem;
-        backdrop-filter: blur(2rem);
-        z-index: 4;
-}
-.circle1, .circle2{
-    background: white;
-    height: 15rem;
-    width: 15rem;
-    border-radius: 50%;
-    position: absolute;
-    background: linear-gradient( to right bottom,
-    rgba(255,255,255,0.7),
-    rgba(255,255,255,0.4)
-    );
-    z-index: 2;
-}
-.circle1{
-  top: 4%;
-  right: 2%;  
-}
-.circle2{
-    bottom: 4%;
-    left: 2%;
-}
-.main-box nav{
-    padding: 50px;
-}
-.main-box nav u1{
-   display: flex; 
-   justify-content: space-between;
-}
-.logo{
-    color: black;
-    font-size: 1.1rem;
-    font-weight: 800;
-}
-.bx{
-    font-size: 1.6rem;
-    color: #fff;
-    padding: 6px 6px;
-    border-radius: 0.5rem;
-background: black;
-cursor: pointer;
-}
-.main-content{
-display: flex;
-align-items: center;
-justify-content: space-around;
-}
-.main-text{
-    max-width: 500px;
 
+/* Navigation Bar Styles */
+nav {
+    background: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.main-text h1 {
-font-size: 2.5rem;    
+
+.menu {
+    margin-left: auto;
 }
-.main-text h2 {
-    font-size: 2rem;
-    font-weight: 200;
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.main-text p {
- font-size: 1rem;
- font-weight: 100;
- margin: 18px 0 40px;
+
+.menu ul li {
+    display: inline;
+    margin-right: 20px;
 }
-.btn1,.btn2{
-padding: 10px 20px;
-background: #000000;
-color: #fff;
-font-weight: 300;
-border-radius: 2rem;
-cursor: pointer;
+
+.menu ul li a {
+    color: #000000; /* Black text color */
+    font-weight: bold;
+    text-decoration: none;
 }
-.btn2{
-    background-color: #fff;
-    color: black;
-    margin-left: 1rem;
+
+.profile button {
+    background-color: transparent;
+    border: none;
+    color: #000000; /* Black text color */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px; /* Removed border-radius */
 }
-.btn2:hover {
-    background: #000000;
-    color: #fff;
-    transition: 0.5s ease;
+
+.profile button:focus {
+    outline: none;
 }
-.main-text::after{
-    content: '';
-    width: 5px;
-    height: 20%;
-    background: #fff;
+
+.dropdown {
     position: absolute;
-    left: 2.4rem;
-    top: 11.1rem;
+    top: 50px;
+    right: 0;
+    background-color: #333333;
+    padding: 0;
+    width: 152px; /* Set width */
+    height: 100px; /* Set height */
+    border-radius: 5px;
+    display: none;
 }
-.main-img{
-    width: 350px;
-    height: 350px;
+
+.profile:hover .dropdown {
+    display: block;
 }
-.main-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown button:first-child {
+    background-color: blue; /* Blue color for Sign Up button */
+}
+
+.dropdown button:hover {
+    background-color: #555555;
+}
+
+/* Light mode theme */
+.light-mode {
+    background: #ffffff;
+    color: #000000; /* Black text color */
+}
+
+.light-mode .profile button {
+    background-color: #000000; /* Black circle */
+}
+
+/* Dark mode theme */
+.dark-mode {
+    background: #232323; /* Dark background color */
+    color: #ffffff; /* White text color */
+}
+
+.dark-mode .profile button {
+    background-color: #ffffff; /* White circle */
+    color: #000000; /* Black text color */
+}
+
+/* Apple-like Main Section Styles */
+.apple-mockup {
+    background-color: #f8f9fc; /* Light background color */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.apple-mockup .inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.apple-mockup h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.apple-mockup p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.apple-mockup button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apple-mockup button:hover {
+    background-color: #333333;
+}
+
+/* Update button and text color in dark mode */
+.dark-mode .apple-mockup {
+    background-color: #232323; /* Dark background color */
+}
+
+.dark-mode .apple-mockup h1,
+.dark-mode .apple-mockup p {
+    color: #ffffff; /* White text color */
+}
+
+.dark-mode .apple-mockup button {
+    background-color: #ffffff; /* White button background color */
+    color: #000000; /* Black text color */
+}
+
+.dark-mode .apple-mockup button:hover {
+    background-color: #cccccc; /* Lighter background color on hover */
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.description {
+    width: 50%;
+    text-align: left;
+}
+
+.newsletter {
+    text-align: right;
+}
+
+.newsletter h3 {
+    margin-bottom: 10px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #333333;
+}
+
+/* Update button and text color in dark mode */
+.dark-mode .newsletter button {
+    background-color: #ffffff; /* White background color */
+    color: #000000; /* Black text color */
+}
+
+.dark-mode .newsletter button:hover {
+    background-color: #cccccc; /* Lighter background color on hover */
+}
+
+/* Bento Box Layout */
+.bento-box {
+    display: flex;
+    margin-top: 50px;
+}
+
+.bento-box .image,
+.bento-box .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.bento-box .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .bento-box {
+        flex-direction: column;
+    }
+}
+
+/* Additional Styles */
+.back-button {
+    margin-left: 20px;
+}
+
+.back-button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button button:hover {
+    background-color: #45a049;
 }
