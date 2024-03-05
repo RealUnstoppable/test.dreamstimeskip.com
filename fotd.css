@@ -1,0 +1,199 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333333;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.hamburger-menu {
+    display: none; /* Hide initially for larger screens */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile {
+    margin-right: 20px;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #333333;
+    color: #ffffff;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Hide initially for mobile */
+    transition: left 0.3s ease;
+    padding-top: 50px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Content Styles */
+.content {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Fact of the Day Section */
+.fact-section {
+    text-align: center;
+    padding: 50px 0;
+    background-image: url(''); /* Replace 'fact_bg.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    color: #000000; /* White text color */
+}
+
+.fact-header {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.fact-content {
+    margin-top: 50px;
+}
+
+.fact-date {
+    font-size: 24px;
+}
+
+.fact-text {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.carousel img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 10px;
+}
+
+/* Socials */
+.socials {
+    margin-top: 50px;
+}
+
+.socials h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.socials-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.socials-button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.socials-button:hover {
+    background-color: #333333;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show for smaller screens */
+        cursor: pointer;
+    }
+
+    .logo {
+        order: 2; /* Move logo to the middle */
+    }
+
+    .sidebar {
+        left: 0;
+    }
+
+    .content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .fact-header {
+        font-size: 36px;
+    }
+
+    .fact-date {
+        font-size: 20px;
+    }
+
+    .fact-text {
+        font-size: 16px;
+    }
+
+    .carousel img {
+        width: 150px;
+    }
+
+    .socials h2 {
+        font-size: 20px;
+    }
+
+    .socials-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

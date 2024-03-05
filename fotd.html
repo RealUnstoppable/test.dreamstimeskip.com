@@ -4,11 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fact of the Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fotd.css"> <!-- Include your main stylesheet -->
+    <style>
+        /* Add any additional CSS specific to this page here */
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 100%;
+            height: 3px;
+            background-color: #000000;
+            border-radius: 3px;
+        }
+
+        /* Profile Icon Styles */
+        .profile {
+            margin-right: 20px;
+        }
+
+        .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #000000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #f2f2f2;
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #333333;
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 200px; /* Adjust based on sidebar width */
+            padding: 20px;
+        }
+
+        .fact-section {
+            text-align: center;
+            padding: 50px 0;
+            background-image: url('fact_bg.jpg'); /* Replace 'fact_bg.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* White text color */
+        }
+
+        .fact-header {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .fact-segment {
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .fact-date {
+            font-size: 24px;
+        }
+
+        .fact-text {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .carousel img {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+            margin: 0 10px;
+        }
+
+        .socials {
+            margin-top: 50px;
+        }
+
+        .socials-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .socials-button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .socials-button:hover {
+            background-color: #333333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fact of the Day</h1> 
-    <h6>coming soon...</h6>
-    
+    <nav class="navbar">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <img src="logo_placeholder.png" alt="Logo"> <!-- Placeholder for logo image -->
+        </div>
+        <div class="profile">
+            <img src="profile_icon.png" alt="Profile"> <!-- Placeholder for profile icon -->
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Dreams TimeSkip</a></li>
+            <li><a href="#">F.O.T.D</a></li>
+            <li><a href="#">Unstoppable</a></li>
+            <li><a href="#">Starlight VPN</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="fact-section">
+            <h1 class="fact-header">Fact of the Day</h1>
+            <h6>In Development</h6>
+        </div>
+
+        <section class="fact-segment">
+            <div class="fact-date">March 5, 2024</div>
+            <div class="fact-text">The shortest war in history lasted only 38 minutes. It was between Britain and Zanzibar on August 27, 1896.</div>
+        </section>
+
+        <div class="carousel">
+            <img src="Gold Tier Patreon.png" alt="Image 1"> <!-- Replace 'image1.jpg' with your image file -->
+            <img src="Gold Tier Patreon.png" alt="Image 2"> <!-- Replace 'image2.jpg' with your image file -->
+            <img src="Gold Tier Patreon.png" alt="Image 3"> <!-- Replace 'image3.jpg' with your image file -->
+            <img src="Gold Tier Patreon.png" alt="Image 4"> <!-- Replace 'image4.jpg' with your image file -->
+        </div>
+
+        <div class="socials">
+            <h2>Follow us on Social Media</h2>
+            <div class="socials-row">
+                <button class="socials-button">Youtube</button>
+                <button class="socials-button">Instagram</button>
+                <button class="socials-button">Reddit</button>
+                <button class="socials-button">X</button>
+            </div>
+            <div class="socials-row">
+                <button class="socials-button">TikTok</button>
+                <button class="socials-button">Threads</button>
+                <button class="socials-button">Discord</button>
+                <button class="socials-button">Facebook</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Back Button -->
     <button onclick="goBack()">Go Back</button>
 

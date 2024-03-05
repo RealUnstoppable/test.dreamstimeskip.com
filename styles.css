@@ -1,4 +1,4 @@
-/* Reset CSS */
+ /* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -116,7 +116,7 @@ nav {
 /* Apple-like Main Section Styles */
 .apple-mockup {
     background-color: #f8f9fc; /* Light background color */
-    padding: 100px 0;
+    padding: 50px 20px; /* Adjusted padding for smaller screens */
     text-align: center;
 }
 
@@ -126,22 +126,22 @@ nav {
 }
 
 .apple-mockup h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 24px; /* Adjusted font size for smaller screens */
+    margin-bottom: 10px; /* Adjusted margin for smaller screens */
 }
 
 .apple-mockup p {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    margin-bottom: 20px; /* Adjusted margin for smaller screens */
 }
 
 .apple-mockup button {
     background-color: #000000;
     color: #ffffff;
-    padding: 15px 30px;
+    padding: 10px 20px; /* Adjusted padding for smaller screens */
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px; /* Adjusted font size for smaller screens */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -172,18 +172,17 @@ nav {
 /* Footer Styles */
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column; /* Adjusted layout for smaller screens */
+    justify-content: center; /* Center align content */
+    align-items: center; /* Center align content */
     padding: 20px;
 }
 
-.description {
-    width: 50%;
-    text-align: left;
-}
-
+.description,
 .newsletter {
-    text-align: right;
+    width: 100%; /* Adjusted width for smaller screens */
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Adjusted margin for smaller screens */
 }
 
 .newsletter h3 {
@@ -194,6 +193,8 @@ footer {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 80%; /* Adjusted width for smaller screens */
+    margin-bottom: 10px; /* Adjusted margin for smaller screens */
 }
 
 .newsletter button {
@@ -222,12 +223,12 @@ footer {
 /* Bento Box Layout */
 .bento-box {
     display: flex;
-    margin-top: 50px;
+    flex-direction: column; /* Adjusted layout for smaller screens */
+    margin-top: 20px; /* Adjusted margin for smaller screens */
 }
 
 .bento-box .image,
 .bento-box .text {
-    flex: 1;
     padding: 20px;
 }
 
@@ -236,15 +237,15 @@ footer {
     height: auto;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .bento-box {
-        flex-direction: column;
+        flex-direction: row; /* Revert layout for larger screens */
     }
 }
 
 /* Additional Styles */
 .back-button {
-    margin-left: 20px;
+    margin-top: 20px; /* Adjusted margin for smaller screens */
 }
 
 .back-button button {

@@ -3,11 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unstoppable's Website</title>
+    <title>Apple-like Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background: none;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            margin-left: auto;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .menu ul li a {
+            color: #000000; /* Black text color */
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .profile button {
+            background-color: transparent;
+            border: none;
+            color: #000000; /* Black text color */
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px; /* Removed border-radius */
+        }
+
+        .profile button:focus {
+            outline: none;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #333333;
+            padding: 0;
+            width: 152px; /* Set width */
+            height: 100px; /* Set height */
+            border-radius: 5px;
+            display: none;
+        }
+
+        .profile:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 0;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .dropdown button:first-child {
+            background-color: blue; /* Blue color for Sign Up button */
+        }
+
+        .dropdown button:hover {
+            background-color: #555555;
+        }
+
+        /* Light mode theme */
+        .light-mode {
+            background: #ffffff;
+            color: #000000; /* Black text color */
+        }
+
+        .light-mode .profile button {
+            background-color: #000000; /* Black circle */
+        }
+
+        /* Dark mode theme */
+        .dark-mode {
+            background: #232323; /* Dark background color */
+            color: #ffffff; /* White text color */
+        }
+
+        .dark-mode .profile button {
+            background-color: #ffffff; /* White circle */
+            color: #000000; /* Black text color */
+        }
+
+        /* Apple-like Main Section Styles */
+        .apple-mockup {
+            background-color: #f8f9fc; /* Light background color */
+            padding: 50px 20px; /* Adjusted padding for smaller screens */
+            text-align: center;
+        }
+
+        .apple-mockup .inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .apple-mockup h1 {
+            font-size: 24px; /* Adjusted font size for smaller screens */
+            margin-bottom: 10px; /* Adjusted margin for smaller screens */
+        }
+
+        .apple-mockup p {
+            font-size: 14px; /* Adjusted font size for smaller screens */
+            margin-bottom: 20px; /* Adjusted margin for smaller screens */
+        }
+
+        .apple-mockup button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 20px; /* Adjusted padding for smaller screens */
+            border: none;
+            border-radius: 5px;
+            font-size: 14px; /* Adjusted font size for smaller screens */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .apple-mockup button:hover {
+            background-color: #333333;
+        }
+
+        /* Update button and text color in dark mode */
+        .dark-mode .apple-mockup {
+            background-color: #232323; /* Dark background color */
+        }
+
+        .dark-mode .apple-mockup h1,
+        .dark-mode .apple-mockup p {
+            color: #ffffff; /* White text color */
+        }
+
+        .dark-mode .apple-mockup button {
+            background-color: #ffffff; /* White button background color */
+            color: #000000; /* Black text color */
+        }
+
+        .dark-mode .apple-mockup button:hover {
+            background-color: #cccccc; /* Lighter background color on hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            display: flex;
+            flex-direction: column; /* Adjusted layout for smaller screens */
+            justify-content: center; /* Center align content */
+            align-items: center; /* Center align content */
+            padding: 20px;
+        }
+
+        .description,
+        .newsletter {
+            width: 100%; /* Adjusted width for smaller screens */
+            text-align: center; /* Center align text */
+            margin-bottom: 20px; /* Adjusted margin for smaller screens */
+        }
+
+        .newsletter h3 {
+            margin-bottom: 10px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 10px; /* Adjusted padding for smaller screens */
+            width: 100%; /* Adjusted width for smaller screens */
+            margin-bottom: 10px; /* Adjusted margin for smaller screens */
+        }
+
+        .newsletter button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 20px; /* Adjusted padding for smaller screens */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .newsletter button:hover {
+            background-color: #333333;
+        }
+
         /* Popup Styles */
         .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -15,205 +239,115 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
         }
 
-        .popup-content {
-            background-color: #fff;
-            max-width: 400px;
-            margin: 100px auto;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
+        .popup.show,
+        .overlay.show {
+            display: block;
         }
 
-        .popup-content h2 {
-            margin-bottom: 20px;
-        }
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .apple-mockup h1 {
+                font-size: 20px; /* Reduced font size for smaller screens */
+            }
 
-        .popup-buttons {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            gap: 10px; /* Add gap between buttons */
-        }
+            .apple-mockup p {
+                font-size: 12px; /* Reduced font size for smaller screens */
+            }
 
-        .popup-buttons button {
-            flex: 1; /* Use all available space */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+            .apple-mockup button {
+                padding: 8px 16px; /* Adjusted padding for smaller screens */
+                font-size: 12px; /* Reduced font size for smaller screens */
+            }
 
-        .popup-buttons button#login-btn {
-            background-color: #0000ff; /* Blue color for Sign Up button */
-            color: #ffffff;
-        }
+            .newsletter input[type="email"] {
+                padding: 8px; /* Adjusted padding for smaller screens */
+            }
 
-        .popup-buttons button#signup-btn {
-            background-color: #ffffff; /* White color for Log In button */
-            color: #000000;
-        }
+            .newsletter button {
+                padding: 8px 16px; /* Adjusted padding for smaller screens */
+                font-size: 12px; /* Reduced font size for smaller screens */
+            }
 
-        .popup-buttons button:hover {
-            opacity: 0.8; /* Reduced opacity on hover */
+            .description,
+            .newsletter {
+                padding: 0; /* Removed padding for smaller screens */
+            }
+
+            .dropdown {
+                top: 30px; /* Adjusted top position */
+            }
         }
     </style>
 </head>
-<body>
-    <!-- Navigation Bar -->
+<body class="light-mode">
     <nav>
         <div class="logo">
-            <img src="unstoppable logo website.png" alt="Unstoppable">
+            <h1>Logo</h1>
         </div>
         <div class="menu">
             <ul>
-                <li><a href="dreamstimeskip.html" class="nav-link">Dreams Timeskip</a></li>
-                <li><a href="unstoppable.html" class="nav-link">Unstoppable</a></li>
-                <li><a href="harmonytunes.html" class="nav-link">HarmonyTunes</a></li>
-                <li><a href="fotd.html" class="nav-link">F.O.T.D.</a></li>
-                <li><a href="404.html" class="nav-link">Starlight VPN</a></li> <!-- Replaced "Portfolio" with "Starlight VPN" -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
         <div class="profile">
-            <button id="profile-btn">
-                <img src="profile image website.png" alt="Profile">
-            </button>
+            <button>Sign Up</button>
             <div class="dropdown">
-                <div class="popup-buttons">
-                    <button id="login-btn">Log In</button>
-                    <button id="signup-btn">Sign Up</button>
+                <div class="dropdown-content">
+                    <button>Login</button>
+                    <button>Logout</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Mockup of Apple-like main section -->
-        <section class="apple-mockup">
-            <div class="inner">
-                <h1>Welcome to the Unstoppable Universe</h1>
-                <p>One place for everything.</p>
-                <button class="learn-more">Learn More</button> <!-- Added a class for the button -->
-            </div>
-        </section>
+    <section class="apple-mockup">
+        <div class="inner">
+            <h1>Experience the Best</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
 
-        <!-- Bento Box Layout for Section 1 -->
-        <section class="bento-box">
-            <div class="image">
-                <img src="harmonytunes perks2.png" alt="HarmonyTunes">
-            </div>
-            <div class="text">
-                <h2>HarmonyTunes</h2>
-                <p>Music at the tip of your fingertips.</p>
-            </div>
-        </section>
-
-        <!-- Bento Box Layout for Section 2 -->
-        <section class="bento-box">
-            <div class="text">
-                <h2>Dreams TimeSkip</h2>
-                <p>A Minecraft MMO with tons of content to explore.</p>
-            </div>
-            <div class="image">
-                <img src="dreamstimeskip perks2.png" alt="Dreams TimeSkip">
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
     <footer>
         <div class="description">
-            <!-- Your e-commerce site description -->
-            <p>This is a exclusive sneak-peak for an upcoming e-commerce/media site. We are Unstoppable and we own 4 seprate entities, that all make their home here.</p>
+            <p>© 2024 Apple-like Landing Page. All Rights Reserved.</p>
         </div>
         <div class="newsletter">
-            <h3>Subscribe to Our Newsletter</h3>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-        <div class="theme-toggle">
-            <button id="theme-toggle-btn" onclick="toggleTheme()"><img src="moon.png" alt="Dark Mode"></button>
+            <h3>Subscribe to our newsletter</h3>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
         </div>
     </footer>
 
-    <!-- Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Experimental Site</h2>
-            <p>By continuing to view the website and its content, you agree to not tell anyone about this site.</p>
-            <div class="popup-buttons">
-                <button class="agree" onclick="accept()">Agree</button>
-                <button class="disagree" onclick="disagree()">Disagree</button>
-            </div>
-        </div>
+    <div class="overlay"></div>
+    <div class="popup">
+        <h2>Popup</h2>
+        <p>This is a popup.</p>
+        <button>Close</button>
     </div>
 
-    <!-- JavaScript for theme toggle -->
     <script>
-        function toggleTheme() {
-            var body = document.body;
-            body.classList.toggle("light-mode");
-            body.classList.toggle("dark-mode");
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.querySelector('.profile button');
+            const popup = document.querySelector('.popup');
+            const overlay = document.querySelector('.overlay');
+            const closeButton = document.querySelector('.popup button');
 
-            // Toggle dark background for the entire body
-            if (body.classList.contains("dark-mode")) {
-                body.style.backgroundColor = "#000000"; // Dark background color
-                document.querySelector(".learn-more").style.color = "#000000"; // Change button text color to black in dark mode
-                document.querySelectorAll(".nav-link").forEach(function(item) {
-                    item.style.color = "#ffffff"; // Change navigation link text color to white in dark mode
-                });
-            } else {
-                body.style.backgroundColor = "#ffffff"; // Light background color
-                document.querySelector(".learn-more").style.color = "#ffffff"; // Change button text color to white in light mode
-                document.querySelectorAll(".nav-link").forEach(function(item) {
-                    item.style.color = "#000000"; // Change navigation link text color to black in light mode
-                });
-            }
-        }
+            button.addEventListener('click', function () {
+                popup.classList.toggle('show');
+                overlay.classList.toggle('show');
+            });
 
-        // JavaScript for dropdown box
-        document.getElementById("profile-btn").addEventListener("click", function() {
-            document.querySelector(".dropdown").classList.toggle("show");
+            closeButton.addEventListener('click', function () {
+                popup.classList.remove('show');
+                overlay.classList.remove('show');
+            });
         });
-
-        // Close dropdown box when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.matches('#profile-btn')) {
-                var dropdowns = document.getElementsByClassName("dropdown");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-        // Function to handle when user accepts
-        function accept() {
-            localStorage.setItem("agreed", true);
-            document.getElementById("popup").style.display = "none";
-            window.location.href = "index.html"; // Redirect to index page
-        }
-
-        // Function to handle when user disagrees
-        function disagree() {
-            window.location.href = "404.html";
-        }
-
-        // Show the popup when the page loads
-        window.onload = function() {
-            var agreed = localStorage.getItem("agreed");
-            if (!agreed) {
-                document.getElementById("popup").style.display = "block";
-            }
-        }
     </script>
 </body>
 </html>
