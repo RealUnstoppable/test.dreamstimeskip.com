@@ -3,78 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unstoppable Site</title>
+    <title>Unstoppable</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="light-mode">
-    <nav>
+<body>
+    <header>
         <div class="logo">
-            <h1>un</h1>
+            <img src="unstoppable logo website.png" alt="Unstoppable Logo">
         </div>
-        <div class="menu">
-            <ul>
+        <nav>
+            <div class="hamburger">
+                <span>V</span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="dreamstimeskip.html">Dreams TimeSkip</a></li>
                 <li><a href="unstoppable.html">Unstoppable</a></li>
                 <li><a href="fotd.html">F.O.T.D</a></li>
-                <li><a href="404.html">Starlight App</a></li>
-                <li><a href="404.html">HarmonyTunes</a></li>
+                <li><a href="starlightapp.html">Starlight App</a></li>
+                <li><a href="harmonytunes.html">HarmonyTunes</a></li>
             </ul>
-        </div>
-        <div class="profile">
-            <button>Sign Up</button>
-            <div class="dropdown">
-                <div class="dropdown-content">
-                    <button>Login</button>
-                    <button>Logout</button>
-                </div>
+            <div class="profile-icon">
+                <img src="profile image website.png" alt="Profile Icon">
             </div>
-        </div>
-    </nav>
-
-    <section class="apple-mockup">
-        <div class="inner">
-            <h1>Welcome to Unstoppable®</h1>
-            <p>Our Website is in Early Alpha</p>
-            <button>Learn More</button>
+        </nav>
+    </header>
+    
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Unstoppable</h1>
+            <p>A place for everything Unstoppable.</p>
+            <a href="about.html" class="cta-btn">Start Exploring</a>
         </div>
     </section>
+    
+    <section class="feature-row unstoppable">
+        <h2>Unstoppable</h2>
+        <p>Welcome to Unstoppable, Unstoppable is a gaming channel where we play and cover games, news, updates, memes, and much much more.</p>
+        <!-- Add content for Unstoppable feature -->
+        <img src="unstoppable_image.png" alt="Unstoppable Icon">
+    </section>
+
+    <section class="feature-row dreamstimeskip">
+        <h2>Dreams TimeSkip</h2>
+        <p>Welcome to Dreams TimeSkip, Dreams TimeSkip is a Massive Minecraft SMP where player can roleplay and experience a story rich world, while they risse to the top, with boss fights, dungeons, cities, kingdoms, etc.</p>
+        <!-- Add content for Dreams TimeSkip feature -->
+        <img src="dreamstimeskip perks 2.png" alt="Dreams TimeSkip Icon">
+    </section>
+
+    <section class="feature-row harmonytunes">
+        <h2>HarmonyTunes</h2>
+        <p>Welcome to HarmonyTunes, HarmonyTunes is a channel where we upload Music from your favorite artist daily, leave a request for a the song you want to see next below.</p>
+        <!-- Add content for HarmonyTunes feature -->
+        <img src="harmonytunes perks 2.png" alt="HarmonyTunes Icon">
+    </section>
+
+    <section class="feature-row starlightapp">
+        <h2>Starlight App</h2>
+        <p>Welcome to Starlight App, Starlight App is a app that you can use to customize your phone, and express yourself with your friends.</p>
+        <!-- Add content for Starlight feature -->
+        <img src="starlight_image.png" alt="Starlight Icon">
+    </section>
+
+    <section class="feature-row fotd">
+        <h2>F.O.T.D</h2>
+        <p>Welcome to Fact of the Day, Fact of the Day is a where you can see the fact of the day, alongside the video uploaded for the today's fact.</p>
+        <!-- Add content for F.O.T.D feature -->
+        <img src="fotd_image.png" alt="Fact of the Day Icon">
+    </section>
+
+    <!-- Repeat the above section for other features -->
 
     <footer>
-        <div class="description">
-            <p>© 2024 Unstoppable. All Rights Reserved.</p>
+        <div class="footer-left">
+            <p>Unstoppable HQ</p>
+            <div class="social-links">
+                <a href="https://youtube.com"><img src="Youtube.png" alt="YouTube"></a>
+                <a href="https://x.com"><img src="x.png" alt="X"></a>
+                <a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a>
+            </div>
+            <p>This website is in early beta. We update the site weekly, with new updates, and new content.</p>
+            <p>&copy; 2024 Unstoppable</p>
         </div>
-        <div class="newsletter">
-            <h3>Subscribe to our newsletter</h3>
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
+        <div class="footer-right">
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email">
+                <button type="submit" class="subscribe-btn">Subscribe for 10% off</button>
+            </form>
         </div>
     </footer>
 
-    <div class="overlay"></div>
-    <div class="popup">
-        <h2>Popup</h2>
-        <p>This is a popup.</p>
-        <button>Close</button>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const button = document.querySelector('.profile button');
-            const popup = document.querySelector('.popup');
-            const overlay = document.querySelector('.overlay');
-            const closeButton = document.querySelector('.popup button');
-
-            button.addEventListener('click', function () {
-                popup.classList.toggle('show');
-                overlay.classList.toggle('show');
-            });
-
-            closeButton.addEventListener('click', function () {
-                popup.classList.remove('show');
-                overlay.classList.remove('show');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

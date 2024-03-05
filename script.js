@@ -1,12 +1,8 @@
-function toggleTheme() {
-    var body = document.body;
-    body.classList.toggle("light-mode");
-    body.classList.toggle("dark-mode");
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Toggle dark background for the entire body
-    if (body.classList.contains("dark-mode")) {
-        body.style.backgroundColor = "#000000"; // Dark background color
-    } else {
-        body.style.backgroundColor = ""; // Reset to default background color
-    }
-}
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('show-nav');
+    });
+});

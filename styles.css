@@ -1,263 +1,147 @@
- /* Reset CSS */
+/* CSS reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #333; /* Set background color for dark mode */
+    color: #fff; /* Set text color for dark mode */
 }
 
-/* Navigation Bar Styles */
-nav {
-    background: none;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu {
-    margin-left: auto;
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.menu ul li a {
-    color: #000000; /* Black text color */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.profile button {
-    background-color: transparent;
-    border: none;
-    color: #000000; /* Black text color */
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px; /* Removed border-radius */
-}
-
-.profile button:focus {
-    outline: none;
-}
-
-.dropdown {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: #333333;
-    padding: 0;
-    width: 152px; /* Set width */
-    height: 100px; /* Set height */
-    border-radius: 5px;
-    display: none;
-}
-
-.profile:hover .dropdown {
-    display: block;
-}
-
-.dropdown-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.dropdown button {
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 5px 0;
-    text-align: left;
-    cursor: pointer;
-}
-
-.dropdown button:first-child {
-    background-color: blue; /* Blue color for Sign Up button */
-}
-
-.dropdown button:hover {
-    background-color: #555555;
-}
-
-/* Light mode theme */
-.light-mode {
-    background: #ffffff;
-    color: #000000; /* Black text color */
-}
-
-.light-mode .profile button {
-    background-color: #000000; /* Black circle */
-}
-
-/* Dark mode theme */
-.dark-mode {
-    background: #232323; /* Dark background color */
-    color: #ffffff; /* White text color */
-}
-
-.dark-mode .profile button {
-    background-color: #ffffff; /* White circle */
-    color: #000000; /* Black text color */
-}
-
-/* Apple-like Main Section Styles */
-.apple-mockup {
-    background-color: #f8f9fc; /* Light background color */
-    padding: 50px 20px; /* Adjusted padding for smaller screens */
+/* Header styles */
+header {
+    background: #222; /* Darker background for header */
+    padding: 20px 0;
     text-align: center;
 }
 
-.apple-mockup .inner {
+.logo img {
+    max-width: 150px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.show-nav {
+    display: block !important;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('background.jpg') center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.apple-mockup h1 {
-    font-size: 24px; /* Adjusted font size for smaller screens */
-    margin-bottom: 10px; /* Adjusted margin for smaller screens */
-}
-
-.apple-mockup p {
-    font-size: 14px; /* Adjusted font size for smaller screens */
-    margin-bottom: 20px; /* Adjusted margin for smaller screens */
-}
-
-.apple-mockup button {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px 20px; /* Adjusted padding for smaller screens */
-    border: none;
-    border-radius: 5px;
-    font-size: 14px; /* Adjusted font size for smaller screens */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.apple-mockup button:hover {
-    background-color: #333333;
-}
-
-/* Update button and text color in dark mode */
-.dark-mode .apple-mockup {
-    background-color: #232323; /* Dark background color */
-}
-
-.dark-mode .apple-mockup h1,
-.dark-mode .apple-mockup p {
-    color: #ffffff; /* White text color */
-}
-
-.dark-mode .apple-mockup button {
-    background-color: #ffffff; /* White button background color */
-    color: #000000; /* Black text color */
-}
-
-.dark-mode .apple-mockup button:hover {
-    background-color: #cccccc; /* Lighter background color on hover */
-}
-
-/* Footer Styles */
-footer {
-    display: flex;
-    flex-direction: column; /* Adjusted layout for smaller screens */
-    justify-content: center; /* Center align content */
-    align-items: center; /* Center align content */
-    padding: 20px;
-}
-
-.description,
-.newsletter {
-    width: 100%; /* Adjusted width for smaller screens */
-    text-align: center; /* Center align text */
-    margin-bottom: 20px; /* Adjusted margin for smaller screens */
-}
-
-.newsletter h3 {
-    margin-bottom: 10px;
-}
-
-.newsletter input[type="email"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 80%; /* Adjusted width for smaller screens */
-    margin-bottom: 10px; /* Adjusted margin for smaller screens */
-}
-
-.newsletter button {
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.newsletter button:hover {
-    background-color: #333333;
-}
-
-/* Update button and text color in dark mode */
-.dark-mode .newsletter button {
-    background-color: #ffffff; /* White background color */
-    color: #000000; /* Black text color */
-}
-
-.dark-mode .newsletter button:hover {
-    background-color: #cccccc; /* Lighter background color on hover */
-}
-
-/* Bento Box Layout */
-.bento-box {
-    display: flex;
-    flex-direction: column; /* Adjusted layout for smaller screens */
-    margin-top: 20px; /* Adjusted margin for smaller screens */
-}
-
-.bento-box .image,
-.bento-box .text {
-    padding: 20px;
-}
-
-.bento-box .image img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (min-width: 768px) {
-    .bento-box {
-        flex-direction: row; /* Revert layout for larger screens */
-    }
-}
-
-/* Additional Styles */
-.back-button {
-    margin-top: 20px; /* Adjusted margin for smaller screens */
-}
-
-.back-button button {
-    background-color: #4CAF50;
+.cta-btn, .subscribe-btn {
+    display: inline-block;
+    background: #007bff; /* Change button color to blue */
     color: white;
+    text-decoration: none;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 20px;
+    border-radius: 20px; /* Rounded corners for buttons */
 }
 
-.back-button button:hover {
-    background-color: #45a049;
+/* Features section styles */
+.feature-row {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature-row h2 {
+    margin-bottom: 20px;
+}
+
+.feature-row img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer styles */
+footer {
+    background: #222; /* Darker background for footer */
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left p {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+.footer-right form {
+    display: flex;
+}
+
+.footer-right input[type="email"] {
+    padding: 10px; /* Change the padding value */
+    flex: 1;
+    border: none;
+    border-radius: 20px; /* Add border-radius property for rounded corners */
+}
+
+.footer-right button {
+    background: #007bff; /* Change button color to blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded corners for buttons */
 }
