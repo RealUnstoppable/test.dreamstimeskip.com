@@ -204,10 +204,9 @@ header{
         background: url(logo_watch_medium.png) center no-repeat;
         background-size: auto 6.2rem;
     }
-
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 1068pxpx){
     header{
         height: 4.8rem;
         transition: background .36s cubic-bezier(0.32,0.08, 0.24, 1),
@@ -361,7 +360,8 @@ header{
 
 }
 
-@media screen and (max-width: 735px){
+    @media screen and (max-width: 735px){
+
     .iphone-11-pro{
         background-image: url(iphone_11_pro_small.jpg);
     }
@@ -408,7 +408,6 @@ header{
     .cta-link{
         font-size: 1.9rem;
     }
-}
 
 .footer{
     margin-top: 5px;
@@ -470,4 +469,6 @@ form button{
     margin: 10px;
     cursor: pointer;
     text-decoration: none;
+}
+
 }
