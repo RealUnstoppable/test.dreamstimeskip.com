@@ -206,7 +206,7 @@ header{
     }
 }
 
-@media screen and (max-width: 1068pxpx){
+@media screen and (max-width: 767px){
     header{
         height: 4.8rem;
         transition: background .36s cubic-bezier(0.32,0.08, 0.24, 1),
@@ -360,7 +360,7 @@ header{
 
 }
 
-    @media screen and (max-width: 735px){
+@media screen and (max-width: 735px){
 
     .iphone-11-pro{
         background-image: url(iphone_11_pro_small.jpg);
@@ -408,67 +408,4 @@ header{
     .cta-link{
         font-size: 1.9rem;
     }
-
-.footer{
-    margin-top: 5px;
-    width: 70%;
-    padding: 100px 15%;
-    background: #333;
-    color: #efefef;
-    display: flex;
-}
-.footer div{
-    text-align: center;
-}
-
-.col-2{
-    flex-grow: 2;
-}
-
-.footer div h3{
-    font-weight: 300;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-}
-
-.col-1 a{
-    display: block;
-    text-decoration: none;
-    color: #efefef;
-    margin-bottom: 10px;
-}
-
-form input{
-    width: 150px;
-    height: 25px;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    border: none;
-}
-
-form button{
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 15px;
-    cursor: pointer;
-
-}
-
-.social-icons{
-    margin-top: 30px;
-}
-
-.social-icons i{
-    font-size: 22px;
-    margin: 10px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
 }
