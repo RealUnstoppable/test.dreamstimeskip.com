@@ -6,9 +6,9 @@
     padding: 0;
 }
 
-html{
+html {
     font-size: 10px;
-    font-family: 'SF Pro Display', san-serif;
+    font-family: 'SF Pro Display', sans-serif;
 }
 
 a{
@@ -204,6 +204,7 @@ header{
         background: url(logo_watch_medium.png) center no-repeat;
         background-size: auto 6.2rem;
     }
+
 }
 
 @media screen and (max-width: 767px){
@@ -361,7 +362,6 @@ header{
 }
 
 @media screen and (max-width: 735px){
-
     .iphone-11-pro{
         background-image: url(iphone_11_pro_small.jpg);
     }
@@ -408,4 +408,66 @@ header{
     .cta-link{
         font-size: 1.9rem;
     }
+}
+
+.footer{
+    margin-top: 5px;
+    width: 70%;
+    padding: 100px 15%;
+    background: #333;
+    color: #efefef;
+    display: flex;
+}
+.footer div{
+    text-align: center;
+}
+
+.col-2{
+    flex-grow: 2;
+}
+
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.col-1 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+form input{
+    width: 150px;
+    height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+}
+
+form button{
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons i{
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
 }
