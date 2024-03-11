@@ -469,5 +469,5 @@ form button{
     font-size: 22px;
     margin: 10px;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: solid;
 }
