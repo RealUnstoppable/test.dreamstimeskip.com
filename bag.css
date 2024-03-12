@@ -1,0 +1,97 @@
+body {
+    font-family: 'SF Display Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bag-items {
+    flex: 2;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h2 {
+    margin-bottom: 10px;
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+.quantity label {
+    margin-right: 10px;
+}
+
+.remove-btn {
+    background-color: #ff3b30;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #cc3126;
+}
+
+.cart-summary {
+    flex: 1;
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+.subtotal p {
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 2rem;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}

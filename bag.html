@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag</title>
+    <link rel="stylesheet" href="bag.css">
+</head>
+<body>
+    <header>
+        <h1>Shopping Bag</h1>
+    </header>
+    <main>
+        <div class="container">
+            <section class="bag-items">
+                <div class="item">
+                    <img src="product1.jpg" alt="Product 1">
+                    <div class="item-details">
+                        <h2>Wallpaper Pack (50)</h2>
+                        <!-- Inside each .item-details -->
+                        <p class="price" id="price1">Price: $50.00</p>
+                        <div class="quantity">
+                            <label for="quantity1">Quantity:</label>
+                            <input type="number" id="quantity1" name="quantity1" min="1" value="1" onchange="updatePrice(1)">
+                        </div>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+                <!-- More items here -->
+            </section>
+            <aside class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="subtotal">
+                    <p id="subtotal">Subtotal: $50.00</p>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </aside>
+        </div>
+    </main>    
+    <footer>
+        <p>&copy; 2024 Unstoppable</p>
+    </footer>
+</body>
+</html>

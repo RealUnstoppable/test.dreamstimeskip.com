@@ -23,3 +23,26 @@ function isValidEmail(email) {
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
+
+function updatePrice(itemId) {
+    // Get the quantity input field and the price element
+    var quantityInput = document.getElementById("quantity" + itemId);
+    var priceElement = document.getElementById("price" + itemId);
+    var subtotalElement = document.getElementById("subtotal");
+
+    // Get the current price
+    var currentPrice = 50; // Assuming initial price is $50
+
+    // Get the new quantity
+    var newQuantity = parseInt(quantityInput.value);
+
+    // Calculate the new total price
+    var newTotalPrice = currentPrice * newQuantity;
+
+    // Update the price element with the new total price
+    priceElement.innerText = "Price: $" + newTotalPrice.toFixed(2);
+
+    // Update the subtotal element with the new total price
+    subtotalElement.innerText = "Subtotal: $" + newTotalPrice.toFixed(2);
+}
+
