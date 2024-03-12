@@ -46,7 +46,7 @@ function updatePrice(itemId) {
     subtotalElement.innerText = "Subtotal: $" + newTotalPrice.toFixed(2);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+ddocument.addEventListener("DOMContentLoaded", function () {
     // Check if the user has already accepted or declined
     if (localStorage.getItem('popupAccepted') !== 'true' && localStorage.getItem('popupDeclined') !== 'true') {
         showPopup('experimental-popup');
@@ -57,12 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const popup = document.getElementById(popupId);
         popup.style.display = 'block';
         popup.classList.add('pop-in');
+        document.body.classList.add('popup-open'); // Add class to body
     }
 
     // Hide popup function
     function hidePopup(popupId) {
         const popup = document.getElementById(popupId);
         popup.style.display = 'none';
+        document.body.classList.remove('popup-open'); // Remove class from body
     }
 
     // Accept button
