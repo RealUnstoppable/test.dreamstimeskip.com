@@ -76,8 +76,11 @@ header{
 
 /* iphone 11 pro */
 .iphone-11-pro{
-    background: url(iphone_11_pro_large.jpg);
+    background: url("Unstoppable Gaming Intro_Vscode-2.mp4");
     margin-top: 4.4rem;
+    position: relative;
+    left: 0;
+    overflow: show;
 }
 
 .title{
@@ -170,7 +173,7 @@ header{
 
 @media screen and (max-width: 1068px){
     .iphone-11-pro{
-        background-image: url(iphone_11_pro_medium.jpg);
+        background-image: url("Unstoppable Gaming Intro_Vscode-2.mp4");
     }
 
     .iphone-11{
@@ -363,7 +366,7 @@ header{
 
 @media screen and (max-width: 735px){
     .iphone-11-pro{
-        background-image: url(iphone_11_pro_small.jpg);
+        background-image: url("Unstoppable Gaming Intro_Vscode-2.mp4");
     }
 
     .iphone-11{
