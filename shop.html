@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shop</h1>
+        <div class="products">
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$10.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$15.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Add more products here -->
+        </div>
+    </div>
+      <!-- Back Button -->
+      <button onclick="goBack()">Go Back</button>
+
+      <script>
+          // Function to go back to the index.html
+          function goBack() {
+              window.location.href = 'index.html';
+          }
+      </script>
+</body>
+</html>

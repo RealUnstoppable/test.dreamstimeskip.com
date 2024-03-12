@@ -489,3 +489,10 @@ form button:hover{
     color: #fff;
 }
 
+.social-icons i:hover{
+    background-color: none; 
+    color: #7e7e7e; 
+    border: 3px solid none;
+    transition: opacity ease-in-out 3s;
+    cursor: pointer;
+}

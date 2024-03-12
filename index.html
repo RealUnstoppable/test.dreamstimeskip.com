@@ -111,17 +111,18 @@
             <a href="404.html">About</a>
             <a href="404.html">Services</a>
             <a href="404.html">Contact</a>
-            <a href="404.html">Shop</a>
+            <a href="shop.html">Shop</a>
             <a href="404.html">Blog</a>
         </div>
         <div class="col-2">
             <h3>Join Our Newsletter for 10% Off</h3>
-            <form>
-                <input type="email" placeholder="Email Address">
+            <form id="newsletterForm" action="submit.php" method="post">
+                <input type="email" id="emailInput" name="email" placeholder="Email Address">
                 <br>
-                <button type="submit">Subscribe</button>
+                <span id="emailError" style="color: red; display: none;">Please enter a valid email address</span>
+                <button type="submit" onclick="return validateForm()">Subscribe</button>
             </form>
-        </div>
+        </div>                  
         <div class="col-3">
             <h3>Socials</h3>
             <p>Follow<br>Us!</p>
