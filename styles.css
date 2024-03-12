@@ -496,3 +496,33 @@ form button:hover{
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-buttons button {
+    margin: 10px;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.349);
+}
