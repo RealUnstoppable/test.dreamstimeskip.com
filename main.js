@@ -46,50 +46,24 @@ function updatePrice(itemId) {
     subtotalElement.innerText = "Subtotal: $" + newTotalPrice.toFixed(2);
 }
 
-ddocument.addEventListener("DOMContentLoaded", function () {
-    // Check if the user has already accepted or declined
-    if (localStorage.getItem('popupAccepted') !== 'true' && localStorage.getItem('popupDeclined') !== 'true') {
-        showPopup('experimental-popup');
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("popup");
+    var acceptButton = document.getElementById("accept");
+    var declineButton = document.getElementById("decline");
+
+    var popupShown = localStorage.getItem("popupShown");
+
+    if (!popupShown) {
+        popup.style.display = "block";
     }
 
-    // Show popup function with animation
-    function showPopup(popupId) {
-        const popup = document.getElementById(popupId);
-        popup.style.display = 'block';
-        popup.classList.add('pop-in');
-        document.body.classList.add('popup-open'); // Add class to body
-    }
-
-    // Hide popup function
-    function hidePopup(popupId) {
-        const popup = document.getElementById(popupId);
-        popup.style.display = 'none';
-        document.body.classList.remove('popup-open'); // Remove class from body
-    }
-
-    // Accept button
-    document.getElementById('acceptBtn').addEventListener('click', function () {
-        localStorage.setItem('popupAccepted', 'true');
-        hidePopup('experimental-popup');
+    acceptButton.addEventListener("click", function() {
+        localStorage.setItem("popupShown", true);
+        popup.style.display = "none";
     });
 
-    // Decline button
-    document.getElementById('declineBtn').addEventListener('click', function () {
-        localStorage.setItem('popupDeclined', 'true');
-        hidePopup('experimental-popup');
-        // Here you can implement banning IP address
-        // For demonstration purposes, let's just redirect to 'bye.html'
-        window.location.href = 'bye.html';
-    });
-
-    // Yes button (Are you sure?)
-    document.getElementById('yesBtn').addEventListener('click', function () {
-        hidePopup('are-you-sure-popup');
-        // Implement any action needed on 'Yes' click
-    });
-
-    // No button (Are you sure?)
-    document.getElementById('noBtn').addEventListener('click', function () {
-        showPopup('experimental-popup');
+    declineButton.addEventListener("click", function() {
+        window.location.href = "banned.html";
+        //implement server-side logic to ban IP addresses.
     });
 });
