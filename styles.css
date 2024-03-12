@@ -436,7 +436,16 @@ header{
     display: block;
     text-decoration: none;
     color: #efefef;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    left: 5rem;
+}
+
+.col-1 a:hover{
+    background-color: none; 
+    color: #6d6d6d; 
+    border: none;
+    transition: opacity ease-in-out 3s;
+    cursor: pointer;
 }
 
 form input{
@@ -458,16 +467,25 @@ form button{
     padding: 10px 15px;
     font-size: 15px;
     cursor: pointer;
+}
 
+form button:hover{
+    background-color: #ffffff; 
+    color: #0d0d0d; 
+    border: 2px solid #ffffff;
+    transition: opacity ease-in-out 3s;
+    cursor: pointer;
 }
 
 .social-icons{
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .social-icons i{
     font-size: 22px;
     margin: 10px;
     cursor: pointer;
-    text-decoration: solid;
+    text-decoration: none;
+    color: #fff;
 }
+
