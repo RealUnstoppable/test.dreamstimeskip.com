@@ -364,7 +364,7 @@ header{
 
 }
 
-@media screen and (max-width: 932px){
+@media screen and (max-width: 480px){
     .iphone-11-pro{
         background-image: url("Unstoppable Gaming Intro_735px.mp4");
     }
