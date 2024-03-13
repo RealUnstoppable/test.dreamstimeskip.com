@@ -507,8 +507,8 @@ form button:hover{
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2000;
 }
