@@ -364,6 +364,55 @@ header{
 
 }
 
+@media screen and (max-width: 767px){
+    .iphone-11-pro{
+        background-image: url("Unstoppable Gaming Intro_390px.mp4");
+    }
+
+    .iphone-11{
+        background-image: url(iphone_11_small.jpg);
+    }
+
+    .watch{
+        background-image: url(watch_small.jpg);
+    }
+
+    .hero{
+        height: 50rem;
+        background-size: auto 54.8rem;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+
+    .title{
+        padding: 3.7rem;
+    }
+
+    .title-heading{
+        font-size: 3.2rem;
+    }
+
+    .title-sub-heading{
+        font-size: 1.9rem;
+    }
+
+    .title-heading-watch{
+        margin-top: -.5rem;
+        margin-bottom: 0;
+    }
+
+    .title-price{
+        font-size: 1.4rem;
+    }
+
+    .cta{
+        margin-top: .7rem;
+    }
+    .cta-link{
+        font-size: 1.9rem;
+    }
+}
+
 @media screen and (max-width: 390px){
     .iphone-11-pro{
         background-image: url("Unstoppable Gaming Intro_390px.mp4");
