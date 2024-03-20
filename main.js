@@ -67,3 +67,25 @@ document.addEventListener("DOMContentLoaded", function() {
         //implement server-side logic to ban IP addresses.
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("popup-kari");
+    var acceptButton = document.getElementById("accept");
+    var declineButton = document.getElementById("decline");
+
+    var popupShown = localStorage.getItem("popupShown");
+
+    if (!popupShown) {
+        popup.style.display = "show";
+    }
+
+    acceptButton.addEventListener("click", function() {
+        localStorage.setItem("popupShown", true);
+        popup.style.display = "none";
+    });
+
+    declineButton.addEventListener("click", function() {
+        window.location.href = "index.html";
+        //implement server-side logic to ban IP addresses.
+    });
+});

@@ -74,88 +74,6 @@ header{
     background: url(bag.svg) center no-repeat;
 }
 
-/* iphone 11 pro */
-.iphone-11-pro{
-    background: url("Unstoppable Gaming Intro_Vscode-2.mp4");
-    margin-top: 4.4rem;
-    position: relative;
-    left: 0;
-    overflow: show;
-}
-
-.title{
-    color: #fff;
-    text-align: center;
-    padding-top: 5.5rem;
-}
-
-.title-heading{
-    font-size: 5.6rem;
-    line-height: 1.07143;
-    letter-spacing: -.005rem;
-}
-
-.title-sub-heading{
-    font-size: 2.65rem;
-    margin-top: .6rem;
-    letter-spacing: .008rem;
-    font-weight: 400;
-}
-
-.title-price{
-    font-size: 1.7rem;
-    color: #888;
-    margin-top: .68rem;
-}
-
-.cta{
-    text-align: center;
-    margin-top: 1.8rem;
-}
-
-.cta-link{
-    color: #66bbff;
-    font-size: 2.1rem;
-    display: inline-block;
-}
-
-.cta-link:nth-child(2){
-    margin-left: 2.6rem;
-}
-
-.cta-link:hover{
-    border-bottom: 2px solid #66bbff;
-}
-
-/* iPhone 11 Section */
-.iphone-11{
-    background: url(iphone_11_large.jpg);
-}
-
-.title-dark{
-    color: #000;
-    text-align: center;
-}
-
-.cta-link-darker{
-    color: #0070c9;
-}
-
-.cta-link-darker:hover{
-    border-bottom: #0070c9;
-}
-
-.watch{
-    background: url(watch_large.jpg);   
-}
-
-.title-heading-watch{
-    height: 7.8rem;
-    background: url(logo_watch_large.png) center no-repeat;
-    background-size: auto 7.8rem;
-    margin-top: 1.6rem;
-}
-
 /* moved to the bottom of all section styles to keep consistent styles */
 .hero{
     height: 69.2rem;
@@ -172,40 +90,12 @@ header{
 /* end */
 
 @media screen and (max-width: 1068px){
-    .iphone-11-pro{
-        background-image: url("Unstoppable Gaming Intro_1068px.mp4");
-    }
-
-    .iphone-11{
-        background-image: url(iphone_11_medium.jpg);
-    }
-
-    .watch{
-        background-image: url(watch_medium.jpg);
-    }
 
     .hero{
         height: 65rem;
         background-size: auto 69.8rem;
         background-position: bottom center;
         background-repeat: no-repeat;
-    }
-
-    .title-heading{
-        font-size: 4.4rem;
-    }
-
-    .title-sub-heading{
-        font-size: 2.4rem;
-    }
-
-    .cta-link:nth-child(2){
-        margin-left: 2rem;
-    }
-    .title-heading-watch{
-        height: 6.2rem;
-        background: url(logo_watch_medium.png) center no-repeat;
-        background-size: auto 6.2rem;
     }
 
 }
@@ -219,10 +109,6 @@ header{
 
     header .container{
         padding: 0;
-    }
-
-    .iphone-11-pro{
-        margin-top: 4.8rem;
     }
 
     .nav-list{
@@ -361,57 +247,8 @@ header{
             opacity: 1;
         }
     }
-
 }
-
-@media screen and (max-width: 735px){
-    .iphone-11-pro{
-        background-image: url("Unstoppable Gaming Intro_390px.mp4");
-    }
-
-    .iphone-11{
-        background-image: url(iphone_11_small.jpg);
-    }
-
-    .watch{
-        background-image: url(watch_small.jpg);
-    }
-
-    .hero{
-        height: 50rem;
-        background-size: auto 54.8rem;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-    }
-
-    .title{
-        padding: 3.7rem;
-    }
-
-    .title-heading{
-        font-size: 3.2rem;
-    }
-
-    .title-sub-heading{
-        font-size: 1.9rem;
-    }
-
-    .title-heading-watch{
-        margin-top: -.5rem;
-        margin-bottom: 0;
-    }
-
-    .title-price{
-        font-size: 1.4rem;
-    }
-
-    .cta{
-        margin-top: .7rem;
-    }
-    .cta-link{
-        font-size: 1.9rem;
-    }
-}
+/* end */
 
 .footer{
     margin-top: 5px;
@@ -431,7 +268,7 @@ header{
 
 .footer div h3{
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 130px;
     letter-spacing: 1px;
 }
 
@@ -476,8 +313,6 @@ form button:hover{
     background-color: #ffffff; 
     color: #0d0d0d; 
     border: 2px solid #ffffff;
-    border-radius: 10px;
-    padding: 10px 15px;
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
@@ -502,74 +337,3 @@ form button:hover{
     cursor: pointer;
 }
 
-.popup-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2000;
-}
-
-.popup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #222222;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    animation: popup 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-@keyframes popup {
-    0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-}
-
-.popup h2 {
-    color: red;
-}
-
-.buttons {
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background: floralwhite;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    gap: 5px;
-}
-
-button:hover {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background: gray;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hero {
-    position: relative;
-}
-
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/*ending*/
