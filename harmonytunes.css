@@ -1,7 +1,7 @@
 /* global */
 *,
 *::before,
-::after{
+*::after{
     margin: 0;
     padding: 0;
 }
@@ -349,38 +349,40 @@ form button:hover{
   .hero-text {
     max-width: 600px;
     margin: 0 auto;
+    font-weight: bold;
+    font-size: 3em;
   }
   
-  .hero h1 {
-    font-size: 48px;
+  .buttons {
+    margin-top: 20px;
   }
   
-  .hero p {
-    font-size: 18px;
-  }
-  
-  .btn {
+  .button {
     display: inline-block;
+    background-color: #007AFF; /* Apple's blue color */
+    color: white;
     padding: 10px 20px;
-    background-color: #0078D4;
-    color: #fff;
+    margin: 0 10px;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
   }
   
-  .features {
-    text-align: center;
-    padding: 50px 0;
+  .social-icons {
+    margin-top: 20px;
   }
   
-  .feature {
-    display: inline-block;
-    max-width: 300px;
-    margin: 0 20px;
-    text-align: left;
+  .social-icon {
+    margin: 0 5px;
   }
   
-  .feature img {
-    width: 50px;
+  #video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
   }
-  
