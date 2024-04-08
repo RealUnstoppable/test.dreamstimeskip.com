@@ -89,3 +89,30 @@ document.addEventListener("DOMContentLoaded", function() {
         //implement server-side logic to ban IP addresses.
     });
 });
+
+<script>
+    function login(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get input values
+        var email = document.getElementById('login-email').value;
+        var password = document.getElementById('login-password').value;
+
+        // Send data to backend (example using Fetch API)
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email, password: password })
+        })
+        .then(response => {
+            if (response.ok) {
+                // Handle successful login
+            } else {
+                // Handle login failure
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
