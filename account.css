@@ -16,7 +16,7 @@ body {
 }
 
 .form-container {
-    background-color: #ffffff;
+    background-color: url('background-login.jpg');
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;

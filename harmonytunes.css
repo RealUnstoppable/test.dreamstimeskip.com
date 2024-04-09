@@ -337,50 +337,126 @@ form button:hover{
     cursor: pointer;
 }
 
-.hero {
-    margin-top: -4.6px ;
-    background-image: url('HarmonyTunes-Artist.jpg');
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-  }
-  
-  .hero-text {
-    max-width: 600px;
-    margin: 10% auto;
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-  }
-  
-  .hero p {
-    font-size: 18px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0078D4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .features {
-    text-align: center;
-    padding: 50px 0;
-  }
-  
-  .feature {
-    display: inline-block;
-    max-width: 300px;
-    margin: 0 20px;
-    text-align: left;
-  }
-  
-  .feature img {
-    width: 50px;
-  }
-  
+@media screen and (max-width: 1980px){
+
+    .hero {
+        margin-top: -4.6px;
+        background-image: url('HarmonyTunes-Artists.jpg');
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+      }
+      
+      .hero-text {
+        max-width: 600px;
+        margin: 10% auto;
+      }
+      
+      .hero h1 {
+        font-size: 48px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    
+      .btn:hover{
+        display: inline-block;
+        padding: 11px 20px;
+        background-color: #ffffff;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+        transition: padding 0.1s;
+      }
+      
+      .features {
+        text-align: center;
+        padding: 50px 0;
+      }
+      
+      .feature {
+        display: inline-block;
+        max-width: 300px;
+        margin: 0 20px;
+        text-align: left;
+      }
+      
+      .feature img {
+        width: 50px;
+      }
+    }
+
+    @media screen and (max-width: 767px){
+
+        .hero {
+            margin-top: -4.6px;
+            background-image: url('HarmonyTunes-Artist-Mobile.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+          }
+          
+          .hero-text {
+            max-width: 600px;
+            margin: 10% auto;
+          }
+          
+          .hero h1 {
+            font-size: 48px;
+          }
+          
+          .hero p {
+            font-size: 18px;
+          }
+          
+          .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: padding 0.2s;
+            transition: background 0.3s;
+          }
+        
+          .btn:hover{
+            display: inline-block;
+            padding: 11px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: padding 0.2s;
+            transition: background 0.3s;
+          }
+          
+          .features {
+            text-align: center;
+            padding: 50px 0;
+          }
+          
+          .feature {
+            display: inline-block;
+            max-width: 300px;
+            margin: 0 20px;
+            text-align: left;
+          }
+          
+          .feature img {
+            width: 50px;
+          }
+        }
