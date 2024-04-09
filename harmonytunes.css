@@ -1,7 +1,7 @@
 /* global */
 *,
 *::before,
-*::after{
+::after{
     margin: 0;
     padding: 0;
 }
@@ -338,8 +338,8 @@ form button:hover{
 }
 
 .hero {
-    margin-top: 100px ;
-    background-image: url('harmonytunes_image.png');
+    margin-top: -4.6px ;
+    background-image: url('HarmonyTunes-Artist.jpg');
     background-size: cover;
     color: #fff;
     text-align: center;
@@ -348,41 +348,39 @@ form button:hover{
   
   .hero-text {
     max-width: 600px;
-    margin: 0 auto;
-    font-weight: bold;
-    font-size: 3em;
+    margin: 10% auto;
   }
   
-  .buttons {
-    margin-top: 20px;
+  .hero h1 {
+    font-size: 48px;
   }
   
-  .button {
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .btn {
     display: inline-block;
-    background-color: #007AFF; /* Apple's blue color */
-    color: white;
     padding: 10px 20px;
-    margin: 0 10px;
+    background-color: #0078D4;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
   }
   
-  .social-icons {
-    margin-top: 20px;
+  .features {
+    text-align: center;
+    padding: 50px 0;
   }
   
-  .social-icon {
-    margin: 0 5px;
+  .feature {
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 20px;
+    text-align: left;
   }
   
-  #video-bg {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+  .feature img {
+    width: 50px;
   }
+  

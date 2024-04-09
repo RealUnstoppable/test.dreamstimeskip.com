@@ -1,8 +1,6 @@
 body {
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    background-image: url('background-login.jpg'); /* Replace 'your-image-url.jpg' with the URL of your image */
-    background-size: cover; /* This ensures the image covers the entire background */
-    background-position: center; /* This centers the image */
+    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,7 +13,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Added to stack forms vertically */
 }
 
 .form-container {
