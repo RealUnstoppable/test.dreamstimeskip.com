@@ -63,9 +63,9 @@ header{
 }
 
 .nav-link-search{
-    width: 1.6rem;
-    height: 4.4rem;
-    background: url(search.svg) center no-repeat;
+    width: .8rem;
+    height: 1.8rem;
+    background: url(user-regular.svg) center no-repeat;
 }
 
 .nav-link-bag{
