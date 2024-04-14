@@ -137,6 +137,11 @@ header{
     text-align: center;
 }
 
+.title-dark-1{
+    color: #000000;
+    text-align: center;
+}
+
 .cta-link-darker{
     color: #0070c9;
 }
