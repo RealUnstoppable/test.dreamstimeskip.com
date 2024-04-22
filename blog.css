@@ -280,11 +280,11 @@ body {
 }
 
 .post h2 {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Arial';
 }
 
 .post p {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Arial';
 }
 
 .post a {
@@ -297,8 +297,8 @@ body {
 }
 
 .post a:hover {
-    color: #0000;
-    background-color: yellow;
+    color: #000;
+    background-color: rgb(235, 155, 255);
     box-shadow: 0 0 10px #000; /* Black drop shadow */
 }
 
@@ -337,13 +337,13 @@ body {
 }
 
 .category-link:hover {
-    color: #0000;
-    background-color: yellow;
+    color: #000;
+    background-color: #ca2be2;
     box-shadow: 0 0 10px #000; /* Black drop shadow */
 }
 
 .footer{
-    margin-top: 5px;
+    margin-top: 5rem;
     width: 70%;
     padding: 100px 15%;
     background: #333;
