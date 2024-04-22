@@ -254,12 +254,13 @@ body {
     font-family: Arial, sans-serif;
     margin-top: 5rem;
     padding: 0;
-    background-color: #f5f5f7;
+    background-color: #000000;
+    color: #fff;
 }
 
 h1 {
     text-align: center;
-    color: #333333;
+    color: #ffffff;
 }
 
 .cart {
@@ -269,7 +270,7 @@ h1 {
 }
 
 .cart h2 {
-    color: #333333;
+    color: #ffffff;
 }
 
 .quantity {
@@ -318,34 +319,118 @@ button:hover {
 }
 
 .item {
-    border-bottom: 1px solid #cccccc;
-    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
     margin-bottom: 20px;
-    position: relative; /* Make it a relative position container */
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+
+.bag-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.item-details {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 5px;
+}
+
+.item-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+.quantity label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.quantity input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #fff;
 }
 
 .remove-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: #ff6347; /* Change color to red */
+    background-color: #ff6347; /* Red color */
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 16px; /* Adjust padding as needed */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.remove:hover {
-    background-color: #cc4a38;
+.remove-btn:hover {
+    background-color: #cc4a38; /* Darker red on hover */
+}
+
+.product-info {
+    display: flex;
+}
+
+.product-info img {
+    max-width: 100px; /* Adjust size as needed */
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.checkout-info {
+    background-color: #1b1b1b; /* Gray background */
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px; /* Rounded corners */
+    flex-grow: 1; /* Take remaining space */
+    align-self: flex-start; /* Align to the top */
+}
+
+.checkout-info p {
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    background-color: #0070c9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #005393;
 }
 
 .footer{
     margin-top: 5px;
     width: 70%;
     padding: 100px 15%;
-    background: #333;
+    background: #000000;
     color: #efefef;
     display: flex;
 }

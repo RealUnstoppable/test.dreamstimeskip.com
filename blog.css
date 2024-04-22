@@ -343,10 +343,10 @@ body {
 }
 
 .footer{
-    margin-top: 5rem;
+    margin-top: 8rem;
     width: 70%;
     padding: 100px 15%;
-    background: #333;
+    background: #000000;
     color: #efefef;
     display: flex;
 }

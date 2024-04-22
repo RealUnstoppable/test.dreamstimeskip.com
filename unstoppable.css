@@ -282,8 +282,8 @@ button:hover {
     margin-top: 5px;
     width: 70%;
     padding: 100px 15%;
-    background: #333;
-    color: #efefef;
+    background: #ffffff;
+    color: #000000;
     display: flex;
 }
 .footer div{
@@ -303,7 +303,7 @@ button:hover {
 .col-1 a{
     display: block;
     text-decoration: none;
-    color: #efefef;
+    color: #000000;
     margin-bottom: 30px;
     left: 5rem;
 }
@@ -324,13 +324,13 @@ form input{
     margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
-    border: none;
+    border: 2px solid #000;
 }
 
 form button{
     background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid #000000;
+    color: #000000;
     border-radius: 10px;
     padding: 10px 15px;
     font-size: 15px;
@@ -340,7 +340,7 @@ form button{
 form button:hover{
     background-color: #ffffff; 
     color: #0d0d0d; 
-    border: 2px solid #ffffff;
+    border: 2px solid #000000;
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
@@ -354,13 +354,13 @@ form button:hover{
     margin: 10px;
     cursor: pointer;
     text-decoration: none;
-    color: #fff;
+    color: #000000;
+    transition: opacity ease-in-out 3s;
 }
 
 .social-icons i:hover{
     background-color: none; 
     color: #7e7e7e; 
     border: 3px solid none;
-    transition: opacity ease-in-out 3s;
     cursor: pointer;
 }

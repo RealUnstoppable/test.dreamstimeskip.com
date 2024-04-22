@@ -63,30 +63,31 @@
     <main>
         <div class="container">
             <section class="bag-items">
-                <div class="item">
-                    <img src="product1.jpg" alt="Product 1">
-                    <div class="item-details">
-                        <h2>Wallpaper Pack (50)</h2>
-                        <!-- Inside each .item-details -->
-                        <p class="price" id="price1">Price: $50.00</p>
-                        <div class="quantity">
-                            <label for="quantity1">Quantity:</label>
-                            <input type="number" id="quantity1" name="quantity1" min="1" value="1" onchange="updatePrice(1)">
-                        </div>
-                        <button class="remove-btn">Remove</button>
+                <main>
+                    <div class="container">
+                        <section class="bag-items">
+                            <div class="item">
+                                <div class="product-info">
+                                    <img src="product-1.png" alt="Product 1">
+                                    <div class="item-details">
+                                        <h2>Wallpaper Pack (50)</h2>
+                                        <p class="price" id="price1">Price: $50.00</p>
+                                        <div class="quantity">
+                                            <label for="quantity1">Quantity:</label>
+                                            <input type="number" id="quantity1" name="quantity1" min="1" value="1" onchange="updatePrice(1)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkout-info">
+                                    <h5>A wallpaper pack with 50 unique Dreams Timeskip Wallpapers. <br> </br></h5>
+                                    <p>Subtotal: $50.00</p>
+                                    <button class="checkout-btn">Proceed to Checkout</button>
+                                </div>
+                            </div>
+                            <!-- More items here -->
+                        </section>
                     </div>
-                </div>
-                <!-- More items here -->
-            </section>
-            <aside class="cart-summary">
-                <h2>Order Summary</h2>
-                <div class="subtotal">
-                    <p id="subtotal">Subtotal: $50.00</p>
-                </div>
-                <button class="checkout-btn">Proceed to Checkout</button>
-            </aside>
-        </div>
-    </main>    
+                </main>                  
 </body>
 <div class="footer">
     <div class="col-1">
