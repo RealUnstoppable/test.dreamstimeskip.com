@@ -249,66 +249,107 @@ header{
     }
 }
 /* end */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 6.5rem 0;
+}
 
-main {
-    padding: 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .blog-posts {
-    margin: 35px 0;
-    position: relative;
-    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .post {
-    margin-bottom: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.post:hover {
+    box-shadow: 0 0 20px #8a2be2; /* Purple drop shadow */
 }
 
 .post h2 {
-    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 .post p {
-    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 .post a {
-    color: #007bff;
-}
-
-button[onclick="goBack()"] {
-    position: fixed;
-    top: 60px; /* Adjust this value according to your desired distance from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75px;
-    height: 30px;
-    padding: 5px 10px; /* Corrected padding value */
-    border: none;
+    color: #fff;
+    text-decoration: none;
+    background-color: #8a2be2;
+    padding: 10px 20px;
     border-radius: 5px;
-    transition: opacity 0.3s ease-in-out;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-button[onclick="goBack()"]:hover {
-    background-color: #000000;
-    color: #ffffff;
-    /* Corrected transition property value */
-    transition: opacity 0.3s ease-in-out;
-    /* Add any other styles you want to apply */
+.post a:hover {
+    color: #0000;
+    background-color: yellow;
+    box-shadow: 0 0 10px #000; /* Black drop shadow */
 }
 
+.sidebar {
+    float: left; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+}
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px -5px;
+.about-me-box,
+.categories-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.about-me-box:hover,
+.categories-box:hover {
+    box-shadow: 0 0 20px #8a2be2; /* Purple drop shadow */
+}
+
+.categories-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.category-link:hover {
+    color: #0000;
+    background-color: yellow;
+    box-shadow: 0 0 10px #000; /* Black drop shadow */
+}
+
+.footer{
+    margin-top: 5px;
+    width: 70%;
+    padding: 100px 15%;
     background: #333;
     color: #efefef;
     display: flex;
 }
-
-
 .footer div{
     text-align: center;
 }
@@ -319,7 +360,7 @@ button[onclick="goBack()"]:hover {
 
 .footer div h3{
     font-weight: 300;
-    margin-bottom: 130px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
 }
 
@@ -364,6 +405,8 @@ form button:hover{
     background-color: #ffffff; 
     color: #0d0d0d; 
     border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px 15px;
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
