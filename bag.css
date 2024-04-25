@@ -57,15 +57,16 @@ header{
 }
 
 .nav-link-apple{
-    width: 1.6rem;
-    height: 4.4rem;
-    background: url(apple.svg) center no-repeat;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background: url(unstoppable\ logo\ website.png) center no-repeat;
 }
 
 .nav-link-search{
-    width: 1.6rem;
-    height: 4.4rem;
-    background: url(search.svg) center no-repeat;
+    width: .8rem;
+    height: 1.8rem;
+    background: url(user-regular.svg) center no-repeat;
 }
 
 .nav-link-bag{
@@ -176,8 +177,8 @@ header{
    }
 
    .nav-link-apple{
-    width: 1.8rem;
-    height: 4.8rem;
+    width: 100px;
+    height: 50px;
     position: relative;
     z-index: 1500;
    }
@@ -425,7 +426,7 @@ button:hover {
 .checkout-btn:hover {
     background-color: #005393;
 }
-
+@media screen and (max-width: 767px){}
 .footer{
     margin-top: 5px;
     width: 70%;
