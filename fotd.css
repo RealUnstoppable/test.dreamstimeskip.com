@@ -248,36 +248,79 @@ header{
         }
     }
 }
-/* end */
-
-button[onclick="goBack()"] {
-    position: fixed;
-    top: 60px; /* Adjust this value according to your desired distance from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75px;
-    height: 30px;
-    padding: 5px 10px; /* Corrected padding value */
-    border: none;
-    border-radius: 5px;
-    transition: opacity 0.3s ease-in-out;
+/* Bento box grid styles */
+body{
+    background-color: #000;
+}
+.bento-box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-button[onclick="goBack()"]:hover {
+.bento-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bento-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Fact of the day section */
+.fact-of-the-day {
+    margin-top: 48px;
     background-color: #000000;
-    color: #ffffff;
-    /* Corrected transition property value */
-    transition: opacity 0.3s ease-in-out;
-    /* Add any other styles you want to apply */
+    color: #fff;
+    padding: 40px 0;
 }
 
+.fact-box {
+    text-align: center;
+}
 
+.fact-box h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fact-box p {
+    font-size: 18px;
+}
+
+/* Footer styles */
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .bento-box-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .fact-box h2 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .fact-box h2 {
+        font-size: 20px;
+    }
+}
 .footer{
-    margin-top: 240px;
+    margin-top: 5px;
     width: 70%;
     padding: 100px 15%;
-    background: #ffffff;
-    color: #000000;
+    background: #000000;
+    color: #efefef;
     display: flex;
 }
 .footer div{
@@ -297,7 +340,7 @@ button[onclick="goBack()"]:hover {
 .col-1 a{
     display: block;
     text-decoration: none;
-    color: #000000;
+    color: #efefef;
     margin-bottom: 30px;
     left: 5rem;
 }
@@ -318,13 +361,13 @@ form input{
     margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
-    border: 2px solid #000;
+    border: none;
 }
 
 form button{
     background: transparent;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #fff;
+    color: #fff;
     border-radius: 10px;
     padding: 10px 15px;
     font-size: 15px;
@@ -334,7 +377,7 @@ form button{
 form button:hover{
     background-color: #ffffff; 
     color: #0d0d0d; 
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
@@ -348,13 +391,14 @@ form button:hover{
     margin: 10px;
     cursor: pointer;
     text-decoration: none;
-    color: #000000;
-    transition: opacity ease-in-out 3s;
+    color: #fff;
 }
 
 .social-icons i:hover{
     background-color: none; 
     color: #7e7e7e; 
     border: 3px solid none;
+    transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
+
