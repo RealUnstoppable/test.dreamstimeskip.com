@@ -57,9 +57,9 @@ header{
 }
 
 .nav-link-apple{
-    width: 1.6rem;
+    width: 1.8rem;
     height: 4.4rem;
-    background: url(apple.svg) center no-repeat;
+    background: url(un-web.png) center no-repeat;
 }
 
 .nav-link-search{
@@ -251,15 +251,18 @@ header{
 /* end */
 /* unstoppable.css */
 
+body{
+    background-color: #000;
+}
 h1 {
 margin-top: 100px;
-    color: #333333;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 40px;
 }
 
 p {
-    color: #666666;
+    color: #bbbbbb;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -267,6 +270,7 @@ p {
 button {
     background-color: #4CAF50;
     color: white;
+    margin: 0 0;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -282,8 +286,8 @@ button:hover {
     margin-top: 5px;
     width: 70%;
     padding: 100px 15%;
-    background: #ffffff;
-    color: #000000;
+    background: #000000;
+    color: #ffffff;
     display: flex;
 }
 .footer div{
@@ -303,7 +307,7 @@ button:hover {
 .col-1 a{
     display: block;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 30px;
     left: 5rem;
 }
@@ -324,13 +328,13 @@ form input{
     margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
 }
 
 form button{
     background: transparent;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     border-radius: 10px;
     padding: 10px 15px;
     font-size: 15px;
@@ -341,6 +345,9 @@ form button:hover{
     background-color: #ffffff; 
     color: #0d0d0d; 
     border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
@@ -354,7 +361,7 @@ form button:hover{
     margin: 10px;
     cursor: pointer;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     transition: opacity ease-in-out 3s;
 }
 
