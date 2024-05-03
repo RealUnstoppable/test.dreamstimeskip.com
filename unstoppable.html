@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unstoppable</title>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
-        <link rel="stylesheet" href="unstoppable.css">
-    </head>
+    <link rel="stylesheet" href="unstoppable.css">
+</head>
+<body>
     <header>
         <div class="container">
             <nav class="nav">
@@ -35,25 +30,25 @@
                         <a href="index.html" class="nav-link nav-link-apple"></a>
                     </li>
                     <li class="nav-item">
-                        <a href="unstoppable.html" class="nav-link nav-link">Unstoppable</a>
+                        <a href="unstoppable.html" class="nav-link">Unstoppable</a>
                     </li>
                     <li class="nav-item">
-                        <a href="dreamstimeskip.html" class="nav-link nav-link">Dreams TimeSkip</a>
+                        <a href="dreamstimeskip.html" class="nav-link">Dreams TimeSkip</a>
                     </li>
                     <li class="nav-item">
-                        <a href="harmonytunes.html" class="nav-link nav-link">HarmonyTunes</a>
+                        <a href="harmonytunes.html" class="nav-link">HarmonyTunes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="fotd.html" class="nav-link nav-link">F.O.T.D.</a>
+                        <a href="fotd.html" class="nav-link">F.O.T.D.</a>
                     </li>
                     <li class="nav-item">
-                        <a href="starlight.html" class="nav-link nav-link">Starlight</a>
+                        <a href="starlight.html" class="nav-link">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link nav-link">Blog</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://www.discord.com" class="nav-link nav-link">Support Us</a>
+                        <a href="https://www.discord.com" class="nav-link">Support Us</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="nav-link nav-link-search"></a>
@@ -66,24 +61,50 @@
             </nav>
         </div>
     </header>
-    </main>    
-    </body>
-
-<body>
-    <div class="container">
-        <h1>Welcome to Unstoppable Gaming!</h1>
-        <p>Unstoppable Gaming is a YouTube channel that posts exciting gaming videos. Stay tuned for awesome content coming soon!</p>
-        <p>work in progress</p>
-        <!-- Back Button -->
-        <button onclick="goBack()">Go Back</button>
+    <header-2>
+        <h1>YouTube Clone Channel</h1>
+        <nav-2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav-2>
+    </header-2>
+    <section class="video-row">
+        <div class="video-wrapper">
+          <img src="thumbnail1.jpg" alt="Video 1 Thumbnail">
+          <h2>Video 1</h2>
+        </div>
+        <!-- Repeat for each video -->
+    </section>
+    <input type="text" id="searchBar" placeholder="Search videos">
+    <div class="pagination">
+        <button class="prevPageBtn">Previous</button>
+        <span class="currentPage">Page 1</span>
+        <button class="nextPageBtn">Next</button>
     </div>
-
-    <script>
-        // Function to go back to the index.html
-        function goBack() {
-            window.location.href = 'index.html';
-        }
-    </script>
+    <footer>
+        <h3>Channel Links</h3>
+        <ul>
+          <li><a href="https://example.com/1">Website 1</a></li>
+          <li><a href="https://example.com/2">Website 2</a></li>
+          <li><a href="https://example.com/3">Website 3</a></li>
+          <li><a href="https://example.com/4">Website 4</a></li>
+          <li><a href="https://example.com/5">Website 5</a></li>
+          <li><a href="https://example.com/6">Website 6</a></li>
+          <li><a href="https://example.com/7">Website 7</a></li>
+        </ul>
+        <button id="subscribeBtn">Subscribe</button>
+        <div class="channel-settings">
+          <button id="settingsBtn">View Channel</button>
+          <div class="dropdown-content">
+            <a href="#">About Profile</a>
+            <a href="#">Notifications</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+    </footer>
     <div class="footer">
         <div class="col-1">
             <h3>Useful Links</h3>
@@ -110,13 +131,14 @@
                     <i class="fa-brands fa-facebook"></i></a>   
                 <a href="https://www.x.com">
                     <i class="fa-brands fa-x-twitter"></i></a> 
-                    <a href="https://www.instagram.com">
-                        <i class="fa-brands fa-instagram"></i></a>   
-                    <a href="https://www.youtube.com">
-                        <i class="fa-brands fa-youtube"></i></a> 
+                <a href="https://www.instagram.com">
+                    <i class="fa-brands fa-instagram"></i></a>   
+                <a href="https://www.youtube.com">
+                    <i class="fa-brands fa-youtube"></i></a> 
             </div>
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/54a4669066.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-    </body>
-    </html>    
+</body>
+</html>

@@ -89,3 +89,98 @@ document.addEventListener("DOMContentLoaded", function() {
         //implement server-side logic to ban IP addresses.
     });
 });
+// For demonstration purposes, let's simulate loading videos
+const videos = [
+    { title: 'Video 1', src: 'video1.mp4' },
+    { title: 'Video 2', src: 'video2.mp4' },
+    { title: 'Video 3', src: 'video3.mp4' },
+    { title: 'Video 4', src: 'video4.mp4' },
+    { title: 'Video 5', src: 'video5.mp4' },
+  ];
+  
+  // Function to dynamically add videos to the video row
+  function addVideos() {
+    const videoRow = document.querySelector('.video-row');
+    videos.forEach(video => {
+      const videoElement = document.createElement('video');
+      videoElement.src = video.src;
+      videoElement.controls = true;
+      const titleElement = document.createElement('h2');
+      titleElement.textContent = video.title;
+      const videoWrapper = document.createElement('div');
+      videoWrapper.classList.add('video-wrapper');
+      videoWrapper.appendChild(videoElement);
+      videoWrapper.appendChild(titleElement);
+      videoRow.appendChild(videoWrapper);
+    });
+  }
+  
+  // Call the function to add videos when the page loads
+  window.onload = addVideos;
+  
+  // Add event listener for search bar
+  document.getElementById('searchBar').addEventListener('keyup', function(event) {
+    const searchText = event.target.value.toLowerCase();
+    const videos = document.querySelectorAll('.video-wrapper');
+    videos.forEach(video => {
+      const title = video.querySelector('h2').textContent.toLowerCase();
+      if (title.includes(searchText)) {
+        video.style.display = 'block';
+      } else {
+        video.style.display = 'none';
+      }
+    });
+  });
+  
+  // Pagination
+  let currentPage = 1;
+  const videosPerPage = 4;
+  const totalVideos = videos.length;
+  const totalPages = Math.ceil(totalVideos / videosPerPage);
+  
+  function showVideos(page) {
+    const startIndex = (page - 1) * videosPerPage;
+    const endIndex = startIndex + videosPerPage;
+    videos.forEach((video, index) => {
+      if (index >= startIndex && index < endIndex) {
+        video.style.display = 'block';
+      } else {
+        video.style.display = 'none';
+      }
+    });
+  }
+  
+  document.querySelector('.prevPageBtn').addEventListener('click', function() {
+    if (currentPage > 1) {
+      currentPage--;
+      updatePagination();
+      showVideos(currentPage);
+    }
+  });
+  
+  document.querySelector('.nextPageBtn').addEventListener('click', function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      updatePagination();
+      showVideos(currentPage);
+    }
+  });
+  
+  function updatePagination() {
+    document.querySelector('.currentPage').textContent = `Page ${currentPage}`;
+  }
+  
+  // Initially show videos for the first page
+  showVideos(currentPage);
+  
+  // Subscribe button functionality
+  document.getElementById('subscribeBtn').addEventListener('click', function() {
+    alert('Subscribed!');
+  });
+  
+  // Channel settings dropdown
+  document.getElementById('settingsBtn').addEventListener('click', function() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display === 'block' ? dropdownContent.style.display = 'none' : dropdownContent.style.display = 'block';
+  });
+  

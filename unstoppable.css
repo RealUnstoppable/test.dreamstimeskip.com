@@ -1,7 +1,9 @@
-/* global */
+/* unstoppable.css */
+
+/*global*/
 *,
 *::before,
-::after{
+*::after{
     margin: 0;
     padding: 0;
 }
@@ -176,7 +178,7 @@ header{
    }
 
    .nav-link-apple{
-    width: 1.8rem;
+    width: 4.8rem;
     height: 4.8rem;
     position: relative;
     z-index: 1500;
@@ -249,39 +251,12 @@ header{
     }
 }
 /* end */
-/* unstoppable.css */
-
 body{
-    background-color: #000;
+    background-color: black;
+    color: #fff;
+    margin-top: 50px;
 }
-h1 {
-margin-top: 100px;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-p {
-    color: #bbbbbb;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    margin: 0 0;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
+/*footer*/
 .footer{
     margin-top: 5px;
     width: 70%;
@@ -370,4 +345,128 @@ form button:hover{
     color: #7e7e7e; 
     border: 3px solid none;
     cursor: pointer;
+}
+
+/* Integrated Code */
+/* Video Thumbnail Carousel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.video-thumbnail {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+}
+
+.pagination .currentPage {
+  font-weight: bold;
+}
+
+/* YouTube Channel Page Styles */
+
+/* Profile Section */
+.profile-section {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  background-image: url('profile-banner.jpg'); /* Add your banner image URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-picture {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: #fff; /* Add background color if no picture */
+  /* Add background image if available */
+  /* background-image: url('profile-picture.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+
+.channel-info {
+  position: absolute;
+  top: 20px;
+  left: 200px; /* Adjust distance from profile picture */
+}
+
+.channel-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.subscribe-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff0000; /* Adjust button color */
+  border: 5px solid #ff0000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Video Section */
+.video-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.video-wrapper {
+  width: calc(33.33% - 20px); /* Adjust width and spacing */
+  margin-bottom: 20px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.video-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* About Channel Section */
+.about-section {
+  margin-top: 20px;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 16px;
+  color: #666;
 }

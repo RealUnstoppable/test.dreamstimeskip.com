@@ -419,6 +419,9 @@ header{
 }
 /* Reset default margin and padding */
 /* Style the product container */
+body{
+    background-color: black;
+}
 .product-container {
     max-width: 1200px;
     margin: 30px auto;
@@ -474,22 +477,24 @@ header{
 
 /* Style the contact owner section */
 .contact-owner {
-    background-color: #f9f9f9;
+    background-color: #1e1e1e;
     padding: 20px;
     border-radius: 5px;
 }
 
 .contact-owner h2 {
     margin-bottom: 10px;
+    color: #fff;
 }
 
 .contact-owner p {
     margin-bottom: 5px;
+    color: #fff
 }
 
 .footer{
     margin-top: 5px;
-    width: 100%;
+    width: 70%;
     padding: 100px 15%;
     background: #000000;
     color: #efefef;
