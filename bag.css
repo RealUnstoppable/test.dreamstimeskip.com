@@ -5,6 +5,11 @@
     margin: 0;
     padding: 0;
 }
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 html {
     font-size: 10px;
@@ -28,7 +33,7 @@ header{
     top: 0;
     z-index: 1400;
     width: 100%;
-    height: 4.4rem;
+    height: 7.5rem;
     background-color: rgba(0,0,0,.8);
     backdrop-filter: blur(2rem);
 }
@@ -514,3 +519,24 @@ form button:hover{
     cursor: pointer;
 }
 
+.product {
+    width: 200px;
+    margin: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.shopping-cart {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+.add-to-cart {
+    margin: 1rem;
+ background-color: #ffffff;
+ color: #000;
+}
