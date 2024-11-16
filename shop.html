@@ -60,34 +60,45 @@
         </nav>
     </div>
 </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon-like E-commerce Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <div class="container">
-        <h1>Shop</h1>
-        <div class="products">
-            <div class="product">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$10.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="product2.jpg" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>$15.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <!-- Add more products here -->
-        </div>
+  <header>
+    <div class="navbar">
+      <div class="logo">MyStore</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button>Search</button>
+      </div>
+      <div class="cart">
+        <a href="#">Cart (0)</a>
+      </div>
     </div>
-      <!-- Back Button -->
-      <button onclick="goBack()">Go Back</button>
+  </header>
 
-      <script>
-          // Function to go back to the index.html
-          function goBack() {
-              window.location.href = 'index.html';
-          }
-      </script>
+  <main>
+    <section class="product-list">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$99.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$199.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Add more products similarly -->
+    </section>
+  </main>
        <div class="footer">
         <div class="col-1">
             <h3>Useful Links</h3>
@@ -123,7 +134,7 @@
 
 </div>
     <script src="https://kit.fontawesome.com/54a4669066.js" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+<script src="test.js"></script>
 </body>
 </html>
 </body>
