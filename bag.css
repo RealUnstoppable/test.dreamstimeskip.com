@@ -540,3 +540,49 @@ form button:hover{
  background-color: #ffffff;
  color: #000;
 }
+button[data-id="1"] {
+    background-color: #ffffff;
+}
+button[data-id="2"] {
+    background-color: #ffffff;
+}
+button[data-id="1"]:hover {
+    background-color: #858585;
+}
+button[data-id="2"]:hover {
+    background-color: #858585;
+}
+button.remove-item {
+    background-color: #ff1e00;
+}
+button.remove-item:hover {
+    background-color: #882012;
+}
+button {
+    background-color: #ffffff;
+}
+button.increase-quantity{
+    background-color: rgb(0, 211, 0);
+}
+button.increase-quantity:hover{
+    background-color: rgb(26, 146, 26);
+}
+button.decrease-quantity{
+    background-color: #ff1e00;
+}
+button.decrease-quantity:hover{
+    background-color: #882012;
+}
+
+button.check-out{
+    background-color: #ffffff;
+    color: #000;
+    margin-top:10px;
+    padding: 10px 15px;
+}
+button.check-out:hover{
+    background-color: #69ff8c;
+    color: #000;
+    margin-top:10px;
+    padding: 10px 15px;
+}
