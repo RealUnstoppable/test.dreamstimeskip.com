@@ -18,6 +18,12 @@ body {
   background-color: var(--light-color);
   color: var(--dark-color);
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* Heading styles */
