@@ -269,6 +269,24 @@ body{
     align-items: center;
 }
 
+.bento-box-lucky {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+  }
+  
+  .bento-box-lucky img {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
 .bento-box img {
     width: 100%;
     border-radius: 10px;
