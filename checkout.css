@@ -77,3 +77,10 @@ body {
     border-radius: 20px ;
     color: #fff
   }
+.btn1{
+  border: 3px solid #0d00ff;
+  background-color: #0d00ff;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
