@@ -4,8 +4,22 @@ html {
 }
 /* General Styles */
 body {
-    text-align: center;
-    margin: 0;
+    background-image: url("shop-checkout.png"); /* Path to your image */
+    background-size: cover; /* or 'contain' depending on your preference */
+    background-repeat: no-repeat; 
+    background-position: center; /* Adjust as needed */
+      /* ... background properties ... */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Ensure body covers the whole viewport */
+      color: white; /* Example text color */
+
+      text-shadow: 2px 2px 4px black; /* Example text shadow for readability */
+    text-align: left;
+    margin-left: 25px;
+    margin-top: -35px;
     padding: 0;
   }
   
@@ -83,4 +97,15 @@ body {
   border-radius: 5px;
   color: #fff;
   text-decoration: none;
+  transition: all 0.10s ease-in-out;
 }
+
+.btn1:hover{
+  border: 3px solid #726bff;
+  background-color: #726bff;
+  border-radius: 15px;
+  padding: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+
