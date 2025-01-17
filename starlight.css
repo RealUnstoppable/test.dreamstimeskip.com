@@ -251,12 +251,10 @@ header{
 /* end */
 body{
     background-color: #000;
-}
-body-2 {
     font-family: Arial, sans-serif;
-    padding: 25%;
     color: white;
-  }
+}
+
   .product {
     background-color: #fff;
     border: 1px solid #ccc;
