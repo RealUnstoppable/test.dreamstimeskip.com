@@ -1,206 +1,290 @@
 /* unstoppable.css */
 
-/*global*/
+/* global */
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Include padding and border in element's total width and height */
 }
 
 html {
-    font-size: 10px;
-    font-family: 'SF Pro Display', sans-serif;
+  font-size: 10px;
+  /* Base font size for rem units */
+  font-family: 'SF Pro Display', sans-serif;
 }
 
-a{
-    display: block;
-    text-decoration: none;
+body {
+  background-color: black;
+  color: #fff;
+  margin-top: 4.4rem;
+  /* Adjust margin-top to account for fixed header */
 }
 
-.container{
-    max-width: 98rem;
-    margin: 0 auto;
-    padding: 0 2.2rem;
+a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  /* Default link color */
+}.container {
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 0 2.2rem;
 }
 
-/* header */
-header{
-    position: fixed;
-    top: 0;
-    z-index: 1400;
-    width: 100%;
-    height: 4.4rem;
-    background-color: rgba(0,0,0,.8);
-    backdrop-filter: blur(2rem);
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1400;
+  width: 100%;
+  height: 4.4rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2rem);
+}.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -1rem;
+}.nav-list-mobile {
+  display: none;
+}.nav-link {
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 0 1rem;
+  transition: opacity 0.5s;
+}.nav-link:hover {
+  opacity: 0.7;
+}.nav-link-apple {
+  width: 100px;
+  height: 4.8rem;
+  background: url(un-web.png) center no-repeat;
+}.nav-link-search {
+  width: 0.8rem;
+  height: 1.8rem;
+  background: url(user-regular.svg) center no-repeat;
+}.nav-link-bag {
+  width: 1.4rem;
+  height: 4.4rem;
+  background: url(bag.svg) center no-repeat;
 }
 
-.nav-list{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 -1rem;
+/* iphone 11 pro */.iphone-11-pro {
+  background: url("test2.mp4");
+  margin-top: 4.4rem;
+  position: relative;
+  left: 0;
+  overflow: show;
+}.title {
+  color: #fff;
+  text-align: center;
+  padding-top: 5.5rem;
+}.title-heading {
+  font-size: 5.6rem;
+  line-height: 1.07143;
+  letter-spacing: -.005rem;
+}.title-sub-heading {
+  font-size: 2.65rem;
+  margin-top: 0.6rem;
+  letter-spacing: 0.008rem;
+  font-weight: 400;
+}.title-price {
+  font-size: 1.7rem;
+  color: #888;
+  margin-top: 0.68rem;
+}.cta {
+  text-align: center;
+  margin-top: 1.8rem;
+}.cta-link {
+  color: #66bbff;
+  font-size: 2.1rem;
+  display: inline-block;
+}.cta-link:nth-child(2) {
+  margin-left: 2.6rem;
+}.cta-link:hover {
+  border-bottom: 2px solid #66bbff;
 }
 
-.nav-list-mobile{
-    display: none;
+/* iPhone 11 Section */.iphone-11 {
+  background: url(iphone_11_large.jpg);
+}.title-dark {
+  color: #ffffff;
+  text-align: center;
+}.title-dark-1 {
+  color: #000000;
+  text-align: center;
+}.cta-link-darker {
+  color: #0070c9;
+}.cta-link-darker:hover {
+  border-bottom: #0070c9;
+}.watch {
+  background: url(harmonytunes735.mp4);
+}.title-heading-watch {
+  height: 7.8rem;
+  background: url(logo_watch_large.png) center no-repeat;
+  background-size: auto 7.8rem;
+  margin-top: 1.6rem;
 }
 
-.nav-link{
-    font-size: 1.4rem;
-    color: #fff;
-    padding: 0 1rem;
-    transition: opacity .5s;
+/* moved to the bottom of all section styles to keep consistent styles */.hero {
+  height: 69.2rem;
+  background-size: auto 73.6rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 0.6rem solid #fff;
+  border-bottom: 0.6em solid #fff;
+}.iphone-11-pro {
+  border-top: none;
 }
 
-.nav-link:hover{
-    opacity: .7;
-}
-
-.nav-link-apple{
-    width: 1.8rem;
-    height: 4.4rem;
-    background: url(un-web.png) center no-repeat;
-}
-
-.nav-link-search{
-    width: 1.6rem;
-    height: 4.4rem;
-    background: url(search.svg) center no-repeat;
-}
-
-.nav-link-bag{
-    width: 1.4rem;
-    height: 4.4rem;
-    background: url(bag.svg) center no-repeat;
-}
-
-/* moved to the bottom of all section styles to keep consistent styles */
-.hero{
-    height: 69.2rem;
-    background-size: auto 73.6rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-top: .6rem solid #fff;
-    border-bottom: .6em solid #fff;
-}
-
-.iphone-11-pro{
-    border-top: none;
-}
 /* end */
 
-@media screen and (max-width: 1068px){
+@media screen and (max-width: 1068px) {
+.iphone-11-pro {
+    background-image: url("test2.mp4");
+  }
 
-    .hero{
-        height: 65rem;
-        background-size: auto 69.8rem;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-    }
+.iphone-11 {
+    background-image: url(dt-2025-02-04_00.47.png);
+  }
+
+.watch {
+    background-image: url("harmony1068.mp4");
+  }
+
+.hero {
+    height: 65rem;
+    background-size: auto 69.8rem;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
+
+.title-heading {
+    font-size: 4.4rem;
+  }
+
+.title-sub-heading {
+    font-size: 2.4rem;
+  }
+
+.cta-link:nth-child(2) {
+    margin-left: 2rem;
+  }
+
+.title-heading-watch {
+    height: 6.2rem;
+    background: url(logo_watch_medium.png) center no-repeat;
+    background-size: auto 6.2rem;
+  }
 
 }
 
-@media screen and (max-width: 767px){
-    header{
-        height: 4.8rem;
-        transition: background .36s cubic-bezier(0.32,0.08, 0.24, 1),
-                    height .56s cubic-bezier(0.32,0.08, 0.24, 1);
-    }
+@media screen and (max-width: 767px) {
+  header {
+    height: 4.8rem;
+    transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+      height 0.56s cubic-bezier(0.32, 0.08, 0.24, 1);
+  }
 
-    header .container{
-        padding: 0;
-    }
+  header.container {
+    padding: 0;
+  }
 
-    .nav-list{
-        margin: 0;
-    }
+.iphone-11-pro {
+    margin-top: 4.8rem;
+  }
 
-    .nav-list-mobile{
-        display: flex;
-    }
+.nav-list {
+    margin: 0;
+  }
 
-    .nav-item{
-        width: 4.8rem;
-        height: 4.8rem;
-        display: flex;
-        justify-content: center;
-    }
+.nav-list-mobile {
+    display: flex;
+  }
 
-    .nav-item-hidden{
-        display: none;
-    }
+.nav-item {
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+  }
 
-    .mobile-menu{
-        position: relative;
-        z-index: 1500;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
+.nav-item-hidden {
+    display: none;
+  }
 
-    .line{
-        position: absolute;
-        width: 1.7rem;
-        height: 1px;
-        background-color: #fff;
-        transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-    }
+.mobile-menu {
+    position: relative;
+    z-index: 1500;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-    .line.top{
-        margin-top: 3px;
-    }
+.line {
+    position: absolute;
+    width: 1.7rem;
+    height: 1px;
+    background-color: #fff;
+    transition: margin-top 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
 
-    .line-bottom{
-        margin-top: -.4rem;
-    }
+.line.top {
+    margin-top: 3px;
+  }
 
-   .active .line-top{
+.line-bottom {
+    margin-top: -0.4rem;
+  }
+
+.active.line-top {
     margin-top: 0;
     transform: rotate(45deg);
-    transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-   }
+    transition: transform 0.3192s 0.1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
 
-   .active .line-bottom{
+.active.line-bottom {
     margin-top: 0;
     transform: rotate(-45deg);
-    transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-   }
+    transition: transform 0.3192s 0.1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
 
-   header.active{
+  header.active {
     height: 100%;
     background-color: #000;
-   }
+  }
 
-   .nav-link-apple{
-    width: 4.8rem;
+.nav-link-apple {
+    width: 100px;
     height: 4.8rem;
     position: relative;
     z-index: 1500;
-   }
+  }
 
-   .nav-link-bag{
+.nav-link-bag {
     width: 1.6rem;
     height: 4.8rem;
     transition: opacity 3s;
-   }
+  }
 
-   .nav{
+.nav {
     position: relative;
-   }
+  }
 
-   .nav-link{
+.nav-link {
     font-size: 1.7rem;
     padding: 0;
     margin: auto 0;
-   }
+  }
 
-   .nav-list-larger{
+.nav-list-larger {
     position: fixed;
     top: 0;
     left: 0;
@@ -212,285 +296,454 @@ header{
     box-sizing: border-box;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s;
-   }
+    transition: opacity.3s;
+  }
 
-.active .nav-list-larger{
+.active.nav-list-larger {
     width: 100%;
     height: 100vh;
     opacity: 1;
     visibility: visible;
+  }
+
+.active.nav-link-bag {
+    opacity: 0;
+    transition: opacity.3s;
+  }
+
+.nav-list-larger.nav-item {
+    width: 100%;
+    justify-content: flex-start;
+    border-bottom: 2px solid rgba(255, 255, 255,.1);
+  }
+
+.nav-list-larger.nav-item:nth-child(9) {
+    border-bottom: none;
+  }
+
+.active.nav-list-larger.nav-item {
+    animation: fadeIn 1s ease-in
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-    
-    .active .nav-link-bag{
-        opacity: 0;
-        transition: opacity .3s;
+
+    to {
+      opacity: 1;
     }
+  }
 
-    .nav-list-larger .nav-item{
-        width: 100%;
-        justify-content: flex-start;
-        border-bottom: 2px solid rgba(255, 255, 255, .1);
-    }
-
-    .nav-list-larger .nav-item:nth-child(9){
-        border-bottom: none;
-    }
-
-    .active .nav-list-larger .nav-item{
-        animation: fadeIn 1s ease-in
-    }
-    
-    @keyframes fadeIn {
-        from{
-            opacity: 0;
-        }
-        to{
-            opacity: 1;
-        }
-    }
-}
-/* end */
-body{
-    background-color: black;
-    color: #fff;
-    margin-top: 50px;
-}
-/*footer*/
-.footer{
-    margin-top: 5px;
-    width: 70%;
-    padding: 100px 15%;
-    background: #000000;
-    color: #ffffff;
-    display: flex;
-}
-.footer div{
-    text-align: center;
 }
 
-.col-2{
-    flex-grow: 2;
-}
+@media screen and (max-width: 735px) {
+.iphone-11-pro {
+    background-image: url("test2.mp4");
+  }
 
-.footer div h3{
-    font-weight: 300;
-    margin-bottom: 130px;
-    letter-spacing: 1px;
-}
+.iphone-11 {
+    background-image: url(iphone_11_small.jpg);
+  }
 
-.col-1 a{
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    margin-bottom: 30px;
-    left: 5rem;
-}
+.watch {
+    background-image: url("harmonytunes735.mp4");
+  }
 
-.col-1 a:hover{
-    background-color: none; 
-    color: #6d6d6d; 
-    border: none;
-    transition: opacity ease-in-out 3s;
-    cursor: pointer;
-}
+.hero {
+    height: 50rem;
+    background-size: auto 54.8rem;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
 
-form input{
-    width: 150px;
-    height: 25px;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    border: 2px solid #ffffff;
-}
+.title {
+    padding: 3.7rem;
+  }
 
-form button{
-    background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 15px;
-    cursor: pointer;
-}
+.title-heading {
+    font-size: 3.2rem;
+  }
 
-form button:hover{
-    background-color: #ffffff; 
-    color: #0d0d0d; 
-    border: 2px solid #000000;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 15px;
-    transition: opacity ease-in-out 3s;
-    cursor: pointer;
-}
+.title-sub-heading {
+    font-size: 1.9rem;
+  }
 
-.social-icons{
-    margin-top: 15px;
-}
+.title-heading-watch {
+    margin-top: -.5rem;
+    margin-bottom: 0;
+  }
 
-.social-icons i{
-    font-size: 22px;
-    margin: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #ffffff;
-    transition: opacity ease-in-out 3s;
-}
+.title-price {
+    font-size: 1.4rem;
+  }
 
-.social-icons i:hover{
-    background-color: none; 
-    color: #7e7e7e; 
-    border: 3px solid none;
-    cursor: pointer;
-}
+.cta {
+    margin-top:.7rem;
+  }
 
-/* Integrated Code */
-/* Video Thumbnail Carousel */
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.carousel {
+.cta-link {
+    font-size: 1.9rem;
+  }
+}.footer {
+  margin-top: 5px;
+  width: 70%;
+  padding: 100px 15%;
+  background: #333;
+  color: #efefef;
   display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.video-thumbnail {
-  flex: 0 0 auto;
-  margin-right: 20px;
-}
-
-/* Pagination */
-.pagination {
+}.footer div {
   text-align: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  padding: 8px 16px;
-  margin: 0 5px;
-}
-
-.pagination .currentPage {
-  font-weight: bold;
-}
-
-/* YouTube Channel Page Styles */
-
-/* Profile Section */
-.profile-section {
-  position: relative;
-  width: 100%;
-  height: 200px; /* Adjust height as needed */
-  background-image: url('profile-banner.jpg'); /* Add your banner image URL */
-  background-size: cover;
-  background-position: center;
-}
-
-.profile-picture {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Adjust size as needed */
-  border-radius: 50%;
-  background-color: #fff; /* Add background color if no picture */
-  /* Add background image if available */
-  /* background-image: url('profile-picture.jpg'); */
-  /* background-size: cover; */
-  /* background-position: center; */
-}
-
-.channel-info {
-  position: absolute;
-  top: 20px;
-  left: 200px; /* Adjust distance from profile picture */
-}
-
-.channel-name {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-#subscribeBtn{
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #ff0000; /* Adjust button color */
-  border: 5px solid #ff0000;
-  border-radius: 5px;
+}.col-2 {
+  flex-grow: 2;
+}.footer div h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}.col-1 a {
+  display: block;
+  text-decoration: none;
+  color: #efefef;
+  margin-bottom: 30px;
+  left: 5rem;
+}.col-1 a:hover {
+  background-color: none;
+  color: #6d6d6d;
+  border: none;
+  transition: opacity ease-in-out 3s;
   cursor: pointer;
 }
 
-/* Video Section */
-.video-section {
+form input {
+  width: 150px;
+  height: 25px;
+  border-radius: 4px;
+  text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+}
+
+form button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: opacity ease-in-out 3s;
+  cursor: pointer;
+}.social-icons {
+  margin-top: 15px;
+}.social-icons i {
+  font-size: 22px;
+  margin: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}.social-icons i:hover {
+  background-color: none;
+  color: #7e7e7e;
+  border: 3px solid none;
+  transition: opacity ease-in-out 3s;
+  cursor: pointer;
+}.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222222;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  animation: popup 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes popup {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}.popup h2 {
+  color: red;
+}.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background: floralwhite;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  gap: 5px;
+}
+
+button:hover {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background: gray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}.hero {
+  position: relative;
+}.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/*ending*/
+
+/* Netflix-inspired styles (Added after your existing CSS) */
+
+body {
+  background-color: #141414;
+  /* Netflix dark background */
+  color: #fff;
+}
+
+/* Featured Video Section */.featured-video {
+  padding: 40px 0;
+  /* Increased padding */
+  background-color: #141414;
+}.featured-video iframe {
+  width: 100%;
+  height: 0;
+  /* Maintain aspect ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio (9 / 16 * 100) */
+  position: relative;
+  border: 0;
+}
+
+/* Video Categories Navigation */.video-categories {
+  background-color: #141414;
+  padding: 20px 0;
+  border-bottom: 1px solid #222;
+  /* Subtle divider */
+}.video-categories.container {
+  /* More specific selector */
+  display: flex;
+  /* Use flexbox for horizontal layout */
+  justify-content: center;
+  /* Center the buttons */
+}.category-btn {
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  /* Slightly lighter text */
+  padding: 10px 20px;
+  margin: 0 10px;
+  /* Space between buttons */
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: color 0.3s;
+  /* Smooth transition for color */
+}.category-btn:hover,.category-btn.active {
+  color: #fff;
+  /* White on hover and active */
+}
+
+/* Video Grid */.video-grid {
+  padding: 40px 0;
+  background-color: #141414;
+}.video-grid-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Responsive columns */
+  gap: 20px;
+}.video-wrapper {
+  position: relative;
+  overflow: hidden;
+}.video-wrapper iframe {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  position: relative;
+  border: 0;
+}.video-title {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Channel Info Section */.channel-info {
+  background-color: #141414;
+  /* Match background */
+  padding: 40px 0;
+  border-bottom: 1px solid #222;
+}.channel-info-content {
+  display: flex;
+  align-items: center;
+}.channel-logo {
+  width: 150px;
+  /* Increased logo size */
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}.channel-name {
+  font-size: 2.4rem;
+  /* Increased font size */
+  margin: 0;
+}.channel-description {
+  font-size: 1.6rem;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+#subscribeBtn {
+  background-color: #e50914;
+  /* Netflix red */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
+  transition: background-color 0.3s;
+  /* Smooth transition */
+}
+
+#subscribeBtn:hover {
+  background-color: #c50711;
+  /* Darker red on hover */
+}
+
+/* Footer */.footer {
+  background-color: #141414;
+  padding: 40px 0;
+  /* Increased padding */
+  border-top: 1px solid #222;
+  width: 100%;
+}.footer.container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.video-wrapper {
-  width: calc(33.33% - 20px); /* Adjust width and spacing */
+  justify-content: space-around;
+}.footer div {
+  text-align: left;
+  /* Align text to the left within each column */
   margin-bottom: 20px;
+  /* Add some spacing between columns */
+  flex: 1 1 30%;
+  /* Each column takes roughly 30% width */
+}.footer div h3 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+  /* Reduced margin */
+}.col-1 a {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  /* Reduced margin */
 }
 
-.video-thumbnail {
-  width: 100%;
-  height: auto;
-}
+/* Media Queries (Adjust as needed) */
+@media screen and (max-width: 767px) {
+
+  /*... (Your existing media queries) */
+.channel-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+.channel-name {
+    font-size: 2rem;
+  }
+
+.channel-description {
+    font-size: 1.4rem;
+  }
+
+.category-btn {
+    font-size: 1.4rem;
+    padding: 8px 16px;
+  }
 
 .video-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* About Channel Section */
-.about-section {
-  margin-top: 20px;
-}
-
-.about-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.about-description {
-  font-size: 16px;
-  color: #666;
-}
-#settingsBtn{
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    background-color: #ffffff; /* Adjust button color */
-    border: 2px solid #000000;
-    border-radius: 3%;
-    cursor: pointer;
-}
-u #channel-link{
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
+    font-size: 1.4rem;
   }
-  
-  /* Add a hover effect for links */
-  #channel-link:hover {
-    color: rgb(255, 251, 0);
-    border: solid 5px #000;
-    background-color: #000;
-  }
-  
+}
+
+/* New CSS for redesign (added after the original CSS) */.hero {
+  position: relative;
+  height: 69.2rem;
+  /* Use existing hero height */
+  overflow: hidden;
+  /* Ensure video stays within container */
+}.background-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Place video behind content */
+}.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}.hero-content {
+  position: relative;
+  /* Position content relative to hero */
+  z-index: 1;
+  /* Ensure content is above video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* Take full height of hero */
+  text-align: center;
+  /* Center text within hero */
+}.title-heading {
+  font-size: 5.6rem;
+  margin-bottom: 1rem;
+}.title-sub-heading {
+  font-size: 2.65rem;
+}.cta {
+  margin-top: 2rem;
+}.cta-link {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent background */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}.cta-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

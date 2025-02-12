@@ -1,8 +1,10 @@
+// Cart functionality (Keep this intact)
+
 const productList = document.querySelector('.product-list');
 const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) ||
 
 function updateCart() {
     cartItems.innerHTML = '';
@@ -36,7 +38,7 @@ function addToCart(productId) {
 }
 
 function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
+    cart = cart.filter(item => item.id!== productId);
     updateCart();
 }
 
@@ -73,3 +75,32 @@ cartItems.addEventListener('click', (event) => {
 });
 
 updateCart();
+
+// Video category functionality (Add this after the cart code)
+
+const categoryBtns = document.querySelectorAll('.category-btn');
+const videoGrid = document.getElementById('videos');
+const shortsGrid = document.getElementById('shorts');
+
+categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to the clicked button
+        btn.classList.add('active');
+
+        const category = btn.textContent.toLowerCase();
+
+        if (category === 'videos') {
+            videoGrid.style.display = 'grid';
+            shortsGrid.style.display = 'none';
+        } else if (category === 'shorts') {
+            videoGrid.style.display = 'none';
+            shortsGrid.style.display = 'grid';
+        } else if (category === 'playlists') {
+            videoGrid.style.display = 'none';
+            shortsGrid.style.display = 'none'; // Or display playlist content
+            // Add code to load and display playlists
+        }
+    });
+});

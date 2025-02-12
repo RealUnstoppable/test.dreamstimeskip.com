@@ -1,4 +1,6 @@
 /* global */
+
+/* for header to work start */
 *,
 *::before,
 ::after{
@@ -418,6 +420,10 @@ header{
     }
 }
 
+/* for header to work end */
+
+/* footer start */
+
 .footer{
     margin-top: 5px;
     width: 70%;
@@ -506,6 +512,8 @@ form button:hover{
     transition: opacity ease-in-out 3s;
     cursor: pointer;
 }
+
+/* footer end */
 
 .popup-container {
     display: none;
