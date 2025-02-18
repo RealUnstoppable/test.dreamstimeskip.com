@@ -48,7 +48,7 @@ const facts = {
     '2025-01-06': 'Fact about Jan 06th',
     '2025-01-05': 'Fact about Jan 05th',
     '2025-01-04': 'Fact about Jan 04th',
-    '2025-01-03': 'Fact about Jan 03rd',
+    '2025-01-03': 'Who were the 4 Beatles? The Beatles were an English rock band that formed in Liverpool in 1960. With members John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the greatest and most influential act of the rock era.'
     '2025-01-02': 'Why do our teeth chatter when we are cold? When it is cold outside and your body temperature starts to drop, the hypothalamus sends a message to your body that it needs to warm up. One way it does that is through your muscles, which generate heat by shivering. Teeth chattering is just a form of shivering.',
     '2025-01-01': 'Which month has the most sunlight in the northern hemisphere? In the Northern Hemisphere, winter generally begins on December 21 or 22. This is the winter solstice, the day of the year with the shortest period of daylight. Summer begins on June 20 or 21, the summer solstice, which has the most daylight of any day in the year.'
 };
