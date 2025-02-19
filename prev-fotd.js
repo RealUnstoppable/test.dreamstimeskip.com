@@ -3,9 +3,12 @@ const factsContainer = document.getElementById('facts-container');
 // Sample facts data (replace with your actual data)
 const facts = {
     
-    '2025-02-16': 'Fact about Feb 13th',
-    '2025-02-15': 'Fact about Feb 13th',
-    '2025-02-14': 'Fact about Feb 13th',
+    '2025-02-19': 'What Is A Claddagh Ring and what does it mean? Claddagh ring. The Claddagh ring (Irish: fáinne Chladaigh) is a traditional Irish ring given which represents love, loyalty, and friendship (the hands represent friendship, the heart represents love, and the crown represents loyalty).',
+    '2025-02-18': 'When was glass first made? Archaeologists have found evidence of man-made glass which dates back to 4000 BC; this took the form of glazes used for coating stone beads. It was not until 1500 BC that the first hollow glass container was made by covering a sand core with a layer of molten glass.',
+    '2025-02-17': 'How are Franklin D Roosevelt and Teddy Roosevelt related? While many Americans may assume that President Franklin D. Roosevelt (1933-1945) was the son of Theodore Roosevelt (1901-1909), the two former presidents who led the country three decades apart were actually fifth cousins. Their closest tie was FDR is wife Eleanor who was also the niece of President Theodore Roosevelt.',
+    '2025-02-16': 'Which planet is made of ice? Neptune, like Uranus, is one of the two outer planets known as an "ice giant." Made up of more ices than Jupiter and Saturn, the chilly body almost seems to be in a class by itself. Different images emphasize the features on Neptune.',
+    '2025-02-15': 'Fact about Feb 15th',
+    '2025-02-14': 'Fact about Feb 14th',
     '2025-02-13': 'Fact about Feb 13th',
     '2025-02-12': 'Fact about Feb 12th',
     '2025-02-11': 'Fact about Feb 11th',
@@ -42,15 +45,15 @@ const facts = {
     '2025-01-12': 'Fact about Jan 12th',
     '2025-01-11': 'Fact about Jan 11th',
     '2025-01-10': 'Fact about Jan 10th',
-    '2025-01-09': 'Fact about Jan 09th',
-    '2025-01-08': 'Fact about Jan 08th',
-    '2025-01-07': 'Fact about Jan 07th',
-    '2025-01-06': 'Fact about Jan 06th',
-    '2025-01-05': 'Fact about Jan 05th',
-    '2025-01-04': 'Fact about Jan 04th',
-    '2025-01-03': 'Who were the 4 Beatles? The Beatles were an English rock band that formed in Liverpool in 1960. With members John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the greatest and most influential act of the rock era.'
+    '2025-01-09': 'How much did Heinz sell for? H.J. Heinz Co. is eliminating 600 jobs across the U.S. and in Canada, including 350 in Pittsburgh, nearly a third of the operation in its hometown, it said Tuesday. The ketchup maker was sold in June to Buffett is Berkshire Hathaway and the Brazilian investment firm 3G Capital for $23.3 billion.',
+    '2025-01-08': 'How many moons does Mars have? Mars has two moons, Phobos and Deimos, which are thought to be captured asteroids. Both satellites were discovered in 1877 by Asaph Hall and are named after the characters Phobos (panic/fear) and Deimos (terror/dread) who, in Greek mythology, accompanied their father Ares, god of war, into battle.',
+    '2025-01-07': 'What oceans are there? Historically, there are four named oceans: the Atlantic, Pacific, Indian, and Arctic. However, most countries—including the United States—now recognize the Southern (Antarctic) as the fifth ocean. The Pacific, Atlantic, and Indian are known as the three major oceans.',
+    '2025-01-06': 'Do babies have kneecaps when they are born? As such, it takes a little longer than some bones to, well, become bone. Although it doesn not show up on X-rays, your baby does in fact have kneecaps. They are just not bony kneecaps. At birth, these kneecaps are still cartilage, and remain so for a few years.',
+    '2025-01-05': 'How long does a migraine usually last? Migraines are disabling headaches that most likely stem from problems with the nerves and blood vessels in the head. Migraine headaches typically last from 4-72 hours. They may occur as often as several times a week to only once a year. People who have migraines are called migraineurs.',
+    '2025-01-04': 'What countries use chopsticks? Chopsticks originated in ancient China and later spread to Vietnam, Korea and Japan. They can also be found in some areas of Tibet and Nepal that are close to Han Chinese populations. Chopsticks are smoothed and frequently tapered, and are commonly made of bamboo, plastic, wood, or stainless steel.',
+    '2025-01-03': 'Who were the 4 Beatles? The Beatles were an English rock band that formed in Liverpool in 1960. With members John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the greatest and most influential act of the rock era.',
     '2025-01-02': 'Why do our teeth chatter when we are cold? When it is cold outside and your body temperature starts to drop, the hypothalamus sends a message to your body that it needs to warm up. One way it does that is through your muscles, which generate heat by shivering. Teeth chattering is just a form of shivering.',
-    '2025-01-01': 'Which month has the most sunlight in the northern hemisphere? In the Northern Hemisphere, winter generally begins on December 21 or 22. This is the winter solstice, the day of the year with the shortest period of daylight. Summer begins on June 20 or 21, the summer solstice, which has the most daylight of any day in the year.'
+    '2025-01-01': 'Which month has the most sunlight in the northern hemisphere? In the Northern Hemisphere, winter generally begins on December 21 or 22. This is the winter solstice, the day of the year with the shortest period of daylight. Summer begins on June 20 or 21, the summer solstice, which has the most daylight of any day in the year.',
 };
 
 

@@ -131,7 +131,8 @@ header{
 
 /* iPhone 11 Section */
 .iphone-11{
-    background: url(iphone_11_large.jpg);
+    background: url(dreams_large.png);
+    background-color: #acbdd1;
 }
 
 .title-dark{
