@@ -3,6 +3,7 @@ const factsContainer = document.getElementById('facts-container');
 // Sample facts data (replace with your actual data)
 const facts = {
     
+    '2025-02-20': 'What is the ocean that borders Antarctica? The Southern Ocean contains the waters that surround Antarctica and sometimes is considered an extension of Pacific, Atlantic and Indian Oceans. In 1928, the first edition of the International Hydrographic Organizations (IHO) Limits of Oceans and Seas publication included the Southern Ocean around Antarctica.',
     '2025-02-19': 'What Is A Claddagh Ring and what does it mean? Claddagh ring. The Claddagh ring (Irish: fáinne Chladaigh) is a traditional Irish ring given which represents love, loyalty, and friendship (the hands represent friendship, the heart represents love, and the crown represents loyalty).',
     '2025-02-18': 'When was glass first made? Archaeologists have found evidence of man-made glass which dates back to 4000 BC; this took the form of glazes used for coating stone beads. It was not until 1500 BC that the first hollow glass container was made by covering a sand core with a layer of molten glass.',
     '2025-02-17': 'How are Franklin D Roosevelt and Teddy Roosevelt related? While many Americans may assume that President Franklin D. Roosevelt (1933-1945) was the son of Theodore Roosevelt (1901-1909), the two former presidents who led the country three decades apart were actually fifth cousins. Their closest tie was FDR is wife Eleanor who was also the niece of President Theodore Roosevelt.',
