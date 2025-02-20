@@ -8,7 +8,7 @@ const facts = {
     '2025-02-18': 'When was glass first made? Archaeologists have found evidence of man-made glass which dates back to 4000 BC; this took the form of glazes used for coating stone beads. It was not until 1500 BC that the first hollow glass container was made by covering a sand core with a layer of molten glass.',
     '2025-02-17': 'How are Franklin D Roosevelt and Teddy Roosevelt related? While many Americans may assume that President Franklin D. Roosevelt (1933-1945) was the son of Theodore Roosevelt (1901-1909), the two former presidents who led the country three decades apart were actually fifth cousins. Their closest tie was FDR is wife Eleanor who was also the niece of President Theodore Roosevelt.',
     '2025-02-16': 'Which planet is made of ice? Neptune, like Uranus, is one of the two outer planets known as an "ice giant." Made up of more ices than Jupiter and Saturn, the chilly body almost seems to be in a class by itself. Different images emphasize the features on Neptune.',
-    '2025-02-15': 'Fact about Feb 15th',
+    '2025-02-15': 'What does menthol come from? Menthol is an organic compound made synthetically or obtained from cornmint, peppermint or other mint oils. It is a waxy, crystalline substance, clear or white in color, which is solid at room temperature and melts slightly above.',
     '2025-02-14': 'Fact about Feb 14th',
     '2025-02-13': 'Fact about Feb 13th',
     '2025-02-12': 'Fact about Feb 12th',
