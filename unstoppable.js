@@ -1,37 +1,25 @@
 // unstoppable.js
+document.addEventListener('DOMContentLoaded', () => {
+    const videoGrid = document.getElementById('video-grid');
 
-// Mobile Menu Toggle
-const mobileMenu = document.querySelector('.mobile-menu');
-const navListLarger = document.querySelector('.nav-list-larger');
+    // Sample video data (replace with your actual data from YouTube API or a data source)
+    const videos = [
+        { title: 'Video 1 Title', thumbnail: 'video1.jpg', videoId: 'VIDEO_ID_1' },  // Replace with actual data
+        { title: 'Video 2 Title', thumbnail: 'video2.jpg', videoId: 'VIDEO_ID_2' },
+        { title: 'Video 3 Title', thumbnail: 'video3.jpg', videoId: 'VIDEO_ID_3' },
+        // ... more videos
+    ];
 
-mobileMenu.addEventListener('click', () => {
-    navListLarger.classList.toggle('active');
-    mobileMenu.classList.toggle('active'); // Toggle the 'active' class on the mobile menu icon
-});
+    videos.forEach(video => {
+        const videoDiv = document.createElement('div');
+        videoDiv.classList.add('video-thumbnail');
+        videoDiv.innerHTML = `<img src="${video.thumbnail}" alt="${video.title}">`;
 
-
-// Video Category Navigation
-const categoryBtns = document.querySelectorAll('.category-btn');
-const videoSections = document.querySelectorAll('.video-section'); // Select all video sections
-
-categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        categoryBtns.forEach(b => b.classList.remove('active'));
-
-        // Add active class to the clicked button
-        btn.classList.add('active');
-
-        // Hide all video sections
-        videoSections.forEach(section => {
-            section.style.display = 'none';
+        videoDiv.addEventListener('click', () => {
+            // Redirect to the YouTube video when the thumbnail is clicked
+            window.open(`https://www.youtube.com/watch?v=${video.videoId}`, '_blank'); // Opens in a new tab
         });
 
-        // Show the corresponding video section
-        const category = btn.textContent.toLowerCase();
-        const selectedSection = document.getElementById(category);
-        if (selectedSection) {
-            selectedSection.style.display = 'block';
-        }
+        videoGrid.appendChild(videoDiv);
     });
 });
