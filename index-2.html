@@ -126,11 +126,26 @@
             <h3>Join Our Newsletter for 10% Off</h3>
             <form id="newsletterForm" action="submit.php" method="post">
                 <span id="emailError" style="color: red; display: none;">Please enter a valid email address</span>
-                <input type="email" id="emailInput" name="email" placeholder="Email Address">
+                <input type="email" id="emailInput" name="email" placeholder="Email Address" required>
                 <br>
-                <button type="submit" onclick="return validateForm()">Subscribe</button>
+                <button type="submit">Subscribe</button>
             </form>
-        </div>                  
+        </div>
+        
+        <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+                const emailInput = document.getElementById('emailInput');
+                const emailError = document.getElementById('emailError');
+        
+                if (!emailInput.checkValidity()) {
+                    event.preventDefault(); // Prevent form submission
+                    emailError.style.display = 'inline'; // Show error message
+                } else {
+                    emailError.style.display = 'none'; // Hide error message if valid
+                }
+            });
+        </script>
+                
         <div class="col-3">
             <h3>Socials</h3>
             <p>Follow<br>Us!</p>
