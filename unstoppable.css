@@ -7,6 +7,13 @@ body {
   background-color: #000000; /* Light gray background */
   color: #ffffff; /* Dark gray text color */
 }
+p{
+    color: #000;
+}
+
+h1{
+    color: #000;
+}
 
 .container {
   max-width: 1200px;
