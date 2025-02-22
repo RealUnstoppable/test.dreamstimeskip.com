@@ -2,6 +2,7 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+    '02-22-2025': 'How many white keys are there on a piano? Almost every modern piano has 52 white keys and 36 black keys for a total of 88 keys (seven octaves plus a minor third, from A0 to C8). Many older pianos only have 85 keys (seven octaves from A0 to A7). Some piano manufacturers extend the range further in one or both directions.',
     '02-21-2025': 'What continent is Russia in? The Asian part of Russia is known as Siberia. However, in terms of population, the situation is reversed: Roughly three out of four Russians live in the European part of the country and just one out of four live in the Asian part. Europe and Asia actually share a single landmass, which is known as Eurasia.',
     '02-20-2025': 'What is the ocean that borders Antarctica? The Southern Ocean contains the waters that surround Antarctica and sometimes is considered an extension of Pacific, Atlantic and Indian Oceans. In 1928, the first edition of the International Hydrographic Organizations (IHO) Limits of Oceans and Seas publication included the Southern Ocean around Antarctica.',
     '02-19-2025': 'What Is A Claddagh Ring and what does it mean? Claddagh ring. The Claddagh ring (Irish: fáinne Chladaigh) is a traditional Irish ring given which represents love, loyalty, and friendship (the hands represent friendship, the heart represents love, and the crown represents loyalty).',
@@ -9,7 +10,7 @@ const facts = {
     '02-17-2025': 'How are Franklin D Roosevelt and Teddy Roosevelt related? While many Americans may assume that President Franklin D. Roosevelt (1933-1945) was the son of Theodore Roosevelt (1901-1909), the two former presidents who led the country three decades apart were actually fifth cousins. Their closest tie was FDR is wife Eleanor who was also the niece of President Theodore Roosevelt.',
     '02-16-2025': 'Which planet is made of ice? Neptune, like Uranus, is one of the two outer planets known as an "ice giant." Made up of more ices than Jupiter and Saturn, the chilly body almost seems to be in a class by itself. Different images emphasize the features on Neptune.',
     '02-15-2025': 'What does menthol come from? Menthol is an organic compound made synthetically or obtained from cornmint, peppermint or other mint oils. It is a waxy, crystalline substance, clear or white in color, which is solid at room temperature and melts slightly above.',
-    '02-14-2025': 'Fact about Feb 14th',
+    '02-14-2025': 'Where is the Fly Geyser? Fly Geyser, also known as Fly Ranch Geyser is a small geothermal geyser that is located approximately 20 miles (32 km) north of Gerlach in Washoe County, Nevada. The Geyser is located in Hualapai Flat, about 1/3 of a mile from State Route 34.',
     '02-13-2025': 'Fact about Feb 13th',
     '02-12-2025': 'Fact about Feb 12th',
     '02-11-2025': 'Fact about Feb 11th',
