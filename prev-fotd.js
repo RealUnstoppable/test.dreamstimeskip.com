@@ -46,7 +46,7 @@ const facts = {
     '2025-01-13': 'Fact about Jan 13th',
     '2025-01-12': 'Fact about Jan 12th',
     '2025-01-11': 'Fact about Jan 11th',
-    '2025-01-10': 'Fact about Jan 10th',
+    '2025-01-10': 'Which country first adopted time zones? On November 2, 1868, the then-British colony of New Zealand officially adopted a standard time to be observed throughout the colony, and was perhaps the first country to do so. It was based on the longitude 172°30′ East of Greenwich, that is 11 hours 30 minutes ahead of GMT.',
     '2025-01-09': 'How much did Heinz sell for? H.J. Heinz Co. is eliminating 600 jobs across the U.S. and in Canada, including 350 in Pittsburgh, nearly a third of the operation in its hometown, it said Tuesday. The ketchup maker was sold in June to Buffett is Berkshire Hathaway and the Brazilian investment firm 3G Capital for $23.3 billion.',
     '2025-01-08': 'How many moons does Mars have? Mars has two moons, Phobos and Deimos, which are thought to be captured asteroids. Both satellites were discovered in 1877 by Asaph Hall and are named after the characters Phobos (panic/fear) and Deimos (terror/dread) who, in Greek mythology, accompanied their father Ares, god of war, into battle.',
     '2025-01-07': 'What oceans are there? Historically, there are four named oceans: the Atlantic, Pacific, Indian, and Arctic. However, most countries—including the United States—now recognize the Southern (Antarctic) as the fifth ocean. The Pacific, Atlantic, and Indian are known as the three major oceans.',
