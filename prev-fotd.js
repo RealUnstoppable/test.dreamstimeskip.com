@@ -2,6 +2,12 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+
+
+    '02-25-2025': 'When was alcohol made legal again? Alcohol consumption was never illegal under federal law. Nationwide prohibition did not begin in the United States until 1920, when the Eighteenth Amendment to the U.S. Constitution went into effect, and was repealed in 1933, with the ratification of the Twenty-first Amendment.',
+    '02-24-2025': 'What color was originally associated with Saint Patricks Day? A particular blue hue was known as St. Patrick blue and for hundreds of years it was this blue that was associated with the holiday. However, green became the dominant color of St Patricks day over time as the holiday was used to highlight Irish nationalism against British rule in the 1790s.',
+    '02-23-2025': 'Why do firefighters have Dalmations? Dalmatians are perhaps best known for their role as fire-fighting apparatus escorts and firehouse mascots. Since Dalmatians and horses are very compatible, the dogs were easily trained to run in front of the carriages to help clear a path and quickly guide the horses and firefighters to the fires.',
+    '02-22-2025': 'Why is it called Greenland? The name Greenland comes from Scandinavian settlers. In the Norse sagas, it is said that Erik the Red was exiled from Iceland for murder. He set out in ships to find land rumoured to be to the northwest. After settling there, he named the land Grfnland (Greenland), possibly to attract more people to settle there.',
     '02-22-2025': 'How many white keys are there on a piano? Almost every modern piano has 52 white keys and 36 black keys for a total of 88 keys (seven octaves plus a minor third, from A0 to C8). Many older pianos only have 85 keys (seven octaves from A0 to A7). Some piano manufacturers extend the range further in one or both directions.',
     '02-21-2025': 'What continent is Russia in? The Asian part of Russia is known as Siberia. However, in terms of population, the situation is reversed: Roughly three out of four Russians live in the European part of the country and just one out of four live in the Asian part. Europe and Asia actually share a single landmass, which is known as Eurasia.',
     '02-20-2025': 'What is the ocean that borders Antarctica? The Southern Ocean contains the waters that surround Antarctica and sometimes is considered an extension of Pacific, Atlantic and Indian Oceans. In 1928, the first edition of the International Hydrographic Organizations (IHO) Limits of Oceans and Seas publication included the Southern Ocean around Antarctica.',
@@ -24,8 +30,8 @@ const facts = {
     '02-03-2025': 'Who invented the game of dominoes? History of Dominoes. Tile games have been found in China as early as 1120 CE. Some historical accounts have traced evidence of the existence of the pieces, way back to a soldier-hero named Hung Ming (181-234 CE). Other historians believe that Keung T ai Kung, in the twelfth century BCE had created them.',
     '02-02-2025': 'Is the sun a yellow dwarf star? The sun is classified as a G-type main-sequence star, or G dwarf star, or more imprecisely, a yellow dwarf. Actually, the sun — like other G-type stars — is white, but appears yellow through Earths atmosphere. Stars generally get bigger as they grow older.',
     '02-01-2025': 'What is the size of the biggest snowflake ever recorded? Guinness World Records lists the largest snowflakes as having fallen during a storm in January 1887 at Fort Keogh, in Montana. A rancher nearby, the book says, called them “larger than milk pans” and measured one at 15 inches wide.',
-    '2025-01-31': 'Fact about Jan 31st',
-    '2025-01-30': 'Fact about Jan 30th',
+    '2025-01-31': 'When was the Rococo period? Rococo Style. Rococo Style, style of 18th-century painting and decoration characterized by lightness, delicacy, and elaborate ornamentation. The rococo period corresponded roughly to the reign (1715-74) of King Louis XV of France.',
+    '2025-01-30': 'How many symphonies did Mozart write? For years this was categorized as a Mozart symphony, but later scholarship determined that it was actually composed by Michael Haydn (No. 25), and Mozart wrote only the slow introduction for it. The three final symphonies (Nos. 39-41) were completed in about three months in 1788.',
     // ... add more facts
     '2025-01-29': 'Fact about Jan 29th',
     '2025-01-28': 'Fact about Jan 28th',
