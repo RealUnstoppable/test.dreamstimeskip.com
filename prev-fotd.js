@@ -2,6 +2,8 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+
+  '03-5-2025':"How many frames per second are typically projected in modern movies? Many modern 35 mm film projectors use three-blade shutters to give 72 images per second—each frame is flashed on screen three times. Motion picture film[edit] In the motion picture industry, where traditional film stock is used, the industry standard filming and projection formats are 24 frames per second (fps).",
   '03-4-2025':"Can Animals Dream? In fact, they concluded that animals can have very complex dreams that include memories or replays of events that happened while they were awake. The researchers studied rats that had been trained to run on a track. They mapped and measured brain activity with electrodes while the rats were awake and running.",
   '03-3-2025':"How many symphonies did Mozart write? For years this was categorized as a Mozart symphony, but later scholarship determined that it was actually composed by Michael Haydn (No. 25), and Mozart wrote only the slow introduction for it. The three final symphonies (Nos. 39-41) were completed in about three months in 1788.",
   '03-2-2025':"How many symphonies did Mozart write? For years this was categorized as a Mozart symphony, but later scholarship determined that it was actually composed by Michael Haydn (No. 25), and Mozart wrote only the slow introduction for it. The three final symphonies (Nos. 39-41) were completed in about three months in 1788.",
