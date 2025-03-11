@@ -4,7 +4,7 @@ const factsContainer = document.getElementById('facts-container');
 const facts = {
 
   '03-11-2025':"How many gallons of water does an average household use per day? If your family's water usage is more than that amount, you need to look at your water-use habits. An average usage is 50 gallons/day/person. An average usage for a family of four for a 30-day billing period would be 6,000 gallons or 8 ccf. Teens tend to stay in the shower longer.",
-  '03-10-2025':"Fact about Mar 10th",
+  '03-10-2025':"When was roller skating invented? The first patented roller skate was introduced in 1760 by Belgian inventor John Joseph Merlin. His roller skate wasn't much more than an ice skate with wheels where the blade goes, (a style we would call inlines today).",
   '03-9-2025':"Fact about Mar 9th",
   '03-8-2025':"Fact about Mar 8th",
   '03-7-2025':"Fact about Mar 7th",
