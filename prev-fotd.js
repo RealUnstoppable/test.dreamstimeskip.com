@@ -2,7 +2,8 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
-
+  '03-13-2025':"When was the last time the US Constitution was amended? Twenty-seventh Amendment, amendment (1992) to the Constitution of the United States that required any change to the rate of compensation for members of the U.S. Congress to take effect only after the subsequent election in the House of Representatives.",
+  '03-12-2025':"Who introduced tobacco to France? Nicotine is named after the tobacco plant Nicotiana tabacum, which in turn is named after the French ambassador in Portugal, Jean Nicot de Villemain, who sent tobacco and seeds to Paris in 1560, and who promoted their medicinal use.",
   '03-11-2025':"How many gallons of water does an average household use per day? If your family's water usage is more than that amount, you need to look at your water-use habits. An average usage is 50 gallons/day/person. An average usage for a family of four for a 30-day billing period would be 6,000 gallons or 8 ccf. Teens tend to stay in the shower longer.",
   '03-10-2025':"When was roller skating invented? The first patented roller skate was introduced in 1760 by Belgian inventor John Joseph Merlin. His roller skate wasn't much more than an ice skate with wheels where the blade goes, (a style we would call inlines today).",
   '03-9-2025':"Fact about Mar 9th",
