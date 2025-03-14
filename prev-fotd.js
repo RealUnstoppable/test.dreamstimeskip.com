@@ -2,6 +2,7 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+  '03-14-2025':"How long does it take for a diamond to form? Most natural diamonds are formed at high temperature and pressure at depths of 140 to 190 kilometers (87 to 118 mi) in the Earth's mantle. Carbon-containing minerals provide the carbon source, and the growth occurs over periods from 1 billion to 3.3 billion years (25% to 75% of the age of the Earth).",
   '03-13-2025':"When was the last time the US Constitution was amended? Twenty-seventh Amendment, amendment (1992) to the Constitution of the United States that required any change to the rate of compensation for members of the U.S. Congress to take effect only after the subsequent election in the House of Representatives.",
   '03-12-2025':"Who introduced tobacco to France? Nicotine is named after the tobacco plant Nicotiana tabacum, which in turn is named after the French ambassador in Portugal, Jean Nicot de Villemain, who sent tobacco and seeds to Paris in 1560, and who promoted their medicinal use.",
   '03-11-2025':"How many gallons of water does an average household use per day? If your family's water usage is more than that amount, you need to look at your water-use habits. An average usage is 50 gallons/day/person. An average usage for a family of four for a 30-day billing period would be 6,000 gallons or 8 ccf. Teens tend to stay in the shower longer.",
