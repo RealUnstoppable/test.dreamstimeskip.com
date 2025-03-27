@@ -2,7 +2,7 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
-
+  '03-27-2025':"Where are bees not found? They are found on every continent except Antarctica, in every habitat on the planet that contains insect-pollinated flowering plants. Bees are adapted for feeding on nectar and pollen, the former primarily as an energy source and the latter primarily for protein and other nutrients.",
   '03-15-2025':"How is a day on Venus longer than a year? Unlike planet Earth, it actually takes longer for Venus to rotate on its own axis (representing the cycle of a day) than it does for it to revolve around the sun (representing the cycle of a year).",
   '03-14-2025':"How long does it take for a diamond to form? Most natural diamonds are formed at high temperature and pressure at depths of 140 to 190 kilometers (87 to 118 mi) in the Earth's mantle. Carbon-containing minerals provide the carbon source, and the growth occurs over periods from 1 billion to 3.3 billion years (25% to 75% of the age of the Earth).",
   '03-13-2025':"When was the last time the US Constitution was amended? Twenty-seventh Amendment, amendment (1992) to the Constitution of the United States that required any change to the rate of compensation for members of the U.S. Congress to take effect only after the subsequent election in the House of Representatives.",
