@@ -2,7 +2,23 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+  '04-02-2025':"Where can you find alligators and crocodiles? Alligators are mostly found in the southern United States and the crocodiles in Africa, India, South America, and southern United States. They are among the largest reptiles. Their bodies are covered with scales and they have webbed toes. They live in swamps and along the banks of rivers.",
+  '04-01-2025':"APRIL FOOLS! There are no facts, there never were.",
+  '03-30-2025':"",
+  '03-29-2025':"",
+  '03-28-2025':"",
   '03-27-2025':"Where are bees not found? They are found on every continent except Antarctica, in every habitat on the planet that contains insect-pollinated flowering plants. Bees are adapted for feeding on nectar and pollen, the former primarily as an energy source and the latter primarily for protein and other nutrients.",
+  '03-26-2025':"",
+  '03-25-2025':"",
+  '03-24-2025':"",
+  '03-23-2025':"",
+  '03-22-2025':"",
+  '03-21-2025':"",
+  '03-20-2025':"",
+  '03-19-2025':"",
+  '03-18-2025':"",
+  '03-17-2025':"",
+  '03-16-2025':"",
   '03-15-2025':"How is a day on Venus longer than a year? Unlike planet Earth, it actually takes longer for Venus to rotate on its own axis (representing the cycle of a day) than it does for it to revolve around the sun (representing the cycle of a year).",
   '03-14-2025':"How long does it take for a diamond to form? Most natural diamonds are formed at high temperature and pressure at depths of 140 to 190 kilometers (87 to 118 mi) in the Earth's mantle. Carbon-containing minerals provide the carbon source, and the growth occurs over periods from 1 billion to 3.3 billion years (25% to 75% of the age of the Earth).",
   '03-13-2025':"When was the last time the US Constitution was amended? Twenty-seventh Amendment, amendment (1992) to the Constitution of the United States that required any change to the rate of compensation for members of the U.S. Congress to take effect only after the subsequent election in the House of Representatives.",
