@@ -2,6 +2,8 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+  '04-11-2025':"What was the last film personally overseen by Walt Disney? The Jungle Book (1967) - Trivia - IMDb. The Jungle Book (1967) The last film personally overseen by Walt Disney.",
+  '04-10-2025':"Updating",
   '04-09-2025':"When was the artificial heart invented? “In 1963, Mr. Winchell patented an artificial heart that he said was a collaboration with Henry J. Heimlich, inventor of the maneuver for choking victims. Mr. Winchell's device was considered the prototype for the one designed by Robert K. Jarvik that was successfully implanted in a human in 1982”.",
   '04-08-2025':"Updating",
   '04-07-2025':"Updating",
