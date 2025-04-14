@@ -2,6 +2,7 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
+  '04-14-2025':"How many amendments have been added to the constitution since 1789? Since 1789, over 10,000 amendments to the Constitution have been introduced in Congress. Of those, only 33 were adopted and sent to the states for ratification, and only 27 were ultimately ratified.",
   '04-13-2025':"What province is the farthest west in Canada? British Columbia is the province located the farthest west in Canada and is bounded by the Alaska Panhandle, the Yukon and Northwest Territories, Alberta and the U.S. states of Montana, Idaho and Washington.",
   '04-12-2025':"Updating",
   '04-11-2025':"What was the last film personally overseen by Walt Disney? The Jungle Book (1967) - Trivia - IMDb. The Jungle Book (1967) The last film personally overseen by Walt Disney.",
