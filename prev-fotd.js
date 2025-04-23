@@ -2,7 +2,6 @@ const factsContainer = document.getElementById('facts-container');
 
 // Sample facts data (replace with your actual data)
 const facts = {
-  '04-15-2025':"How much water is inside the human body? By one year of age that amount drops to about 65% In adult men about 60% of their bodies are water However fat tissue does not have as much water as lean tissue In adult women fat makes up more of the body than men so they have about 55% of their bodies made of water.",
   '04-14-2025':"How many amendments have been added to the constitution since 1789? Since 1789, over 10,000 amendments to the Constitution have been introduced in Congress. Of those, only 33 were adopted and sent to the states for ratification, and only 27 were ultimately ratified.",
   '04-13-2025':"What province is the farthest west in Canada? British Columbia is the province located the farthest west in Canada and is bounded by the Alaska Panhandle, the Yukon and Northwest Territories, Alberta and the U.S. states of Montana, Idaho and Washington.",
   '04-12-2025':"Updating",
