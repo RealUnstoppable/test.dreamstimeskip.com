@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unstoppable | DreamsTimeSkip | HarmonyTunes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables & Global Styles */
+        :root {
+            --bg-color: #0D0D0D;
+            --primary-card-color: #1A1A1A;
+            --border-color: #262626;
+            --text-primary: #F5F5F7;
+            --text-secondary: #A3A3A3;
+            --accent-blue: #0071E3;
+            --accent-hover: #147CE5;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Navigation Bar (Apple Style) --- */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: rgba(22, 22, 23, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 52px;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .nav-logo .accent {
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 2px;
+            margin: 5px auto;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --- General Section & Content Styling --- */
+        section {
+            padding: 120px 5vw;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+        
+        .section-content {
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+             font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--text-primary);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.05);
+        }
+        
+        /* --- Video Background Sections --- */
+        .video-bg-section {
+            min-height: 100vh;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        /* --- Specific Section Styles --- */
+        #harmony, #fact-of-day, #blog-contact, #about {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        #fact-of-day .fact-container {
+            background-color: var(--primary-card-color);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+        
+        #fact-date {
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        #fact-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        #blog-contact .blog-list {
+            list-style: none;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        #blog-contact .blog-item a {
+            display: block;
+            padding: 20px;
+            background-color: var(--primary-card-color);
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        #blog-contact .blog-item a:hover {
+            transform: translateX(10px);
+            background-color: #252525;
+        }
+
+        #contact-button {
+            margin-top: 30px;
+        }
+        
+        #about .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            #about .about-content {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+        
+        #about .ceo-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        /* --- Footer (Crunchyroll Style) --- */
+        .main-footer {
+            background-color: #000;
+            color: var(--text-secondary);
+            padding: 60px 5vw;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-signup {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-signup h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .footer-signup p {
+            margin-bottom: 20px;
+        }
+
+        .signup-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .signup-form input {
+            flex-grow: 1;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--primary-card-color);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        
+        .signup-form button {
+            padding: 14px 24px;
+            border: none;
+            background-color: var(--accent-blue);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .signup-form button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-socials a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- Animations & Responsive --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 52px;
+                flex-direction: column;
+                background-color: #000;
+                width: 100%;
+                height: calc(100vh - 52px);
+                text-align: center;
+                transition: 0.3s;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 20px 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+            
+            .footer-bottom {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .footer-socials a { margin: 0 10px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Un<span class="accent">stop</span>able</a>
+            <ul class="nav-links">
+                <li><a href="#unstoppable">Unstoppable</a></li>
+                <li><a href="#dreamstimeskip">Dreams TimeSkip</a></li>
+                <li><a href="#harmony">HarmonyTunes</a></li>
+                <li><a href="#blog-contact">Blog</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="unstoppable" class="video-bg-section">
+            <div class="video-overlay"></div>
+            <video class="video-background" autoplay loop muted playsinline>
+                <source src="YOUR_VIDEO_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="section-content fade-in">
+                <h1>Unstoppable</h1>
+                <p class="section-subtitle">The ultimate destination for high-tier gameplay, deep dives, and gaming culture.</p>
+                <a href="https://www.youtube.com/@Unstoppab1e" target="_blank" class="cta-button">Watch Now</a>
+            </div>
+        </section>
+
+        <section id="dreamstimeskip" class="video-bg-section">
+            <div class="video-overlay"></div>
+            <video class="video-background" autoplay loop muted playsinline>
+                <source src="YOUR_VIDEO_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="section-content fade-in">
+                <h2>Dreams TimeSkip</h2>
+                <p class="section-subtitle">An epic Minecraft saga awaits. With a rich storyline, interactive NPCs, and live events, this is a server unlike any other. Coming 2027. Trailer drops 2026. Dreams OG out July 30th!</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </section>
+        
+        <section id="harmony">
+            <div class="section-content fade-in">
+                <h3>HarmonyTunes</h3>
+                <p class="section-subtitle">Your daily dose of trending music. Follow us on TikTok and beyond for the most popular songs, every single day. The official app is launching next year!</p>
+                <a href="#" class="cta-button">Follow The Beat</a>
+            </div>
+        </section>
+
+        <section id="fact-of-day">
+            <div class="section-content fade-in">
+                <h3>Fact of the Day</h3>
+                <div class="fact-container">
+                    <p id="fact-date">July 15, 2025</p>
+                    <p id="fact-text">A single cloud can weigh more than a million pounds.</p>
+                </div>
+                <a href="#" class="cta-button">Discover More Facts</a>
+            </div>
+        </section>
+
+        <section id="blog-contact">
+            <div class="section-content fade-in">
+                <h3>From the Blog</h3>
+                <ul class="blog-list">
+                    <li class="blog-item"><a href="#">Top 5 Strategies for Competitive Gaming in 2025</a></li>
+                    <li class="blog-item"><a href="#">Building Immersive Worlds: The Tech Behind Dreams TimeSkip</a></li>
+                    <li class="blog-item"><a href="#">The Viral Loop: How HarmonyTunes Picks Tomorrow's Hits</a></li>
+                </ul>
+                <a href="mailto:unstoppableplays2016@hotmail.com" id="contact-button" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+        
+        <section id="about">
+            <div class="section-content fade-in">
+                <h3>About the Founder</h3>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/180" alt="Portrait of Catalin Andrian" class="ceo-image">
+                    <div>
+                        <h4>Catalin Andrian</h4>
+                        <p class="section-subtitle" style="text-align: inherit; margin-left: 0; margin-right: 0;">
+                            At 20 years old, Catalin is the visionary founder behind these ventures. A passionate creator and college student, he is dedicated to building next-generation entertainment brands that bridge the gap between digital content, gaming, and interactive experiences. His goal is to create a name synonymous with innovation and community.
+                        </p>
+                        <a href="#" class="cta-button">View My Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-signup">
+                <h4>Stay in the Loop</h4>
+                <p>Sign up for news, announcements, and exclusive offers.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="your.email@example.com" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li><a href="#unstoppable">Unstoppable</a></li>
+                        <li><a href="#dreamstimeskip">Dreams TimeSkip</a></li>
+                        <li><a href="#harmony">HarmonyTunes</a></li>
+                        <li><a href="#blog-contact">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Twitter / X</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="mailto:unstoppableplays2016@hotmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DreamstimeSkip LLC. All Rights Reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Scroll Fade-In Animation ---
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2, // Trigger when 20% of the element is visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // --- Dynamic Fact of the Day ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                "A single cloud can weigh more than a million pounds.",
+                "The national animal of Scotland is the unicorn.",
+                "A shrimp's heart is in its head.",
+                "It is impossible for most people to lick their own elbow.",
+                "A crocodile cannot stick its tongue out.",
+                "The Eiffel Tower can be 15 cm taller during the summer.",
+                "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+                "Octopuses have three hearts.",
+                "Bananas are berries, but strawberries aren't.",
+                "There are more trees on Earth than stars in the Milky Way galaxy.",
+                "Wombat poop is cube-shaped."
+            ];
+
+            const today = new Date();
+
+            // Format date
+            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('fact-date').textContent = today.toLocaleDateString('en-US', dateOptions);
+
+            // Get a consistent fact for the day of the year
+            const start = new Date(today.getFullYear(), 0, 0);
+            const diff = today - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const dayOfYear = Math.floor(diff / oneDay);
+            const factIndex = dayOfYear % facts.length;
+            
+            document.getElementById('fact-text').textContent = facts[factIndex];
+        });
+    </script>
+</body>
+</html>

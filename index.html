@@ -287,9 +287,78 @@
                 padding: 20px;
             }
         }
+        
+        /* --- START: Styles for Floating Preview Button --- */
+        #preview-container {
+          position: fixed;
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 9999;
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          background-color: #000;
+          cursor: pointer;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.4);
+          transition: all 0.4s cubic-bezier(0.6, 0, 0.4, 1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+        }
+
+        #preview-container.expanded {
+          width: 220px;
+          border-radius: 30px;
+        }
+
+        /* Text Styling */
+        #preview-container a {
+          color: #fff;
+          text-decoration: none;
+          font-family: 'Poppins', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          opacity: 0;
+          transform: translateY(10px);
+          /* Appear after a delay */
+          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+        }
+
+        #preview-container.expanded a {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Glyph Styles */
+        .preview-glyph {
+            position: absolute; /* Position it inside the container */
+            width: 26px;
+            height: 26px;
+            color: #fff;
+            /* Visible by default */
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        }
+
+        #preview-container.expanded .preview-glyph {
+            /* Hide when expanded */
+            opacity: 0;
+            transform: scale(0);
+        }
+        /* --- END: Styles for Floating Preview Button --- */
     </style>
 </head>
 <body>
+
+    <div id="preview-container">
+      <svg xmlns="http://www.w3.org/2000/svg" class="preview-glyph" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+      <a href="loading.html">Preview Website</a>
+    </div>
 
     <div class="container">
 
@@ -405,10 +474,31 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2025 dreamstimeskip.com. All Rights Reserved.</p>
+            <p>&copy; 2025 Untoppable. All Rights Reserved.</p>
         </footer>
 
     </div>
 
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const previewContainer = document.getElementById('preview-container');
+          
+          // Expand the button on click
+          previewContainer.addEventListener('click', (event) => {
+            // If the button is not yet expanded, expand it and prevent navigation.
+            if (!previewContainer.classList.contains('expanded')) {
+              event.preventDefault(); 
+              previewContainer.classList.add('expanded');
+            }
+            // Otherwise, on a second click, the link will navigate as normal.
+          });
+
+          // Collapse the button when the cursor moves off
+          previewContainer.addEventListener('mouseleave', () => {
+            previewContainer.classList.remove('expanded');
+          });
+        });
+    </script>
+
+    </body>
 </html>
