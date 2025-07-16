@@ -125,6 +125,7 @@
             z-index: 2;
             position: relative;
             max-width: 800px;
+            width: 100%;
         }
 
         h1 {
@@ -533,18 +534,23 @@
                 transform: translateY(-7px) rotate(-45deg);
             }
             
+            /* --- FIXED: Mobile Carousel Styles --- */
             .carousel-item {
-                min-width: 80%; /* Show 1 item mostly */
+                /* Adjusted width to give more space for buttons on mobile */
+                min-width: 75%; 
+                padding: 0 8px; /* Provides space between items */
             }
             .carousel-button {
-                top: 40%;
-                height: 40px;
-                width: 40px;
-                line-height: 40px;
-                font-size: 1.2rem;
+                top: 38%; /* Adjusted vertical position */
+                /* Make buttons smaller on mobile */
+                height: 38px;
+                width: 38px;
+                line-height: 38px;
+                font-size: 1.1rem;
             }
-             .carousel-button.prev { left: 5px; }
-             .carousel-button.next { right: 5px; }
+             /* Give buttons a bit more space from the absolute edge */
+             .carousel-button.prev { left: 10px; }
+             .carousel-button.next { right: 10px; }
 
 
             .footer-bottom {
@@ -631,33 +637,33 @@
                 <div class="carousel-container">
                     <div class="carousel-track">
                         <div class="carousel-item">
-                            <img src="https://via.placeholder.com/300x300/1A1A1A/F5F5F7?text=Item+1" alt="Hot Item 1">
+                            <img src="/images/UnstoppableHoodieModel300x300.png" alt="Hot Item 1">
                             <h4>Unstoppable Hoodie</h4>
                             <p>$49.99</p>
                         </div>
                         <div class="carousel-item">
-                           <img src="https://via.placeholder.com/300x300/1A1A1A/F5F5F7?text=Item+2" alt="Hot Item 2">
+                           <img src="/images/HarmonyTunesModel300x300.png" alt="Hot Item 2">
                             <h4>HarmonyTunes Cap</h4>
                             <p>$24.99</p>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://via.placeholder.com/300x300/1A1A1A/F5F5F7?text=Item+3" alt="Hot Item 3">
+                            <img src="/images/DreamsTimeSkipModel300x300.jpg" alt="Hot Item 3">
                             <h4>DTS Founder's Tee</h4>
                             <p>$34.99</p>
                         </div>
                          <div class="carousel-item">
-                            <img src="https://via.placeholder.com/300x300/1A1A1A/F5F5F7?text=Item+4" alt="Hot Item 4">
+                            <img src="/images/unstoppablemousepadmodel2-300x300.jpg" alt="Hot Item 4">
                             <h4>Unstoppable Mousepad</h4>
                             <p>$19.99</p>
                         </div>
                          <div class="carousel-item">
-                            <img src="https://via.placeholder.com/300x300/1A1A1A/F5F5F7?text=Item+5" alt="Hot Item 5">
+                            <img src="/images/MugAllBrands300x300.png" alt="Hot Item 5">
                             <h4>Branded Mug</h4>
                             <p>$15.99</p>
                         </div>
                     </div>
-                    <button class="carousel-button prev" aria-label="Previous Item">&#10094;</button>
-                    <button class="carousel-button next" aria-label="Next Item">&#10095;</button>
+                    <button class="carousel-button prev" aria-label="Previous Item">❮</button>
+                    <button class="carousel-button next" aria-label="Next Item">❯</button>
                 </div>
                 <a href="#" id="shop-cta" class="cta-button">Enter The Shop</a>
             </div>
@@ -837,6 +843,7 @@
                     if (items.length === 0) return;
                     const itemWidth = items[0].getBoundingClientRect().width;
                     const containerWidth = track.parentElement.getBoundingClientRect().width;
+                    // Calculate how many items are visible, rounding to handle subpixel precision
                     const itemsInView = Math.round(containerWidth / itemWidth);
                     
                     let maxIndex = items.length - itemsInView;
@@ -870,9 +877,12 @@
                         updateCarouselPosition();
                     }
                 });
-
-                window.addEventListener('resize', updateCarouselPosition);
-                updateCarouselPosition(); // Set initial position
+                
+                // Use a timeout to ensure layout is stable after DOM load
+                setTimeout(() => {
+                    updateCarouselPosition();
+                    window.addEventListener('resize', updateCarouselPosition);
+                }, 100);
             }
         });
     </script>
