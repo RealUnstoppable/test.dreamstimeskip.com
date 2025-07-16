@@ -3,9 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unstoppable</title>
+    <title>Maintenance In Progress - dreamstimeskip.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Basic Setup */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #121212;
+            --primary-card-color: #1e1e1e;
+            --secondary-card-color: #2a2a2a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-color: #4a90e2;
+            --green-status: #2ecc71;
+            --orange-status: #f39c12;
+            --red-status: #e74c3c;
+            --border-color: #333333;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            overflow-y: scroll;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Main Container & Layout */
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        /* General Card Styling */
+        .card {
+            background-color: var(--primary-card-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1, h2 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Maintenance Info Section */
+        .maintenance-info {
+            text-align: center;
+        }
+
+        .maintenance-icon {
+            width: 60px;
+            height: 60px;
+            color: var(--accent-color);
+            animation: spin 8s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* CEO Note Section */
+        .ceo-note p strong {
+            display: block;
+            margin-top: 20px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* System Status Section */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--secondary-card-color);
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .status-item:hover {
+            background-color: #333;
+        }
+
+        .status-name {
+            font-weight: 600;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .status-indicator.online {
+            color: #fff;
+            background-color: var(--green-status);
+        }
+
+        .status-indicator.maintenance {
+            color: #fff;
+            background-color: var(--orange-status);
+        }
+
+        .status-indicator.offline {
+            color: #fff;
+            background-color: var(--red-status);
+        }
+        
+        .status-indicator .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #fff;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 30px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid var(--bg-color);
+        }
+        
+        .timeline-item:first-child::before {
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(74, 144, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    test
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">dreams<span>time</span>skip.com</div>
+        </header>
+
+        <main>
+            <section class="card maintenance-info">
+                <svg class="maintenance-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m18 0h-1.5m-15.045-4.122l-1.06-1.06M21.75 7.75l-1.06 1.06M12 21.75V19.5m0-15V2.25m-4.122 15.045l-1.06 1.06M18.697 6.303l-1.06-1.06" />
+                </svg>
+                <h1>We'll Be Back Stronger</h1>
+                <p>We are currently performing essential maintenance to enhance our security and improve your experience. We appreciate your patience and understanding.</p>
+            </section>
+
+            <section class="card ceo-note">
+                <h2>A Note From Our CEO</h2>
+                <p>To our valued users,</p>
+                <p>Today, we made the difficult but necessary decision to take our platform offline for critical maintenance. Our security systems recently identified and thwarted a breach attempt. While our core user data remains secure, this incident highlighted the need for immediate and significant upgrades to our infrastructure.</p>
+                <p>Our team is working tirelessly not only to patch these vulnerabilities but to build a more resilient, faster, and more secure platform for the future. We are also taking this opportunity to roll out some general website improvements you’ve been asking for. Transparency is a core value for us, and we want to keep you informed every step of the way. You can follow our real-time progress below.</p>
+                <p>We are deeply sorry for this disruption and thank you for your continued trust in us.</p>
+                <p><strong>Catalin Andrian, CEO, dreamstimeskip.com</strong></p>
+            </section>
+            
+            <section class="card">
+                <h2>System Status</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-name">Website & Platform</span>
+                        <span class="status-indicator maintenance">
+                            <span class="dot"></span>
+                            Maintenance
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-name">User Accounts</span>
+                         <span class="status-indicator offline">
+                             <span class="dot"></span>
+                            Offline
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-name">API Services</span>
+                         <span class="status-indicator offline">
+                             <span class="dot"></span>
+                            Offline
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-name">Customer Support Email</span>
+                        <span class="status-indicator online">
+                            <span class="dot"></span>
+                            Operational
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Our Progress So Far (July 15, 2025)</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-time">9:00 PM EST</span>
+                        <p class="timeline-description">Integrity checks are in progress on the restored environment. We are testing core systems. An ETA will be announced shortly.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">8:00 PM EST</span>
+                        <p class="timeline-description">Data restoration to the new, hardened server environment is underway. Monitoring performance and integrity closely.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <span class="timeline-time">6:00 PM EST</span>
+                        <p class="timeline-description">The final testing phase for all security patches and platform improvements has been initiated on our internal staging environment.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <span class="timeline-time">4:00 PM EST</span>
+                        <p class="timeline-description">Accelerated the rollout of several pre-planned UI/UX and performance enhancements to maximize this maintenance window.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">2:00 PM EST</span>
+                        <p class="timeline-description">A full system-wide performance audit was initiated to identify and resolve underlying bottlenecks for a faster user experience.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">12:00 PM EST</span>
+                        <p class="timeline-description">Deployed new-generation firewalls and advanced intrusion detection systems across our entire network.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">10:00 AM EST</span>
+                        <p class="timeline-description">Core infrastructure secured. Began implementing proactive, enhanced security protocols to prevent future incidents.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">8:00 AM EST</span>
+                        <p class="timeline-description">Initiated a full database scan and integrity check. All data has been backed up to a secure, isolated location.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <span class="timeline-time">7:00 AM EST</span>
+                        <p class="timeline-description">Began patching the identified vulnerabilities and isolating the affected systems from the rest of our network.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">6:00 AM EST</span>
+                        <p class="timeline-description">Initial forensic assessment completed. The primary attack vector has been identified and contained.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-time">5:00 AM EST</span>
+                        <p class="timeline-description">Our all-hands emergency engineering and security teams were assembled to begin immediate investigation and mitigation.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <span class="timeline-time">4:00 AM EST</span>
+                        <p class="timeline-description">Suspicious activity detected. Our automated security protocols initiated an immediate, platform-wide lockdown to protect all user data and systems.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 dreamstimeskip.com. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
