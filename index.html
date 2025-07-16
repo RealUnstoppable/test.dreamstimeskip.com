@@ -333,18 +333,16 @@
 
         /* Glyph Styles */
         .preview-glyph {
-            position: absolute; /* Position it inside the container */
+            position: absolute;
             width: 26px;
             height: 26px;
             color: #fff;
-            /* Visible by default */
             opacity: 1;
             transform: scale(1);
             transition: opacity 0.2s ease-out, transform 0.2s ease-out;
         }
 
         #preview-container.expanded .preview-glyph {
-            /* Hide when expanded */
             opacity: 0;
             transform: scale(0);
         }
@@ -474,7 +472,7 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2025 Untoppable. All Rights Reserved.</p>
+            <p>&copy; 2025 dreamstimeskip.com. All Rights Reserved.</p>
         </footer>
 
     </div>
@@ -482,19 +480,30 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
           const previewContainer = document.getElementById('preview-container');
-          
-          // Expand the button on click
+          // 👇 Variable to hold the timer
+          let collapseTimer;
+
           previewContainer.addEventListener('click', (event) => {
-            // If the button is not yet expanded, expand it and prevent navigation.
-            if (!previewContainer.classList.contains('expanded')) {
-              event.preventDefault(); 
-              previewContainer.classList.add('expanded');
+            // If the user clicks the expanded button to navigate, clear the timer
+            if (previewContainer.classList.contains('expanded')) {
+              clearTimeout(collapseTimer);
+              return;
             }
-            // Otherwise, on a second click, the link will navigate as normal.
+            
+            // Otherwise, prevent navigation, expand the button, and start the timer
+            event.preventDefault(); 
+            previewContainer.classList.add('expanded');
+
+            // ⏱️ Start a 7-second timer to automatically collapse the button
+            collapseTimer = setTimeout(() => {
+                previewContainer.classList.remove('expanded');
+            }, 7000); // 7000 milliseconds = 7 seconds
           });
 
-          // Collapse the button when the cursor moves off
           previewContainer.addEventListener('mouseleave', () => {
+            // When the cursor leaves, clear any pending timer...
+            clearTimeout(collapseTimer);
+            // ...and collapse the button immediately
             previewContainer.classList.remove('expanded');
           });
         });
