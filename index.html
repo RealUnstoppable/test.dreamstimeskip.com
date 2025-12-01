@@ -1,513 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <script type="module" src="/js/theme-loader.js"></script>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreams TimeSkip - Maintenance In Progress - dreamstimeskip.com</title>
-    <meta name="description" content="Welcome to the official website for Dreamstime Skip. Discover our projects and learn more about us.">
+    <title>DreamsTimekip Hub | The Unstoppable Ecosystem (Beta)</title>
+    <meta name="description" content="The central hub for Unstoppable, Dreams TimeSkip, HarmonyTunes, and more. Discover the projects of Catalin Andrian.">
+    
+     <link rel="icon" type="image/png" href="/images/dreams-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/themes.css">
+
     <style>
-        /* CSS Reset & Basic Setup */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --bg-color: #121212;
-            --primary-card-color: #1e1e1e;
-            --secondary-card-color: #2a2a2a;
-            --text-primary: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --accent-color: #4a90e2;
-            --green-status: #2ecc71;
-            --orange-status: #f39c12;
-            --red-status: #e74c3c;
-            --border-color: #333333;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+        #siri-orb {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #6e45e2, #88d3ce);
+            border-radius: 50%;
+            cursor: pointer;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 40px 20px;
-            overflow-y: scroll;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1000;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 0 20px rgba(110, 69, 226, 0.6);
+            animation: pulse 2.5s infinite;
         }
 
-        /* Main Container & Layout */
-        .container {
+        @keyframes pulse {
+            0% {
+                transform: translateX(-50%) scale(0.95);
+                box-shadow: 0 0 0 0 rgba(110, 69, 226, 0.7);
+            }
+            70% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 0 12px rgba(110, 69, 226, 0);
+            }
+            100% {
+                transform: translateX(-50%) scale(0.95);
+                box-shadow: 0 0 0 0 rgba(110, 69, 226, 0);
+            }
+        }
+
+        #siri-orb.expanded {
+            width: 220px;
+            border-radius: 50px;
+            background: #000;
+            animation: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateX(-50%);
+        }
+
+        .orb-text {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease 0.4s;
+            white-space: nowrap;
+            transform: translateY(20px);
+        }
+
+        #siri-orb.expanded .orb-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- START: Pre-register Popup Styles --- */
+        #preregister-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
-            flex-direction: column;
-            gap: 30px;
-            animation: fadeIn 1s ease-in-out;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001; /* Higher than the Siri orb */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        #preregister-popup-overlay.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
-        /* Header */
-        .header {
+        .popup-content {
+            background-color: #111;
+            padding: 2.5rem;
+            border-radius: 16px;
             text-align: center;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .logo {
-            font-size: 2rem;
+        #preregister-popup-overlay.visible .popup-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-content img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .popup-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
             font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: 1px;
+            color: #fff;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.3;
         }
 
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        /* General Card Styling */
-        .card {
-            background-color: var(--primary-card-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        .popup-preregister-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #6e45e2, #88d3ce);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        .popup-preregister-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(110, 69, 226, 0.4);
         }
 
-        h1, h2 {
-            color: var(--text-primary);
-            margin-bottom: 15px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
-
-        /* Maintenance Info Section */
-        .maintenance-info {
-            text-align: center;
-        }
-
-        .maintenance-icon {
-            width: 60px;
-            height: 60px;
-            color: var(--accent-color);
-            animation: spin 8s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* CEO Note Section */
-        .ceo-note p strong {
-            display: block;
-            margin-top: 20px;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        /* System Status Section */
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .status-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--secondary-card-color);
-            padding: 15px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .status-item:hover {
-            background-color: #333;
-        }
-
-        .status-name {
-            font-weight: 600;
-        }
-
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 20px;
-        }
-
-        .status-indicator.online {
-            color: #fff;
-            background-color: var(--green-status);
-        }
-
-        .status-indicator.maintenance {
-            color: #fff;
-            background-color: var(--orange-status);
-        }
-
-        .status-indicator.offline {
-            color: #fff;
-            background-color: var(--red-status);
-        }
-        
-        .status-indicator .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #fff;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-
-        /* Timeline Section */
-        .timeline {
-            position: relative;
-            margin-top: 20px;
-            padding-left: 30px;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-        }
-        
-        .timeline-item:hover {
-            transform: translateX(5px);
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
+        .popup-close-btn {
             position: absolute;
-            left: -38px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            border: 3px solid var(--bg-color);
-        }
-        
-        .timeline-item:first-child::before {
-            animation: pulse-blue 2s infinite;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(74, 144, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
-        }
-
-        .timeline-time {
-            font-weight: 700;
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .timeline-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .card {
-                padding: 20px;
-            }
-        }
-        
-        /* --- START: Styles for Floating Preview Button --- */
-        #preview-container {
-          position: fixed;
-          bottom: 15px;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 9999;
-          width: 55px;
-          height: 55px;
-          border-radius: 50%;
-          background-color: #000;
-          cursor: pointer;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.4);
-          transition: all 0.4s cubic-bezier(0.6, 0, 0.4, 1);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-        }
-
-        #preview-container.expanded {
-          width: 220px;
-          border-radius: 30px;
-        }
-
-        /* Text Styling */
-        #preview-container a {
-          color: #fff;
-          text-decoration: none;
-          font-family: 'Poppins', sans-serif;
-          font-size: 16px;
-          font-weight: 500;
-          opacity: 0;
-          transform: translateY(10px);
-          /* Appear after a delay */
-          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
-        }
-
-        #preview-container.expanded a {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Glyph Styles */
-        .preview-glyph {
-            position: absolute;
-            width: 26px;
-            height: 26px;
+        .popup-close-btn:hover {
             color: #fff;
-            opacity: 1;
-            transform: scale(1);
-            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+            transform: rotate(90deg);
         }
-
-        #preview-container.expanded .preview-glyph {
-            opacity: 0;
-            transform: scale(0);
-        }
-        /* --- END: Styles for Floating Preview Button --- */
+        /* --- END: Pre-register Popup Styles --- */
     </style>
 </head>
 <body>
-    <div id="preview-container">
-      <svg xmlns="http://www.w3.org/2000/svg" class="preview-glyph" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-      <a href="loading.html">Preview Website</a>
+
+    <div id="preregister-popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close-btn" aria-label="Close popup">&times;</button>
+            <img src="/images/Pencil-1-logo-light.png" alt="A sleek, modern digital pencil">
+            <h2>The last pencil you'll ever buy.</h2>
+            <a href="sign in beta.html" class="popup-preregister-btn">Pre-register Now</a>
+        </div>
     </div>
 
-    <div class="container">
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">un<span></span></a>
+            <ul class="nav-links">
+                <li><a href="#bento">Overview</a></li>
+                <li><a href="#unstoppable">Unstoppable</a></li>
+                <li><a href="#dts">Dreams TimeSkip</a></li>
+                <li><a href="#harmony">HarmonyTunes</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="memberships.html">Memberships</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Design</a></li>
+                <li><a href="sign in beta.html" id="auth-link">Sign In / Sign Up</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
 
-        <header class="header">
-            <div class="logo">dreams<span>time</span>skip.com</div>
-        </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="orb"></div>
+                <h1 class="reveal" id="dynamic-greeting">Good Afternoon.</h1>
+                <h2 class="reveal">All you want, all in one place.</h2>
+                <p class="section-subtitle reveal">Welcome to the central hub for the Unstoppable ecosystem. Explore our projects, get the latest updates, and join the community.</p>
+                <div class="powered-by reveal">
+                    <span>Powered by Unstoppable AI</span>
+                </div>
+            </div>
+        </section>
 
-        <main>
-            <section class="card maintenance-info">
-                <svg class="maintenance-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m18 0h-1.5m-15.045-4.122l-1.06-1.06M21.75 7.75l-1.06 1.06M12 21.75V19.5m0-15V2.25m-4.122 15.045l-1.06 1.06M18.697 6.303l-1.06-1.06" />
-                </svg>
-                <h1>We'll Be Back Stronger</h1>
-                <p>We are currently performing essential maintenance to enhance our security and improve your experience. We appreciate your patience and understanding.</p>
+        <section id="bento" class="bento-section">
+            <div class="bento-grid">
+                <a href="#unstoppable" class="bento-card reveal" id="bento-unstoppable">
+                    <div class="card-content">
+                        <h3>Unstoppable</h3>
+                        <p>High-tier gameplay & gaming content.</p>
+                    </div>
+                    <img src="/images/un-logo-1.png" alt="Unstoppable Logo">
+                </a>
+                <a href="dreamstimeskip.html" class="bento-card reveal" id="bento-dts">
+                     <div class="card-content">
+                        <h3>Dreams TimeSkip</h3>
+                        <p>Season OG, Relive your childhood.</p>
+                    </div>
+                     <img src="/images/dreams-lobby.jpg" alt="Dreams TimeSkip Lobby">
+                </a>
+                <div class="bento-card reveal" id="bento-status">
+                    <h4>Ecosystem Status</h4>
+                    <div class="status-item">
+                        <span>All Systems</span>
+                        <span class="status-indicator online">Operational</span>
+                    </div>
+                    <div class="status-item">
+                        <span>API/F.O.T.D.</span>
+                        <span class="status-indicator down">Maintenance</span>
+                    </div>
+                    <p>Last check: Sep 9, 2025</p>
+                </div>
+                <a href="#harmony" class="bento-card reveal" id="bento-harmony">
+                     <div class="card-content">
+                        <h3>HarmonyTunes</h3>
+                        <p>Your daily dose of trending music.</p>
+                    </div>
+                    <img src="/images/harmony-tunes-card.jpg" alt="HarmonyTunes Card">
+                </a>
+                <a href="fotd.html" class="bento-card reveal" id="bento-fotd">
+                     <div class="card-content">
+                        <h3>Fact of the Day</h3>
+                        <p>The first orange wasn't orange.</p>
+                    </div>
+                </a>
+                <div class="bento-card reveal" id="bento-founder">
+                     <div class="card-content">
+                        <h4>Founder's Note</h4>
+                        <p>"We're building the future of digital entertainment, one project at a time." - Catalin A.</p>
+                    </div>
+                </div>
+                 <a href="shop.html" class="bento-card reveal" id="bento-shop">
+                     <div class="card-content">
+                        <h3>Unstoppable Collection</h3>
+                        <p>New drops available now.</p>
+                    </div>
+                    <img src="/images/Unstoppable Collection Logo.png" alt="Unstoppable Mousepad">
+                </a>
+            </div>
+        </section>
+
+        <div class="scroll-container">
+            <section id="unstoppable" class="brand-section">
+                <div class="section-background" style="background-image: url('UnstoppableHoodieModel300x300.png');"></div>
+                <div class="section-overlay" style="background: linear-gradient(0deg, rgba(139,0,0,0.7) 0%, rgba(20,20,20,0.8) 100%);"></div>
+                <div class="brand-content reveal">
+                    <h2>Unstoppable</h2>
+                    <p class="section-subtitle">The ultimate destination for high-tier gameplay, deep dives, and gaming culture. Join the action and witness top-level competitive play.</p>
+                    <a href="https://www.youtube.com/@Unstoppab1e?sub_confirmation=1" class="cta-button">Watch on YouTube</a>
+                </div>
             </section>
 
-            <section class="card ceo-note">
-                <h2>A Note From Our CEO</h2>
-                <p>To our valued users,</p>
-                <p>Today, we made the difficult but necessary decision to take our platform offline for critical maintenance. Our security systems recently identified and thwarted a breach attempt. While our core user data remains secure, this incident highlighted the need for immediate and significant upgrades to our infrastructure.</p>
-                <p>Our team is working tirelessly not only to patch these vulnerabilities but to build a more resilient, faster, and more secure platform for the future. We are also taking this opportunity to roll out some general website improvements you’ve been asking for. Transparency is a core value for us, and we want to keep you informed every step of the way. You can follow our real-time progress below.</p>
-                <p>We are deeply sorry for this disruption and thank you for your continued trust in us.</p>
-                <p><strong>Catalin Andrian, CEO, dreamstimeskip.com</strong></p>
+            <section id="dts" class="brand-section">
+                <div class="section-background" style="background-image: url('DreamsTimeSkipModel300x300.jpg');"></div>
+                 <div class="section-overlay" style="background: linear-gradient(0deg, rgba(48,25,52,0.7) 0%, rgba(20,20,20,0.8) 100%);"></div>
+                <div class="brand-content reveal">
+                    <h2>Dreams TimeSkip</h2>
+                    <p class="section-subtitle">An epic Minecraft saga awaits. With a rich storyline, interactive NPCs, and live events, this is a server unlike any other. Expected release: 2027.</p>
+                    <a href="https://discord.gg/aYuEdG9Gh7" class="cta-button">Join the Discord</a>
+                </div>
             </section>
             
-            <section class="card">
-                <h2>System Status</h2>
-                <div class="status-grid">
-                    <div class="status-item">
-                        <span class="status-name">Website & Platform</span>
-                        <span class="status-indicator maintenance">
-                            <span class="dot"></span>
-                            Maintenance
-                        </span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-name">User Accounts</span>
-                         <span class="status-indicator offline">
-                             <span class="dot"></span>
-                            Offline
-                        </span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-name">API Services</span>
-                         <span class="status-indicator offline">
-                             <span class="dot"></span>
-                            Offline
-                        </span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-name">Customer Support Email</span>
-                        <span class="status-indicator online">
-                            <span class="dot"></span>
-                            Operational
-                        </span>
-                    </div>
+            <section id="harmony" class="brand-section">
+                <div class="section-background" style="background-image: url('HarmonyTunesModel300x300.png');"></div>
+                <div class="section-overlay" style="background: linear-gradient(0deg, rgba(0,113,227,0.6) 0%, rgba(20,20,20,0.8) 100%);"></div>
+                <div class="brand-content reveal">
+                    <h2>HarmonyTunes</h2>
+                    <p class="section-subtitle">Your daily dose of trending music. Follow us on TikTok for the most popular songs, every single day. The official app is launching next year!</p>
+                    <a href="https://www.tiktok.com/@harmonytunesofficial" class="cta-button">Follow the Beat</a>
                 </div>
             </section>
+        </div>
+    </main>
 
-            <section class="card">
-                <h2>Our Progress So Far (July 15, 2025)</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="timeline-time">9:00 PM EST</span>
-                        <p class="timeline-description">Integrity checks are in progress on the restored environment. We are testing core systems. An ETA will be announced shortly.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">8:00 PM EST</span>
-                        <p class="timeline-description">Data restoration to the new, hardened server environment is underway. Monitoring performance and integrity closely.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <span class="timeline-time">6:00 PM EST</span>
-                        <p class="timeline-description">The final testing phase for all security patches and platform improvements has been initiated on our internal staging environment.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <span class="timeline-time">4:00 PM EST</span>
-                        <p class="timeline-description">Accelerated the rollout of several pre-planned UI/UX and performance enhancements to maximize this maintenance window.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">2:00 PM EST</span>
-                        <p class="timeline-description">A full system-wide performance audit was initiated to identify and resolve underlying bottlenecks for a faster user experience.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">12:00 PM EST</span>
-                        <p class="timeline-description">Deployed new-generation firewalls and advanced intrusion detection systems across our entire network.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">10:00 AM EST</span>
-                        <p class="timeline-description">Core infrastructure secured. Began implementing proactive, enhanced security protocols to prevent future incidents.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">8:00 AM EST</span>
-                        <p class="timeline-description">Initiated a full database scan and integrity check. All data has been backed up to a secure, isolated location.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <span class="timeline-time">7:00 AM EST</span>
-                        <p class="timeline-description">Began patching the identified vulnerabilities and isolating the affected systems from the rest of our network.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">6:00 AM EST</span>
-                        <p class="timeline-description">Initial forensic assessment completed. The primary attack vector has been identified and contained.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">5:00 AM EST</span>
-                        <p class="timeline-description">Our all-hands emergency engineering and security teams were assembled to begin immediate investigation and mitigation.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <span class="timeline-time">4:00 AM EST</span>
-                        <p class="timeline-description">Suspicious activity detected. Our automated security protocols initiated an immediate, platform-wide lockdown to protect all user data and systems.</p>
-                    </div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li><a href="#bento">Overview</a></li>
+                        <li><a href="#unstoppable">Unstoppable</a></li>
+                        <li><a href="#dts">Dreams TimeSkip</a></li>
+                        <li><a href="#harmony">HarmonyTunes</a></li>
+                    </ul>
                 </div>
-            </section>
-        </main>
+                <div class="footer-column">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@Unstoppab1e">YouTube</a></li>
+                        <li><a href="https://www.tiktok.com/@harmonytunesofficial">TikTok</a></li>
+                        <li><a href="https://x.com/harmonytun16586?s=21">Twitter / X</a></li>
+                        <li><a href="https://discord.gg/6zdH5De3ab">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="mailto:unstoppableplays2016@hotmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <h5>Stay in the Loop</h5>
+                    <p>Sign up for news, announcements, and exclusive beta access.</p>
+                    <form class="signup-form">
+                        <input type="email" placeholder="your.email@example.com" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Unstoppable LLC. All Rights Reserved.</p>
+                <p>Designed in collaboration with Unstoppable Design, LLC.</p>
+            </div>
+        </div>
+    </footer>
 
-        <footer class="footer">
-            <p>&copy; 2025 dreamstimeskip.com. All Rights Reserved.</p>
-        </footer>
-
+    <div id="siri-orb">
+        <a href="https://www.dreamstimeskip.com/" class="orb-text">Return Home?</a>
     </div>
+    
+  <script src="/js/script.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-          const previewContainer = document.getElementById('preview-container');
-          // 👇 Variable to hold the timer
-          let collapseTimer;
+            const siriOrb = document.getElementById('siri-orb');
+            let inactivityTimeout;
 
-          previewContainer.addEventListener('click', (event) => {
-            // If the user clicks the expanded button to navigate, clear the timer
-            if (previewContainer.classList.contains('expanded')) {
-              clearTimeout(collapseTimer);
-              return;
-            }
-            
-            // Otherwise, prevent navigation, expand the button, and start the timer
-            event.preventDefault(); 
-            previewContainer.classList.add('expanded');
+            const collapseOrb = () => siriOrb.classList.remove('expanded');
 
-            // ⏱️ Start a 7-second timer to automatically collapse the button
-            collapseTimer = setTimeout(() => {
-                previewContainer.classList.remove('expanded');
-            }, 7000); // 7000 milliseconds = 7 seconds
-          });
+            const startInactivityTimer = () => {
+                clearTimeout(inactivityTimeout);
+                inactivityTimeout = setTimeout(collapseOrb, 5000);
+            };
 
-          previewContainer.addEventListener('mouseleave', () => {
-            // When the cursor leaves, clear any pending timer...
-            clearTimeout(collapseTimer);
-            // ...and collapse the button immediately
-            previewContainer.classList.remove('expanded');
-          });
+            siriOrb.addEventListener('click', (event) => {
+                if (event.target.tagName === 'A') return;
+                
+                if (!siriOrb.classList.contains('expanded')) {
+                    siriOrb.classList.add('expanded');
+                    startInactivityTimer();
+                } else {
+                    startInactivityTimer();
+                }
+            });
         });
     </script>
+    
+   <script type="module">
+      import { auth, db } from './js/auth.js';
+</script>
+    
 
-    </body>
+    <script>
+        // --- START: Pre-register Popup Script ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const popupOverlay = document.getElementById('preregister-popup-overlay');
+            const closeBtn = popupOverlay.querySelector('.popup-close-btn');
+            const preregisterBtn = popupOverlay.querySelector('.popup-preregister-btn');
+
+            // Function to show the popup
+            const showPopup = () => {
+                popupOverlay.classList.add('visible');
+            };
+
+            // Function to hide the popup
+            const hidePopup = () => {
+                popupOverlay.classList.remove('visible');
+                // Store in sessionStorage that the popup has been seen
+                sessionStorage.setItem('popupShown', 'true');
+            };
+
+            // Show the popup after a short delay, but only if it hasn't been shown in this session
+            if (!sessionStorage.getItem('popupShown')) {
+                setTimeout(showPopup, 1000); // 1-second delay
+            }
+
+            // Event listeners to close the popup
+            closeBtn.addEventListener('click', hidePopup);
+            preregisterBtn.addEventListener('click', (e) => {
+                // e.preventDefault(); // Uncomment this if you want to stop the link from navigating
+                console.log('Pre-register button clicked!');
+                hidePopup();
+            });
+
+            // Also close if the user clicks on the dark overlay
+            popupOverlay.addEventListener('click', (event) => {
+                if (event.target === popupOverlay) {
+                    hidePopup();
+                }
+            });
+        });
+        // --- END: Pre-register Popup Script ---
+    </script>
+  
+</body>
 </html>
